@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package com.spaneos.dhi.examination.service;
+
+import java.util.List;
+
+import javax.ws.rs.core.MultivaluedMap;
+
+import com.spaneos.dhi.examination.dto.DigitalEvaluationFacultyDetailDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationFacultyNominationDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationSemesterWiseDetailsDto;
+import com.spaneos.dhi.examination.dto.EvaluationCourseDetailsDto;
+
+/**
+ * @author balaji
+ *
+ */
+public interface DigitalEvaluationFacultyNominationService {
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 20-Apr-2018
+	 * @param degreeId
+	 * @param schemeYear
+	 * @param academicYear
+	 * @param termNumber
+	 * @param semester
+	 * @return
+	 */
+	List<DigitalEvaluationSemesterWiseDetailsDto> getAllCourses(String degreeId, String schemeYear, String academicYear,
+			int termNumber);
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 20-Apr-2018
+	 * @param degreeId
+	 * @param schemeYear
+	 * @param academicYear
+	 * @param termNumber
+	 * @param semester
+	 * @return
+	 */
+	EvaluationCourseDetailsDto getEntireCourseList(String degreeId, String schemeYear, String academicYear,
+			int termNumber, String semester);
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param queryParams
+	 * @return
+	 */
+	DigitalEvaluationFacultyDetailDto getAllocatedFaculties(MultivaluedMap<String, String> queryParams);
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param queryParams
+	 * @return
+	 */
+	DigitalEvaluationFacultyNominationDto getNominationDetails(MultivaluedMap<String, String> queryParams);
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param dto
+	 * @return
+	 */
+	DigitalEvaluationFacultyNominationDto saveFacultyNomination(DigitalEvaluationFacultyNominationDto dto);
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 24-Apr-2018
+	 * @param dto
+	 * @return
+	 */
+	String submitFacultyNominationDetails(EvaluationCourseDetailsDto dto);
+
+}

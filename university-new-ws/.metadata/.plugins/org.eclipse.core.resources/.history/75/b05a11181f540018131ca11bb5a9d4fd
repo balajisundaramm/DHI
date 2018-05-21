@@ -1,0 +1,88 @@
+package com.spaneos.dhi.examination.dto;
+
+import java.util.List;
+
+public class TabulateScoreDTO {
+
+	private int questionNumber;
+	private String option;
+	private Integer questionGroup;
+	private String part;
+	private Integer coState;
+	private double maxMarks;
+	private double obtainedMarks;
+	private boolean isOption;
+	private List<TabulateScoreDTO> optionScores;
+
+	public int getQuestionNumber() {
+		return questionNumber;
+	}
+
+	public void setQuestionNumber(int questionNumber) {
+		this.questionNumber = questionNumber;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
+	}
+
+	public Integer getQuestionGroup() {
+		return questionGroup;
+	}
+
+	public void setQuestionGroup(Integer questionGroup) {
+		this.questionGroup = questionGroup;
+	}
+
+	public String getPart() {
+		return part;
+	}
+
+	public void setPart(String part) {
+		this.part = part;
+	}
+
+	public Integer getCoState() {
+		return coState;
+	}
+
+	public void setCoState(Integer coState) {
+		this.coState = coState;
+	}
+
+	public double getMaxMarks() {
+		return maxMarks;
+	}
+
+	public void setMaxMarks(double maxMarks) {
+		this.maxMarks = maxMarks;
+	}
+	
+	public double getObtainedMarks() {
+		return obtainedMarks;
+	}
+
+	public void setObtainedMarks(double obtainedMarks) {
+		this.obtainedMarks = obtainedMarks;
+	}
+
+	public List<TabulateScoreDTO> getOptionScores() {
+		return optionScores;
+	}
+
+	public void setOptionScores(List<TabulateScoreDTO> optionScores) {
+		this.optionScores = optionScores;
+	}
+
+	public boolean isOption() {
+		return isOption;
+	}
+
+	public void setIsOption(boolean isOption) {
+		this.isOption = isOption;
+	}
+}

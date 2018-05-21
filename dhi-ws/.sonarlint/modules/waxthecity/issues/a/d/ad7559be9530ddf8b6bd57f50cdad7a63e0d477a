@@ -1,0 +1,65 @@
+
+ysquid:S3027¸"FPut single-quotes around ',' to use the faster "indexOf(char)" method.(Ã¾©™ÿÿÿÿÿH¸RMAJORZ
+CODE_SMELL
+Qsquid:S2629L"$Invoke method(s) only conditionally.(…ù—H¹RMAJORZ
+CODE_SMELL
+jsquid:S2629ß"7Use the built-in formatting to construct this argument.(¿•‘˜þÿÿÿÿHºRMAJORZ
+CODE_SMELL
+dsquid:S1197}"8Move the array designator from the variable to the type.(Í­›>H»RMINORZ
+CODE_SMELL
+ysquid:S1192j"IDefine a constant instead of duplicating this literal "textsize" 9 times.(¾óÝµH¼RCRITICALZ
+CODE_SMELL
+—squid:S1192Ý"fDefine a constant instead of duplicating this literal "/Waxing the City-Victor/Intake Forms/" 3 times.(‰ÜØÒH½RCRITICALZ
+CODE_SMELL
+_squid:S2093X"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿH¾RCRITICALZ
+CODE_SMELL
+vsquid:S2095Ì"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(õ‡³üH¿RBLOCKERZBUG
+|squid:S2095Í"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ÁÇ‡ËÿÿÿÿÿHÀRBLOCKERZBUG
+}squid:CommentedOutCodeLinef"<This block of commented-out lines of code should be removed.(üàÖÿÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+f
+squid:S106—"9Replace this use of System.out or System.err by a logger.(êß‹ÿHÂRMAJORZ
+CODE_SMELL
+Vsquid:S1481Y")Remove this unused "file" local variable.(çãöŒHÃRMINORZ
+CODE_SMELL
+[squid:S1481Ý"-Remove this unused "metadata" local variable.(‰ÜØÒHÄRMINORZ
+CODE_SMELL
+wsquid:CallToDeprecatedMethodÔ"8Remove this use of "DbxRequestConfig"; it is deprecated.(—–‹‹HÅRMINORZ
+CODE_SMELL
+zsquid:S00112°"FDefine and throw a dedicated exception instead of using a generic one.(ýµÚ„þÿÿÿÿHÆRMAJORZ
+CODE_SMELL
+ssquid:S2147"ECombine this catch with the one at line 155, which has the same body.(”ý¾HÇRMINORZ
+CODE_SMELL
+ssquid:S2147¥"ECombine this catch with the one at line 163, which has the same body.(ï­£ÄHÈRMINORZ
+CODE_SMELL
+Šsquid:S001165"WRename this field "ACCESS_TOKEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™®ØÅûÿÿÿÿHÉRMINORZ
+CODE_SMELL
+lsquid:UselessImportCheck#"-Remove this unused import 'java.util.Locale'.(åð×±ûÿÿÿÿHÊRMINORZ
+CODE_SMELL
+nsquid:UselessImportCheck$"/Remove this unused import 'java.util.TimeZone'.(à‡ÕùÿÿÿÿHËRMINORZ
+CODE_SMELL
+gsquid:UselessImportCheck "-Remove this unused import 'java.time.ZoneId'.( Æ½“HÌRMINORZ
+CODE_SMELL
+Xsquid:S1148B"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÍRMINORZVULNERABILITY
+Ysquid:S1148œ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÎRMINORZVULNERABILITY
+Ysquid:S1148ž"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÏRMINORZVULNERABILITY
+Ysquid:S1148¤"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÐRMINORZVULNERABILITY
+Ysquid:S1148¦"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÑRMINORZVULNERABILITY
+Lsquid:S2129j"Remove this "Float" constructor(¾óÝµHÒRMAJORZ
+CODE_SMELL
+Ksquid:S2129k"Remove this "Float" constructor(ÒÎÙ2HÓRMAJORZ
+CODE_SMELL
+Qsquid:S2129l"Remove this "Float" constructor(¤‹ÉþÿÿÿÿHÔRMAJORZ
+CODE_SMELL
+Qsquid:S2129m"Remove this "Float" constructor(äË¯êýÿÿÿÿHÕRMAJORZ
+CODE_SMELL
+Qsquid:S2129n"Remove this "Float" constructor(Â÷Î„þÿÿÿÿHÖRMAJORZ
+CODE_SMELL
+Qsquid:S2129o"Remove this "Float" constructor(Çãç‡ûÿÿÿÿH×RMAJORZ
+CODE_SMELL
+Lsquid:S2129p"Remove this "Float" constructor(»ÿªHØRMAJORZ
+CODE_SMELL
+Ksquid:S2129q"Remove this "Float" constructor(Óÿ®,HÙRMAJORZ
+CODE_SMELL
+Qsquid:S2129r"Remove this "Float" constructor(»Â±ÑþÿÿÿÿHÚRMAJORZ
+CODE_SMELL

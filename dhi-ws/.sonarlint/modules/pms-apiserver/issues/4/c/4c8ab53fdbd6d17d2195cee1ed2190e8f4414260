@@ -1,0 +1,44 @@
+
+squid:S1192¨"JDefine a constant instead of duplicating this literal "startDate" 3 times.(şòÒÓüÿÿÿÿHß¼RCRITICALZ
+CODE_SMELL
+zsquid:S1192©"HDefine a constant instead of duplicating this literal "endDate" 3 times.(²ÅÜ§Hà¼RCRITICALZ
+CODE_SMELL
+^squid:S1066»"/Merge this if statement with the enclosing one.(ÑÒúŞHá¼RMAJORZ
+CODE_SMELL
+ˆsquid:S2293©"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤çóÿHâ¼RMINORZ
+CODE_SMELL
+‰squid:S14508"[Remove the "rowValueList" field and declare it as a local variable in the relevant methods.(ªÉ½Hã¼RMINORZ
+CODE_SMELL
+tsquid:S2095K"FUse try-with-resources or close this "Workbook" in a "finally" clause.(ä¡’ÅüÿÿÿÿHä¼RBLOCKERZBUG
+f
+squid:S106{"9Replace this use of System.out or System.err by a logger.(µÉÄ‰Hå¼RMAJORZ
+CODE_SMELL
+l
+squid:S106Œ"9Replace this use of System.out or System.err by a logger.(±Œ¶‡ÿÿÿÿÿHæ¼RMAJORZ
+CODE_SMELL
+’squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "constraints".(ËÊª¡Hç¼RMINORZ
+CODE_SMELL
+vsquid:HiddenFieldCheck«"=Rename "startDate" which hides the field declared at line 57.(Ëù¦UHè¼RMAJORZ
+CODE_SMELL
+usquid:HiddenFieldCheck®";Rename "endDate" which hides the field declared at line 58.(ì¤ö»Hé¼RMAJORZ
+CODE_SMELL
+Wsquid:S1905¶"(Remove this unnecessary cast to "Entry".(ĞÒ›½Hê¼RMINORZ
+CODE_SMELL
+ˆsquid:S3776I"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¤·çËşÿÿÿÿHë¼RCRITICALZ
+CODE_SMELL
+„squid:S3776¦"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(­ÅôÆHì¼RCRITICALZ
+CODE_SMELL
+Zsquid:S1168‘"+Return an empty collection instead of null.(¥¹ïHí¼RMAJORZ
+CODE_SMELL
+†squid:S00117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§êƒÍüÿÿÿÿHî¼RMINORZ
+CODE_SMELL
+osquid:S1858»"@"getKey" returns a string, there's no need to call "toString()".(ÑÒúŞHï¼RMINORZ
+CODE_SMELL
+tsquid:S1858½"@"getKey" returns a string, there's no need to call "toString()".(Ú™–éşÿÿÿÿHğ¼RMINORZ
+CODE_SMELL
+msquid:S2130­"9Use "Integer.parseInt" for this string-to-int conversion.(¾×•ÓıÿÿÿÿHñ¼RMINORZ
+CODE_SMELL
+hsquid:S2130°"9Use "Integer.parseInt" for this string-to-int conversion.(†ğÀ¼Hò¼RMINORZ
+CODE_SMELL
+msquid:S2130¾"9Use "Integer.parseInt" for this string-to-int conversion.(Ùâ¢¡ÿÿÿÿÿHó¼RMINORZ
+CODE_SMELL

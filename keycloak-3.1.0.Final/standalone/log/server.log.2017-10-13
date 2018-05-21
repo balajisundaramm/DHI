@@ -1,0 +1,523 @@
+2017-10-13 09:27:30,390 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2017-10-13 09:27:30,725 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2017-10-13 09:27:30,832 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2017-10-13 09:27:30,834 DEBUG [org.jboss.as.config] (MSC service thread 1-8) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /opt/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_131-b11
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_131
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.131-b11
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /opt/keycloak-3.1.0.Final
+	jboss.host.name = spaneos-a041
+	jboss.modules.dir = /opt/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = spaneos-a041
+	jboss.qualified.host.name = spaneos-a041
+	jboss.server.base.dir = /opt/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /opt/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /opt/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /opt/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /opt/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = spaneos-a041
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /opt/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 100
+	line.separator = 
+
+	logging.configuration = file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /opt/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /opt/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-97-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /opt/keycloak-3.1.0.Final/jboss-modules.jar -mp /opt/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/opt/keycloak-3.1.0.Final -Djboss.server.base.dir=/opt/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=100
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /opt/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2017-10-13 09:27:30,835 DEBUG [org.jboss.as.config] (MSC service thread 1-8) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/opt/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2017-10-13 09:27:32,386 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2017-10-13 09:27:32,411 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.4.Final
+2017-10-13 09:27:32,437 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.4.Final
+2017-10-13 09:27:32,499 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2017-10-13 09:27:32,502 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2017-10-13 09:27:32,508 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2017-10-13 09:27:32,514 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2017-10-13 09:27:32,520 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2017-10-13 09:27:32,566 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2017-10-13 09:27:32,575 INFO  [org.jboss.as.naming] (MSC service thread 1-3) WFLYNAM0003: Starting Naming Service
+2017-10-13 09:27:32,569 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2017-10-13 09:27:32,580 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2017-10-13 09:27:32,590 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2017-10-13 09:27:32,734 INFO  [org.jboss.as.security] (MSC service thread 1-5) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2017-10-13 09:27:32,738 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = h2
+2017-10-13 09:27:32,754 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 4.0.18.Final
+2017-10-13 09:27:32,762 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-10-13 09:27:32,757 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-10-13 09:27:32,985 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/opt/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2017-10-13 09:27:33,008 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2017-10-13 09:27:33,010 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0018: Host default-host starting
+2017-10-13 09:27:33,117 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2017-10-13 09:27:33,118 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2017-10-13 09:27:33,171 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8180
+2017-10-13 09:27:33,370 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2017-10-13 09:27:33,371 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2017-10-13 09:27:33,643 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-8) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/keycloak-3.1.0.Final/standalone/deployments
+2017-10-13 09:27:33,640 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2017-10-13 09:27:33,860 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-2) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-10-13 09:27:34,329 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started work cache from keycloak container
+2017-10-13 09:27:34,331 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started users cache from keycloak container
+2017-10-13 09:27:34,345 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started realms cache from keycloak container
+2017-10-13 09:27:34,347 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2017-10-13 09:27:34,347 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started keys cache from keycloak container
+2017-10-13 09:27:34,348 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started authorization cache from keycloak container
+2017-10-13 09:27:34,353 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2017-10-13 09:27:34,354 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 57) WFLYCLINF0002: Started sessions cache from keycloak container
+2017-10-13 09:27:35,636 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2017-10-13 09:27:37,173 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2017-10-13 09:27:37,184 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2017-10-13 09:27:39,371 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 54) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2017-10-13 09:27:39,455 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 54) HHH000412: Hibernate Core {5.0.7.Final}
+2017-10-13 09:27:39,457 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 54) HHH000206: hibernate.properties not found
+2017-10-13 09:27:39,459 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 54) HHH000021: Bytecode provider name : javassist
+2017-10-13 09:27:39,499 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 54) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-10-13 09:27:39,675 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 54) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-10-13 09:27:39,681 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 54) HHH000431: Unable to determine H2 database version, certain features may not work
+2017-10-13 09:27:39,724 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 54) Envers integration enabled? : true
+2017-10-13 09:27:40,624 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 54) HV000001: Hibernate Validator 5.2.3.Final
+2017-10-13 09:27:41,624 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 54) HHH000397: Using ASTQueryTranslatorFactory
+2017-10-13 09:27:43,634 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,636 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,645 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,645 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,646 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:27:43,765 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0021: Registered web context: /auth
+2017-10-13 09:27:43,821 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2017-10-13 09:27:43,952 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:10090/management
+2017-10-13 09:27:43,953 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:10090
+2017-10-13 09:27:43,953 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 14053ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2017-10-13 09:32:25,730 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-9) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 09:32:25,735 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 09:32:26,380 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:32:26,385 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) supportsCredentialType is returning : true
+2017-10-13 09:32:26,385 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) entered is valida method : 
+2017-10-13 09:32:26,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 09:32:26,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) user in getpassword is instance of useradapter
+2017-10-13 09:32:26,405 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:32:26,405 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 09:32:26,405 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) user in getpassword is instance of useradapter
+2017-10-13 09:32:26,406 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:32:26,407 ERROR [stderr] (default task-9) http://localhost:8083/api/login/validatepwd?pwd= pwd $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS enteredpwd dhi001
+2017-10-13 09:32:26,560 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) isValid is returning : true
+2017-10-13 09:32:26,560 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) isValid get true
+2017-10-13 09:32:26,571 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-9) supportsCredentialType is returning : false
+2017-10-13 09:32:28,319 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-11) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 09:32:28,319 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-11) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 09:32:28,324 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-11) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 09:32:28,640 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-11) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:35:13,539 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-15) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 09:35:13,539 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-15) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 09:35:13,540 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-15) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 09:35:13,723 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-15) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:35:27,366 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-32) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 09:35:27,366 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 09:35:27,368 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 09:35:27,542 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 09:35:27,546 WARN  [org.keycloak.events] (default task-32) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=f:3520c10d-9a19-45b5-8594-7efb1fe0f2ef:prashobhkv@gmail.com, ipAddress=127.0.0.1, error=invalid_email, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=970d6d4e-9411-4fa1-9097-50db178b989b, username=prashobhkv@gmail.com
+2017-10-13 09:38:39,473 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2017-10-13 09:38:39,496 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 60) WFLYUT0022: Unregistered web context: /auth
+2017-10-13 09:38:39,527 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2017-10-13 09:38:39,544 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (ServerService Thread Pool -- 60) <<<<<< Closing factory
+2017-10-13 09:38:39,571 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0019: Host default-host stopping
+2017-10-13 09:38:39,575 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2017-10-13 09:38:39,579 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2017-10-13 09:38:39,589 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTP listener default suspending
+2017-10-13 09:38:39,590 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2017-10-13 09:38:39,592 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 1.3.15.Final stopping
+2017-10-13 09:38:39,611 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2017-10-13 09:38:39,612 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped users cache from keycloak container
+2017-10-13 09:38:39,620 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2017-10-13 09:38:39,620 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2017-10-13 09:38:39,621 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 67) WFLYCLINF0003: Stopped work cache from keycloak container
+2017-10-13 09:38:39,622 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 68) WFLYCLINF0003: Stopped keys cache from keycloak container
+2017-10-13 09:38:39,630 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2017-10-13 09:38:39,633 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 136ms
+2017-10-13 09:38:39,633 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped realms cache from keycloak container
+2017-10-13 09:38:39,647 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-1) WFLYCLINF0003: Stopped realmRevisions cache from keycloak container
+2017-10-13 09:38:39,652 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-1) WFLYCLINF0003: Stopped userRevisions cache from keycloak container
+2017-10-13 09:38:39,715 INFO  [org.jboss.as] (MSC service thread 1-4) WFLYSRV0050: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) stopped in 205ms
+2017-10-13 09:38:41,322 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2017-10-13 09:38:41,558 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2017-10-13 09:38:41,652 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2017-10-13 09:38:41,654 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /opt/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_131-b11
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_131
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.131-b11
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /opt/keycloak-3.1.0.Final
+	jboss.host.name = spaneos-a041
+	jboss.modules.dir = /opt/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = spaneos-a041
+	jboss.qualified.host.name = spaneos-a041
+	jboss.server.base.dir = /opt/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /opt/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /opt/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /opt/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /opt/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = spaneos-a041
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /opt/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 100
+	line.separator = 
+
+	logging.configuration = file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /opt/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /opt/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-97-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /opt/keycloak-3.1.0.Final/jboss-modules.jar -mp /opt/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/opt/keycloak-3.1.0.Final -Djboss.server.base.dir=/opt/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=100
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /opt/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2017-10-13 09:38:41,654 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/opt/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2017-10-13 09:38:43,180 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2017-10-13 09:38:43,203 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.3.4.Final
+2017-10-13 09:38:43,216 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.3.4.Final
+2017-10-13 09:38:43,306 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2017-10-13 09:38:43,309 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2017-10-13 09:38:43,327 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2017-10-13 09:38:43,369 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2017-10-13 09:38:43,388 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2017-10-13 09:38:43,389 INFO  [org.jboss.as.connector] (MSC service thread 1-7) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2017-10-13 09:38:43,393 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2017-10-13 09:38:43,527 INFO  [org.jboss.remoting] (MSC service thread 1-4) JBoss Remoting version 4.0.18.Final
+2017-10-13 09:38:43,532 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2017-10-13 09:38:43,547 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2017-10-13 09:38:43,551 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = h2
+2017-10-13 09:38:43,598 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-10-13 09:38:43,599 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-10-13 09:38:43,677 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2017-10-13 09:38:43,677 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2017-10-13 09:38:43,804 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+2017-10-13 09:38:43,805 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/opt/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2017-10-13 09:38:43,812 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0018: Host default-host starting
+2017-10-13 09:38:43,912 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2017-10-13 09:38:43,913 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2017-10-13 09:38:43,916 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8180
+2017-10-13 09:38:44,178 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2017-10-13 09:38:44,181 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2017-10-13 09:38:44,385 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/keycloak-3.1.0.Final/standalone/deployments
+2017-10-13 09:38:44,390 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2017-10-13 09:38:44,637 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-7) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-10-13 09:38:45,045 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started sessions cache from keycloak container
+2017-10-13 09:38:45,045 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started keys cache from keycloak container
+2017-10-13 09:38:45,050 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started authorization cache from keycloak container
+2017-10-13 09:38:45,051 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started users cache from keycloak container
+2017-10-13 09:38:45,052 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 49) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2017-10-13 09:38:45,050 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2017-10-13 09:38:45,066 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started realms cache from keycloak container
+2017-10-13 09:38:45,067 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started work cache from keycloak container
+2017-10-13 09:38:46,276 INFO  [org.keycloak.services] (ServerService Thread Pool -- 51) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2017-10-13 09:38:47,786 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2017-10-13 09:38:47,795 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2017-10-13 09:38:50,077 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 51) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2017-10-13 09:38:50,133 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 51) HHH000412: Hibernate Core {5.0.7.Final}
+2017-10-13 09:38:50,135 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 51) HHH000206: hibernate.properties not found
+2017-10-13 09:38:50,136 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 51) HHH000021: Bytecode provider name : javassist
+2017-10-13 09:38:50,169 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 51) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-10-13 09:38:50,362 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 51) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-10-13 09:38:50,367 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 51) HHH000431: Unable to determine H2 database version, certain features may not work
+2017-10-13 09:38:50,405 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 51) Envers integration enabled? : true
+2017-10-13 09:38:51,056 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 51) HV000001: Hibernate Validator 5.2.3.Final
+2017-10-13 09:38:52,689 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 51) HHH000397: Using ASTQueryTranslatorFactory
+2017-10-13 09:38:54,748 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,751 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,752 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,752 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,752 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,753 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,753 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,753 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,753 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,753 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 51) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-10-13 09:38:54,861 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 51) WFLYUT0021: Registered web context: /auth
+2017-10-13 09:38:54,933 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2017-10-13 09:38:55,130 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:10090/management
+2017-10-13 09:38:55,132 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:10090
+2017-10-13 09:38:55,132 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 14271ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2017-10-13 09:38:55,417 WARN  [org.keycloak.events] (default task-3) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-10-13 09:38:58,970 WARN  [org.keycloak.events] (default task-12) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-10-13 10:19:43,821 WARN  [org.keycloak.events] (default task-29) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=expired_code, code_id=193f59b5-ddf0-4fd4-bffd-f778e5f5acd1
+2017-10-13 10:19:50,553 WARN  [org.keycloak.events] (default task-38) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 10:19:54,082 WARN  [org.keycloak.events] (default task-46) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 10:19:57,237 WARN  [org.keycloak.events] (default task-47) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-10-13 10:20:09,968 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-50) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:20:09,972 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:20:10,428 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:20:10,435 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) supportsCredentialType is returning : true
+2017-10-13 10:20:10,435 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) entered is valida method : 
+2017-10-13 10:20:10,459 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 10:20:10,460 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) user in getpassword is instance of useradapter
+2017-10-13 10:20:10,460 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:20:10,460 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 10:20:10,460 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) user in getpassword is instance of useradapter
+2017-10-13 10:20:10,461 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:20:10,462 ERROR [stderr] (default task-50) http://localhost:8083/api/login/validatepwd?pwd= pwd $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS enteredpwd dhi001
+2017-10-13 10:20:10,597 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) isValid is returning : true
+2017-10-13 10:20:10,597 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) isValid get true
+2017-10-13 10:20:10,614 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) supportsCredentialType is returning : false
+2017-10-13 10:20:12,295 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-53) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:20:12,295 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 10:20:12,296 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:20:12,514 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:34:19,566 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-55) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:34:19,567 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 10:34:19,567 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:34:19,730 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:34:22,908 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-58) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:34:22,908 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-58) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 10:34:22,908 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-58) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:34:23,102 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-58) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:35:07,698 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-60) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:35:07,698 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-60) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 10:35:07,698 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-60) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:35:07,873 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-60) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:35:43,154 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-21) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 10:35:43,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-21) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 10:35:43,157 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-21) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 10:35:43,336 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-21) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 10:35:43,340 WARN  [org.keycloak.events] (default task-21) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=f:3520c10d-9a19-45b5-8594-7efb1fe0f2ef:prashobhkv@gmail.com, ipAddress=127.0.0.1, error=invalid_email, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=536b02e2-5c37-4a3b-8aae-bdb7605dd608, username=prashobhkv@gmail.com
+2017-10-13 10:44:19,082 WARN  [org.keycloak.events] (default task-13) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=expired_code, code_id=646076ce-19b5-4271-85fc-f724fe50503a
+2017-10-13 10:44:23,191 WARN  [org.keycloak.events] (default task-24) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 10:44:25,114 WARN  [org.keycloak.events] (default task-32) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:02:51,801 WARN  [org.keycloak.events] (default task-5) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:02:53,001 WARN  [org.keycloak.events] (default task-16) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:02:56,000 WARN  [org.keycloak.events] (default task-15) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:03:01,163 WARN  [org.keycloak.events] (default task-29) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:03:03,194 WARN  [org.keycloak.events] (default task-36) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:03:18,716 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-57) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 11:03:18,716 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 11:03:18,719 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 11:03:19,063 WARN  [org.keycloak.events] (default task-57) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=6d11b862-a068-4777-b435-a12c6474f85e, username=prashobhkv@gmail.com
+2017-10-13 11:20:47,895 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-38) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 11:20:47,896 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 11:20:47,897 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 11:20:48,233 WARN  [org.keycloak.events] (default task-38) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=ed1bfeb5-4fd0-4165-964c-47b13ae14356, username=prashobhkv@gmail.com
+2017-10-13 11:22:54,728 WARN  [org.keycloak.events] (default task-49) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:23:00,995 WARN  [org.keycloak.events] (default task-56) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 11:23:48,956 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-17) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 11:23:48,957 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-17) username from userprovider implementation is : prashobh.kv@spaneos.com
+2017-10-13 12:12:32,547 WARN  [org.keycloak.events] (default task-37) type=REFRESH_TOKEN_ERROR, realmId=master, clientId=security-admin-console, userId=null, ipAddress=127.0.0.1, error=invalid_token, grant_type=refresh_token, client_auth_method=client-secret
+2017-10-13 12:39:52,326 WARN  [org.keycloak.events] (default task-36) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 12:39:55,187 WARN  [org.keycloak.events] (default task-37) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 12:39:56,996 WARN  [org.keycloak.events] (default task-54) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 12:40:00,068 WARN  [org.keycloak.events] (default task-58) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 12:40:03,340 WARN  [org.keycloak.events] (default task-3) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-10-13 12:40:05,343 WARN  [org.keycloak.events] (default task-8) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-10-13 12:40:19,889 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-25) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 12:40:19,889 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) username from userprovider implementation is : prashobh.kv@spaneos.com
+2017-10-13 12:40:19,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email from getUserByEmail method is : prashobh.kv@spaneos.com
+2017-10-13 12:40:20,234 WARN  [org.keycloak.events] (default task-25) type=RESET_PASSWORD_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=896c4381-6e69-4cc8-985d-b3b232fe301e, username=prashobh.kv@spaneos.com
+2017-10-13 15:25:09,490 WARN  [org.keycloak.events] (default task-31) type=LOGIN_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 15:25:15,329 WARN  [org.keycloak.events] (default task-38) type=LOGIN_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=invalid_code
+2017-10-13 15:25:38,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-57) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:25:38,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:39,387 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:25:39,387 WARN  [org.keycloak.events] (default task-57) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/?redirect_fragment=%2Ffaculty%2Fprofile, code_id=0ac94344-e552-4b62-9ada-0c93d7e09135, username=prashobhkv@gmail.com
+2017-10-13 15:25:39,402 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:39,743 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:25:48,777 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-3) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:25:48,777 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-3) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:49,110 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-3) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:25:49,110 WARN  [org.keycloak.events] (default task-3) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/?redirect_fragment=%2Ffaculty%2Fprofile, code_id=0ac94344-e552-4b62-9ada-0c93d7e09135, username=prashobhkv@gmail.com
+2017-10-13 15:25:49,128 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-3) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:49,469 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-3) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:25:53,900 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-19) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:25:53,900 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-19) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:54,246 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-19) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:25:54,249 WARN  [org.keycloak.events] (default task-19) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/?redirect_fragment=%2Ffaculty%2Fprofile, code_id=0ac94344-e552-4b62-9ada-0c93d7e09135, username=prashobhkv@gmail.com
+2017-10-13 15:25:54,267 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-19) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:25:54,620 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-19) username from userprovider implementation is : prashobhkv@gmail.com
+2017-10-13 15:30:26,828 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-32) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:30:26,829 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:30:27,014 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:30:27,014 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) supportsCredentialType is returning : true
+2017-10-13 15:30:27,015 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) entered is valida method : 
+2017-10-13 15:30:27,023 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 15:30:27,023 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) user in getpassword is instance of useradapter
+2017-10-13 15:30:27,024 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:30:27,024 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 15:30:27,024 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) user in getpassword is instance of useradapter
+2017-10-13 15:30:27,024 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:30:27,024 ERROR [stderr] (default task-32) http://localhost:8083/api/login/validatepwd?pwd= pwd $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS enteredpwd dhi001
+2017-10-13 15:30:27,198 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) isValid is returning : true
+2017-10-13 15:30:27,199 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) isValid get true
+2017-10-13 15:30:27,201 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) supportsCredentialType is returning : false
+2017-10-13 15:30:28,182 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-33) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:30:28,182 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:30:28,182 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:30:28,361 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:47:20,502 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-43) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:47:20,502 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:47:20,502 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:47:20,676 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:47:21,594 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-48) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:47:21,595 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:47:21,595 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:47:21,763 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:48:01,754 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-50) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:48:01,755 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:48:01,755 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:48:01,935 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:48:02,847 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-42) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:48:02,847 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:48:02,847 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:48:03,020 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:48:42,659 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-53) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:48:42,659 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:48:42,659 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:48:42,841 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-53) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:48:43,488 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-51) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:48:43,488 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-51) External ID from getUserById method is : prashobhkv@gmail.com
+2017-10-13 15:48:43,488 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-51) email from getUserByEmail method is : prashobhkv@gmail.com
+2017-10-13 15:48:43,682 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-51) email and pwd from api-server is : prashobhkv@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:57:26,074 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-62) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:57:26,075 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) email from getUserByEmail method is : collegeadmin@pace.com
+2017-10-13 15:57:26,264 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) email and pwd from api-server is : collegeadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:57:26,265 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) supportsCredentialType is returning : true
+2017-10-13 15:57:26,265 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) entered is valida method : 
+2017-10-13 15:57:26,274 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 15:57:26,275 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) user in getpassword is instance of useradapter
+2017-10-13 15:57:26,275 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:57:26,275 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-10-13 15:57:26,278 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) user in getpassword is instance of useradapter
+2017-10-13 15:57:26,280 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-10-13 15:57:26,280 ERROR [stderr] (default task-62) http://localhost:8083/api/login/validatepwd?pwd= pwd $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS enteredpwd dhi001
+2017-10-13 15:57:26,544 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) isValid is returning : true
+2017-10-13 15:57:26,544 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) isValid get true
+2017-10-13 15:57:26,548 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) supportsCredentialType is returning : false
+2017-10-13 15:57:27,754 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-59) Logging from RestExampleUserStorageProviderFactory create method
+2017-10-13 15:57:27,754 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-59) External ID from getUserById method is : collegeadmin@pace.com
+2017-10-13 15:57:27,754 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-59) email from getUserByEmail method is : collegeadmin@pace.com
+2017-10-13 15:57:27,928 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-59) email and pwd from api-server is : collegeadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS

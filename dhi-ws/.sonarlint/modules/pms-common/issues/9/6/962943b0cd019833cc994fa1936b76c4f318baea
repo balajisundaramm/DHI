@@ -1,0 +1,35 @@
+
+nsquid:S3516p"9Refactor this method to not always return the same value.(ÑÄìıÿÿÿÿHœìRBLOCKERZ
+CODE_SMELL
+f
+squid:S106‚"9Replace this use of System.out or System.err by a logger.(ø¬ö?HìRMAJORZ
+CODE_SMELL
+Vsquid:S1125T"(Remove the literal "true" boolean value.(À·­éHìRMINORZ
+CODE_SMELL
+Vsquid:S1125g"(Remove the literal "true" boolean value.(À·­éHŸìRMINORZ
+CODE_SMELL
+[squid:S1125v"(Remove the literal "true" boolean value.(ï”ã°úÿÿÿÿH ìRMINORZ
+CODE_SMELL
+jsquid:S2589u"7Remove this expression which always evaluates to "true"(¤¦ß‘üÿÿÿÿH¡ìRMAJORZ
+CODE_SMELL
+_squid:S2440:"1Remove this instantiation of "PasswordGenerator".(²»’ğH¢ìRMAJORZ
+CODE_SMELL
+\squid:S1481v")Remove this unused "role" local variable.(ï”ã°úÿÿÿÿH£ìRMINORZ
+CODE_SMELL
+^squid:S3655g"7Call "Optional#isPresent()" before accessing the value.(À·­éH¤ìRMAJORZBUG
+^squid:S3655T"7Call "Optional#isPresent()" before accessing the value.(À·­éH¥ìRMAJORZBUG
+csquid:S3655v"7Call "Optional#isPresent()" before accessing the value.(ï”ã°úÿÿÿÿH¦ìRMAJORZBUG
+hsquid:S2209V"5Change this instance-reference to a static reference.(İ±íıûÿÿÿÿH§ìRMAJORZ
+CODE_SMELL
+[squid:S1602²",Remove useless curly braces around statement(¡õŠíH¨ìRMINORZ
+CODE_SMELL
+`squid:S1612",Replace this lambda with a method reference.(ÅªÀ·ûÿÿÿÿH©ìRMINORZ
+CODE_SMELL
+`squid:S1612³",Replace this lambda with a method reference.(ÅªÀ·ûÿÿÿÿHªìRMINORZ
+CODE_SMELL
+ksquid:S1854f"8Remove this useless assignment to local variable "role".(»í¨¤úÿÿÿÿH«ìRMAJORZ
+CODE_SMELL
+ksquid:S1854v"8Remove this useless assignment to local variable "role".(ï”ã°úÿÿÿÿH¬ìRMAJORZ
+CODE_SMELL
+‰squid:UselessImportCheck"ORemove this unused import 'com.spaneos.pms.profile.exception.ProfileException'.(õ“TH­ìRMINORZ
+CODE_SMELL

@@ -1,0 +1,204 @@
+package com.spaneos.dhi.examination.endpoint;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import org.json.JSONArray;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spaneos.dhi.examination.builder.SuccessMessage;
+import com.spaneos.dhi.examination.consts.URIConsts.FacultyNominationUriConts;
+import com.spaneos.dhi.examination.domain.FacultyNomination;
+import com.spaneos.dhi.examination.dto.CourseDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationReport;
+import com.spaneos.dhi.examination.service.FacultyNominationService;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
+
+/**
+ * 
+ * @author Biswajit
+ *
+ */
+@Component
+@Path(FacultyNominationUriConts.PARENT)
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+public class FacultyNominationEndpoint {
+
+	public static final Logger Log = LoggerFactory.getLogger(FacultyNominationEndpoint.class);
+
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @return
+	 */
+	@GET
+	@Path(FacultyNominationUriConts.REPORT)
+	@ApiOperation(value = "gets faculty nomination report")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get faculty nomination report successful"),
+			@ApiResponse(code = 400, message = "Unable get faculty nomination report"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyNominationReport> getFacultyNominationReport(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme) {
+		Log.info("Endpoint entry {} {} ", degreeId, scheme);
+		return facultyNominationService.getFacultyNominationReport(degreeId, scheme);
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param academicYear
+	 * @param degreeId
+	 * @param termNumber
+	 * @param scheme
+	 * @param semester
+	 * @return
+	 */
+	@GET
+	@Path(FacultyNominationUriConts.NOMINATION_DETAILS)
+	@ApiOperation(value = "gets faculty nomination data")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get faculty nomination data successful"),
+			@ApiResponse(code = 400, message = "Unable get faculty nomination data"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyNominationDto> getFacultyNominationData(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme, @QueryParam("semester") String semester) {
+		Log.info("Endpoint entry {} {} {} ", degreeId, scheme, semester);
+		return facultyNominationService.getFacultyNominationData(degreeId, scheme, semester);
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semesterId
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(FacultyNominationUriConts.COURSE_LIST)
+	@ApiOperation(value = "gets course data")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get faculty course data successful"),
+			@ApiResponse(code = 400, message = "Unable get course data"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<CourseDetailDto> getCourseList(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme, @QueryParam("semester") String semester,
+			@QueryParam("coursecode") String courseCode) {
+		Log.info("Endpoint entry {} {} {} {}", degreeId, scheme, semester, courseCode);
+		return facultyNominationService.getCourseList(degreeId, scheme, semester, courseCode);
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semesterId
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(FacultyNominationUriConts.FACULTY_LIST)
+	@ApiOperation(value = "gets faculties")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get faculties successful"),
+			@ApiResponse(code = 400, message = "Unable get faculties"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyDetailDto> getFacultyListByCourse(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme, @QueryParam("semester") String semester,
+			@QueryParam("coursecode") String courseCode) {
+		Log.info("Endpoint entry {} {} {} {}", degreeId, scheme, semester, courseCode);
+		return facultyNominationService.getFacultyListByCourse(degreeId, scheme, semester, courseCode);
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semester
+	 * @param courseCode
+	 * @param facultyDetailDtos
+	 * @return
+	 */
+	@PUT
+	@Path(FacultyNominationUriConts.SAVE_FACULTY_LIST)
+	@ApiOperation(value = "save faculties")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "save faculties successful"),
+			@ApiResponse(code = 400, message = "Unable save faculties"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public FacultyNomination saveFacultyListByCourse(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme, @QueryParam("semester") String semester,
+			@QueryParam("coursecode") String courseCode, List<FacultyDetailDto> facultyDetailDtos) {
+		Log.info("Endpoint entry {} {} {} {}", degreeId, scheme, semester, courseCode);
+		return facultyNominationService.saveFacultyListByCourse(degreeId, scheme, semester, courseCode,
+				facultyDetailDtos);
+	}
+
+	@PUT
+	@Path(FacultyNominationUriConts.SAVE_FACULTY_NOMINATION)
+	@ApiOperation(value = "save faculty nomination ")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "save faculty nomination successful"),
+			@ApiResponse(code = 400, message = "Unable save faculty nomination"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyNominationDto> saveFacultyNominationData(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String scheme, @QueryParam("semester") String semester,
+			List<FacultyNominationDto> facultyNominationDtos) {
+		Log.info("Endpoint entry {} {} {} ", degreeId, scheme, semester);
+		return facultyNominationService.saveFacultyNominationData(degreeId, scheme, semester, facultyNominationDtos);
+	}
+	/**
+	 * <tt>submitFacultyNomination</tt> Submitting faculty nomination data from college to university. 
+	 * @author balaji
+	 * @since 28-Mar-2018
+	 * @param facultyNominationDtos
+	 * @return
+	 */
+	@POST
+	@Path(FacultyNominationUriConts.SUBMIT_FACULTY_NOMINATION)
+	@ApiOperation(value = "submit faculty nomination ")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "submit faculty nomination successful"),
+			@ApiResponse(code = 400, message = "Unable submit faculty nomination"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public SuccessMessage submitFacultyNomination(String facultyNominations) {
+		ModelMapper modelMapper = new ModelMapper();
+		Log.error("submit faculty nomination endpoint : {}", facultyNominations);
+		List<FacultyNomination> facultyNominations2 = new ArrayList<>();
+		ObjectMapper obj = new ObjectMapper();
+//		obj.convertValue(facultyNominations, FacultyNomination[].class);
+//		
+//		facultyNominations2 = modelMapper.map(facultyNominations, new TypeToken<List<FacultyNomination>>() {
+//		}.getType());
+		
+		BeanUtils.copyProperties(facultyNominations, facultyNominations2);
+		
+		System.err.println("faculty "+facultyNominations2);
+		/*return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.submitFacultyNomination(facultyNominations)).build();*/
+		return null;
+	}
+}

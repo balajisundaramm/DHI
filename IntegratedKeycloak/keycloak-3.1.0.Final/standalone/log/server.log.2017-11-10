@@ -1,0 +1,738 @@
+2017-11-10 17:09:55,475 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2017-11-10 17:09:55,797 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2017-11-10 17:09:55,898 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2017-11-10 17:09:55,900 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /opt/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_151-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_151
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.151-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /opt/keycloak-3.1.0.Final
+	jboss.host.name = spaneos-a041
+	jboss.modules.dir = /opt/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = spaneos-a041
+	jboss.qualified.host.name = spaneos-a041
+	jboss.server.base.dir = /opt/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /opt/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /opt/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /opt/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /opt/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = spaneos-a041
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /opt/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 100
+	line.separator = 
+
+	logging.configuration = file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /opt/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /opt/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-98-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /opt/keycloak-3.1.0.Final/jboss-modules.jar -mp /opt/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/opt/keycloak-3.1.0.Final -Djboss.server.base.dir=/opt/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=100
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /opt/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2017-11-10 17:09:55,901 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/opt/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2017-11-10 17:09:57,453 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2017-11-10 17:09:57,482 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.4.Final
+2017-11-10 17:09:57,505 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.4.Final
+2017-11-10 17:09:57,555 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2017-11-10 17:09:57,576 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2017-11-10 17:09:57,580 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2017-11-10 17:09:57,602 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2017-11-10 17:09:57,604 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2017-11-10 17:09:57,616 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2017-11-10 17:09:57,628 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2017-11-10 17:09:57,631 INFO  [org.jboss.as.security] (MSC service thread 1-7) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2017-11-10 17:09:57,658 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.18.Final
+2017-11-10 17:09:57,717 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2017-11-10 17:09:57,734 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = h2
+2017-11-10 17:09:57,742 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-11-10 17:09:57,743 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-11-10 17:09:57,775 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+2017-11-10 17:09:57,777 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2017-11-10 17:09:57,931 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/opt/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2017-11-10 17:09:57,964 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0012: Started server default-server.
+2017-11-10 17:09:57,966 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0018: Host default-host starting
+2017-11-10 17:09:58,064 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8180
+2017-11-10 17:09:58,077 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2017-11-10 17:09:58,077 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2017-11-10 17:09:58,304 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2017-11-10 17:09:58,307 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2017-11-10 17:09:58,588 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/keycloak-3.1.0.Final/standalone/deployments
+2017-11-10 17:09:58,612 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2017-11-10 17:09:58,785 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-7) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-11-10 17:09:59,547 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started work cache from keycloak container
+2017-11-10 17:09:59,547 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started sessions cache from keycloak container
+2017-11-10 17:09:59,547 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started keys cache from keycloak container
+2017-11-10 17:09:59,549 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started authorization cache from keycloak container
+2017-11-10 17:09:59,547 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2017-11-10 17:09:59,548 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 49) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2017-11-10 17:09:59,548 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started users cache from keycloak container
+2017-11-10 17:09:59,551 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started realms cache from keycloak container
+2017-11-10 17:10:00,693 INFO  [org.keycloak.services] (ServerService Thread Pool -- 50) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2017-11-10 17:10:02,222 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2017-11-10 17:10:02,234 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2017-11-10 17:10:04,274 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 50) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2017-11-10 17:10:04,378 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 50) HHH000412: Hibernate Core {5.0.7.Final}
+2017-11-10 17:10:04,379 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 50) HHH000206: hibernate.properties not found
+2017-11-10 17:10:04,382 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 50) HHH000021: Bytecode provider name : javassist
+2017-11-10 17:10:04,423 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 50) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-11-10 17:10:04,588 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 50) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-11-10 17:10:04,596 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 50) HHH000431: Unable to determine H2 database version, certain features may not work
+2017-11-10 17:10:04,642 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 50) Envers integration enabled? : true
+2017-11-10 17:10:05,308 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 50) HV000001: Hibernate Validator 5.2.3.Final
+2017-11-10 17:10:06,287 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 50) HHH000397: Using ASTQueryTranslatorFactory
+2017-11-10 17:10:08,595 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,598 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,599 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,600 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,600 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 50) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-11-10 17:10:08,717 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 50) WFLYUT0021: Registered web context: /auth
+2017-11-10 17:10:08,765 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2017-11-10 17:10:08,908 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:10090/management
+2017-11-10 17:10:08,909 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:10090
+2017-11-10 17:10:08,909 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 13950ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2017-11-10 17:23:51,692 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-25) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:23:51,699 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email from getUserByEmail method is : collegeadmin@pace.edu.in
+2017-11-10 17:23:52,478 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) username from userprovider implementation is : collegeadmin@pace.edu.in
+2017-11-10 17:23:52,502 WARN  [org.keycloak.events] (default task-25) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=2dcd1bfa-b58d-4304-90a8-ed4186be4d7d, username=collegeadmin@pace.edu.in
+2017-11-10 17:23:52,566 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email from getUserByEmail method is : collegeadmin@pace.edu.in
+2017-11-10 17:23:52,982 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) username from userprovider implementation is : collegeadmin@pace.edu.in
+2017-11-10 17:24:33,449 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-38) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:24:33,449 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) email from getUserByEmail method is : menbaadmin@pace.com
+2017-11-10 17:24:33,696 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) email and pwd from api-server is : menbaadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:24:33,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) supportsCredentialType is returning : true
+2017-11-10 17:24:33,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) entered is valida method : 
+2017-11-10 17:24:33,725 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-11-10 17:24:33,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) user in getpassword is instance of useradapter
+2017-11-10 17:24:33,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:24:33,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2017-11-10 17:24:33,727 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) user in getpassword is instance of useradapter
+2017-11-10 17:24:33,727 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:24:33,729 ERROR [stderr] (default task-38) http://localhost:8083/api/login/validatepwd?pwd= pwd $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS enteredpwd dhi001
+2017-11-10 17:24:33,901 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) isValid is returning : true
+2017-11-10 17:24:33,901 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) isValid get true
+2017-11-10 17:24:33,919 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) supportsCredentialType is returning : false
+2017-11-10 17:24:33,995 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-40) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:24:34,000 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-40) External ID from getUserById method is : menbaadmin@pace.com
+2017-11-10 17:24:34,000 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-40) email from getUserByEmail method is : menbaadmin@pace.com
+2017-11-10 17:24:34,222 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-40) email and pwd from api-server is : menbaadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:24:37,206 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-45) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:24:37,209 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) External ID from getUserById method is : menbaadmin@pace.com
+2017-11-10 17:24:37,209 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) email from getUserByEmail method is : menbaadmin@pace.com
+2017-11-10 17:24:37,397 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) email and pwd from api-server is : menbaadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:24:40,514 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-48) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:24:40,515 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) External ID from getUserById method is : menbaadmin@pace.com
+2017-11-10 17:24:40,515 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) email from getUserByEmail method is : menbaadmin@pace.com
+2017-11-10 17:24:40,759 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) email and pwd from api-server is : menbaadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 17:38:19,945 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-49) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 17:43:19,934 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper) ARJUNA012117: TransactionReaper::check timeout for TX 0:ffff7f000101:-1242bdc8:5a05900e:1ae in state  RUN
+2017-11-10 18:11:23,417 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-10) Logging from RestExampleUserStorageProviderFactory create method
+2017-11-10 19:41:51,929 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) External ID from getUserById method is : menbaadmin@pace.com
+2017-11-10 19:41:51,930 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) email from getUserByEmail method is : menbaadmin@pace.com
+2017-11-10 19:41:51,933 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) email from getUserByEmail method is : menbacollegeadmin@pace.com
+2017-11-10 19:41:51,934 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper) ARJUNA012117: TransactionReaper::check timeout for TX 0:ffff7f000101:-1242bdc8:5a05900e:31b in state  RUN
+2017-11-10 19:41:51,935 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012095: Abort of action id 0:ffff7f000101:-1242bdc8:5a05900e:1ae invoked while multiple threads active within it.
+2017-11-10 19:41:51,989 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012381: Action id 0:ffff7f000101:-1242bdc8:5a05900e:1ae completed with multiple threads - thread default task-49 was in progress with java.lang.Object.clone(Native Method)
+sun.security.util.DerInputBuffer.dup(DerInputBuffer.java:66)
+sun.security.util.DerValue.<init>(DerValue.java:284)
+sun.security.util.DerInputStream.getDerValue(DerInputStream.java:451)
+sun.security.x509.AVA.<init>(AVA.java:603)
+sun.security.x509.RDN.<init>(RDN.java:245)
+sun.security.x509.X500Name.parseDER(X500Name.java:802)
+sun.security.x509.X500Name.<init>(X500Name.java:306)
+sun.security.x509.X509CertInfo.parse(X509CertInfo.java:659)
+sun.security.x509.X509CertInfo.<init>(X509CertInfo.java:167)
+sun.security.x509.X509CertImpl.parse(X509CertImpl.java:1804)
+sun.security.x509.X509CertImpl.<init>(X509CertImpl.java:195)
+sun.security.provider.X509Factory.engineGenerateCertificate(X509Factory.java:102)
+java.security.cert.CertificateFactory.generateCertificate(CertificateFactory.java:339)
+sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:755)
+sun.security.provider.JavaKeyStore$JKS.engineLoad(JavaKeyStore.java:56)
+sun.security.provider.KeyStoreDelegator.engineLoad(KeyStoreDelegator.java:224)
+sun.security.provider.JavaKeyStore$DualFormatJKS.engineLoad(JavaKeyStore.java:70)
+java.security.KeyStore.load(KeyStore.java:1445)
+sun.security.ssl.TrustManagerFactoryImpl.getCacertsKeyStore(TrustManagerFactoryImpl.java:226)
+sun.security.ssl.TrustManagerFactoryImpl.engineInit(TrustManagerFactoryImpl.java:50)
+javax.net.ssl.TrustManagerFactory.init(TrustManagerFactory.java:250)
+sun.security.ssl.SSLContextImpl.engineInit(SSLContextImpl.java:72)
+javax.net.ssl.SSLContext.init(SSLContext.java:282)
+org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder.initDefaultEngine(ResteasyClientBuilder.java:446)
+org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder.build(ResteasyClientBuilder.java:362)
+org.spaneos.rest.storage.user.RestExampleUserStorageProvider.getUserByEmail(RestExampleUserStorageProvider.java:125)
+org.spaneos.rest.storage.user.RestExampleUserStorageProvider.getUserById(RestExampleUserStorageProvider.java:102)
+org.keycloak.storage.UserStorageManager.getUserById(UserStorageManager.java:305)
+org.keycloak.models.cache.infinispan.UserCacheSession.getUserById(UserCacheSession.java:194)
+org.keycloak.services.managers.AuthenticationManager.verifyIdentityToken(AuthenticationManager.java:733)
+org.keycloak.services.managers.AuthenticationManager.authenticateIdentityCookie(AuthenticationManager.java:402)
+org.keycloak.protocol.oidc.endpoints.LogoutEndpoint.logout(LogoutEndpoint.java:128)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:138)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:107)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:133)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:101)
+org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:395)
+org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:51,990 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012108: CheckedAction::check - atomic action 0:ffff7f000101:-1242bdc8:5a05900e:1ae aborting with 1 threads active!
+2017-11-10 19:41:51,993 WARN  [org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorTrackingImpl] (Transaction Reaper Worker 0) HHH000451: Transaction afterCompletion called by a background thread; delaying afterCompletion processing until the original thread can handle it. [status=4]
+2017-11-10 19:41:51,997 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012121: TransactionReaper::doCancellations worker Thread[Transaction Reaper Worker 0,5,main] successfully canceled TX 0:ffff7f000101:-1242bdc8:5a05900e:1ae
+2017-11-10 19:41:51,999 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2017-11-10 19:41:52,004 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012095: Abort of action id 0:ffff7f000101:-1242bdc8:5a05900e:31b invoked while multiple threads active within it.
+2017-11-10 19:41:52,008 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012381: Action id 0:ffff7f000101:-1242bdc8:5a05900e:31b completed with multiple threads - thread default task-10 was in progress with java.util.Arrays.equals(Arrays.java:2696)
+sun.security.util.Cache$EqualByteArray.equals(Cache.java:193)
+java.util.HashMap.putVal(HashMap.java:635)
+java.util.HashMap.put(HashMap.java:612)
+sun.security.util.MemoryCache.put(Cache.java:365)
+sun.security.provider.X509Factory.addToCache(X509Factory.java:233)
+sun.security.provider.X509Factory.engineGenerateCertificate(X509Factory.java:103)
+java.security.cert.CertificateFactory.generateCertificate(CertificateFactory.java:339)
+sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:755)
+sun.security.provider.JavaKeyStore$JKS.engineLoad(JavaKeyStore.java:56)
+sun.security.provider.KeyStoreDelegator.engineLoad(KeyStoreDelegator.java:224)
+sun.security.provider.JavaKeyStore$DualFormatJKS.engineLoad(JavaKeyStore.java:70)
+java.security.KeyStore.load(KeyStore.java:1445)
+sun.security.ssl.TrustManagerFactoryImpl.getCacertsKeyStore(TrustManagerFactoryImpl.java:226)
+sun.security.ssl.TrustManagerFactoryImpl.engineInit(TrustManagerFactoryImpl.java:50)
+javax.net.ssl.TrustManagerFactory.init(TrustManagerFactory.java:250)
+sun.security.ssl.SSLContextImpl.engineInit(SSLContextImpl.java:72)
+javax.net.ssl.SSLContext.init(SSLContext.java:282)
+org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder.initDefaultEngine(ResteasyClientBuilder.java:446)
+org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder.build(ResteasyClientBuilder.java:362)
+org.spaneos.rest.storage.user.RestExampleUserStorageProvider.getUserByEmail(RestExampleUserStorageProvider.java:125)
+org.keycloak.storage.UserStorageManager.getUserByEmail(UserStorageManager.java:333)
+org.keycloak.models.cache.infinispan.UserCacheSession.getUserByEmail(UserCacheSession.java:432)
+org.keycloak.models.utils.KeycloakModelUtils.findUserByNameOrEmail(KeycloakModelUtils.java:207)
+org.keycloak.authentication.authenticators.browser.AbstractUsernameFormAuthenticator.validateUserAndPassword(AbstractUsernameFormAuthenticator.java:133)
+org.keycloak.authentication.authenticators.browser.UsernamePasswordForm.validateForm(UsernamePasswordForm.java:56)
+org.keycloak.authentication.authenticators.browser.UsernamePasswordForm.action(UsernamePasswordForm.java:49)
+org.keycloak.authentication.DefaultAuthenticationFlow.processAction(DefaultAuthenticationFlow.java:92)
+org.keycloak.authentication.DefaultAuthenticationFlow.processAction(DefaultAuthenticationFlow.java:76)
+org.keycloak.authentication.AuthenticationProcessor.authenticationAction(AuthenticationProcessor.java:759)
+org.keycloak.services.resources.LoginActionsService.processFlow(LoginActionsService.java:365)
+org.keycloak.services.resources.LoginActionsService.processAuthentication(LoginActionsService.java:347)
+org.keycloak.services.resources.LoginActionsService.authenticateForm(LoginActionsService.java:401)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:138)
+org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:101)
+org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:395)
+org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,008 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012108: CheckedAction::check - atomic action 0:ffff7f000101:-1242bdc8:5a05900e:31b aborting with 1 threads active!
+2017-11-10 19:41:52,059 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2017-11-10 19:41:52,098 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0022: Unregistered web context: /auth
+2017-11-10 19:41:52,117 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 60) IJ000615: Destroying active connection in pool: KeycloakDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@5558b636)
+2017-11-10 19:41:52,123 WARN  [org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorTrackingImpl] (Transaction Reaper Worker 0) HHH000451: Transaction afterCompletion called by a background thread; delaying afterCompletion processing until the original thread can handle it. [status=4]
+2017-11-10 19:41:52,124 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012121: TransactionReaper::doCancellations worker Thread[Transaction Reaper Worker 0,5,main] successfully canceled TX 0:ffff7f000101:-1242bdc8:5a05900e:31b
+2017-11-10 19:41:52,125 WARN  [org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory] (ServerService Thread Pool -- 60) IJ030022: Lock owned during cleanup: Transaction Reaper Worker 0: java.lang.Throwable: Lock owned during cleanup: Transaction Reaper Worker 0
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at com.arjuna.ats.arjuna.coordinator.TransactionReaper.waitForCancellations(TransactionReaper.java:328)
+	at com.arjuna.ats.internal.arjuna.coordinator.ReaperWorkerThread.run(ReaperWorkerThread.java:65)
+
+2017-11-10 19:41:52,128 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (ServerService Thread Pool -- 59) <<<<<< Closing factory
+2017-11-10 19:41:52,136 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0019: Host default-host stopping
+2017-11-10 19:41:52,140 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2017-11-10 19:41:52,144 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2017-11-10 19:41:52,146 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTP listener default suspending
+2017-11-10 19:41:52,147 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2017-11-10 19:41:52,150 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 1.3.15.Final stopping
+2017-11-10 19:41:52,157 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped work cache from keycloak container
+2017-11-10 19:41:52,159 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 126ms
+2017-11-10 19:41:52,161 ERROR [org.xnio.listener] (default I/O-7) XNIO001007: A channel event listener threw an exception: java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.executeAfter(WorkerThread.java:615)
+	at io.undertow.util.DateUtils.addDateHeaderIfRequired(DateUtils.java:247)
+	at io.undertow.server.protocol.http.HttpTransferEncoding.createSinkConduit(HttpTransferEncoding.java:203)
+	at io.undertow.server.protocol.http.HttpServerConnection.getSinkConduit(HttpServerConnection.java:205)
+	at io.undertow.server.HttpServerExchange.getResponseChannel(HttpServerExchange.java:1264)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.close(ServletOutputStreamImpl.java:603)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.closeStreamAndWriter(HttpServletResponseImpl.java:476)
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:92)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1564)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:316)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:296)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:80)
+	at org.xnio.Connection.writeClosed(Connection.java:117)
+	at org.xnio.nio.AbstractNioStreamConnection.writeClosed(AbstractNioStreamConnection.java:47)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:181)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:191)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:492)
+
+2017-11-10 19:41:52,161 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2017-11-10 19:41:52,163 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0003: Stopped keys cache from keycloak container
+2017-11-10 19:41:52,166 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped users cache from keycloak container
+2017-11-10 19:41:52,172 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2017-11-10 19:41:52,172 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2017-11-10 19:41:52,174 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0003: Stopped realms cache from keycloak container
+2017-11-10 19:41:52,177 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2017-11-10 19:41:52,187 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-3) WFLYCLINF0003: Stopped realmRevisions cache from keycloak container
+2017-11-10 19:41:52,192 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-3) WFLYCLINF0003: Stopped userRevisions cache from keycloak container
+2017-11-10 19:41:52,269 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) email and pwd from api-server is : menbaadmin@pace.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2017-11-10 19:41:52,294 WARN  [com.arjuna.ats.arjuna] (default task-49) ARJUNA012077: Abort called on already aborted atomic action 0:ffff7f000101:-1242bdc8:5a05900e:1ae
+2017-11-10 19:41:52,296 ERROR [io.undertow.request] (default task-49) UT005023: Exception handling request to /auth/realms/demo/protocol/openid-connect/logout: java.lang.NullPointerException
+	at io.undertow.servlet.spec.ServletContextImpl.getInitParameter(ServletContextImpl.java:374)
+	at org.jboss.resteasy.plugins.server.servlet.ListenerBootstrap.getParameter(ListenerBootstrap.java:100)
+	at org.jboss.resteasy.plugins.server.servlet.ServletBootstrap.getParameter(ServletBootstrap.java:38)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:160)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:411)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,299 ERROR [io.undertow.request] (default task-49) UT005071: Undertow request failed HttpServerExchange{ GET /auth/realms/demo/protocol/openid-connect/logout request {Accept=[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8], Accept-Language=[en-US,en;q=0.9], Accept-Encoding=[gzip, deflate, br], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36], Connection=[keep-alive], Cookie=[KC_RESTART=eyJhbGciOiJIUzI1NiIsImtpZCIgOiAiNDQ3MmYyZmMtMGRmYy00OTVlLWIxNjktOWFjODNlMGVmNTAyIn0.eyJjcyI6IjJkY2QxYmZhLWI1OGQtNDMwNC05MGE4LWVkNDE4NmJlNGQ3ZCIsImNpZCI6ImRoaSIsInB0eSI6Im9wZW5pZC1jb25uZWN0IiwicnVyaSI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDIwMC8iLCJhY3QiOiJBVVRIRU5USUNBVEUiLCJub3RlcyI6eyJhdXRoX3R5cGUiOiJjb2RlIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvZGVtbyIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwicmVkaXJlY3RfdXJpIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwLyIsInN0YXRlIjoiYWE0MGQ4NmMtNzc2Ny00MzlmLWI0MTgtZjUwOWY2NTBhOTI5IiwiY29kZV9jaGFsbGVuZ2VfbWV0aG9kIjoicGxhaW4iLCJub25jZSI6IjcxOGE3Mjk0LWNkNzctNDczZS04NmM3LTk1N2MzYzYxZGE4ZiIsInJlc3BvbnNlX21vZGUiOiJmcmFnbWVudCJ9fQ.lX8p1OjfqkRbFlr5xWQ8AOtAU_DZeBQNNc6KBGkatns; KEYCLOAK_IDENTITY=eyJhbGciOiJIUzI1NiIsImtpZCIgOiAiNDQ3MmYyZmMtMGRmYy00OTVlLWIxNjktOWFjODNlMGVmNTAyIn0.eyJqdGkiOiJkMjI4NGYyNy1lZmQzLTQ5YWUtOGVmMy1hMDU3NWMxZmVjZDEiLCJleHAiOjE1MTAzNTA4NzcsIm5iZiI6MCwiaWF0IjoxNTEwMzE0ODc3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvZGVtbyIsInN1YiI6ImY6MzUyMGMxMGQtOWExOS00NWI1LTg1OTQtN2VmYjFmZTBmMmVmOm1lbmJhYWRtaW5AcGFjZS5jb20iLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJmYjY5NTU2Zi05NDc2LTRhMTAtOWIzMS01MzRhNjMyMTVkOTIiLCJyZXNvdXJjZV9hY2Nlc3MiOnt9fQ.x8kAKw8Jkz2ug1rbhikFeWyXq5sCm-N6Q27JMPu31h8; KEYCLOAK_SESSION=demo/f:3520c10d-9a19-45b5-8594-7efb1fe0f2ef:menbaadmin@pace.com/fb69556f-9476-4a10-9b31-534a63215d92; _ga=GA1.1.721617391.1509944219; _gid=GA1.1.1144035942.1510314659], Referer=[http://localhost:4200/], Upgrade-Insecure-Requests=[1], Host=[localhost:8180]} response {}}: java.lang.NullPointerException
+	at io.undertow.servlet.spec.ServletContextImpl.getContextPath(ServletContextImpl.java:159)
+	at io.undertow.servlet.spec.HttpServletRequestImpl.getContextPath(HttpServletRequestImpl.java:252)
+	at io.undertow.servlet.handlers.ServletDebugPageHandler.handleRequest(ServletDebugPageHandler.java:95)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:317)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,403 WARN  [org.keycloak.services] (default task-10) KC-SERVICES0013: Failed authentication: org.infinispan.IllegalLifecycleStateException: ISPN000323: users is in 'TERMINATED' state and so it does not accept new invocations. Either restart it or recreate the cache container.
+	at org.infinispan.cache.impl.SimpleCacheImpl.getDataContainer(SimpleCacheImpl.java:1023)
+	at org.infinispan.cache.impl.SimpleCacheImpl.get(SimpleCacheImpl.java:399)
+	at org.infinispan.cache.impl.AbstractDelegatingCache.get(AbstractDelegatingCache.java:286)
+	at org.keycloak.models.cache.infinispan.CacheManager.get(CacheManager.java:95)
+	at org.keycloak.models.cache.infinispan.UserCacheSession.getUserByUsername(UserCacheSession.java:240)
+	at org.keycloak.models.utils.KeycloakModelUtils.findUserByNameOrEmail(KeycloakModelUtils.java:213)
+	at org.keycloak.authentication.authenticators.browser.AbstractUsernameFormAuthenticator.validateUserAndPassword(AbstractUsernameFormAuthenticator.java:133)
+	at org.keycloak.authentication.authenticators.browser.UsernamePasswordForm.validateForm(UsernamePasswordForm.java:56)
+	at org.keycloak.authentication.authenticators.browser.UsernamePasswordForm.action(UsernamePasswordForm.java:49)
+	at org.keycloak.authentication.DefaultAuthenticationFlow.processAction(DefaultAuthenticationFlow.java:92)
+	at org.keycloak.authentication.DefaultAuthenticationFlow.processAction(DefaultAuthenticationFlow.java:76)
+	at org.keycloak.authentication.AuthenticationProcessor.authenticationAction(AuthenticationProcessor.java:759)
+	at org.keycloak.services.resources.LoginActionsService.processFlow(LoginActionsService.java:365)
+	at org.keycloak.services.resources.LoginActionsService.processAuthentication(LoginActionsService.java:347)
+	at org.keycloak.services.resources.LoginActionsService.authenticateForm(LoginActionsService.java:401)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:138)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:101)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:395)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,406 ERROR [org.keycloak.events.EventBuilder] (default task-10) Failed to save event: org.keycloak.models.ModelException: org.hibernate.HibernateException: Transaction was rolled back in a different thread!
+	at org.keycloak.connections.jpa.PersistenceExceptionConverter.convert(PersistenceExceptionConverter.java:61)
+	at org.keycloak.connections.jpa.PersistenceExceptionConverter.invoke(PersistenceExceptionConverter.java:51)
+	at com.sun.proxy.$Proxy61.persist(Unknown Source)
+	at org.keycloak.events.jpa.JpaEventStoreProvider.onEvent(JpaEventStoreProvider.java:76)
+	at org.keycloak.events.EventBuilder.send(EventBuilder.java:177)
+	at org.keycloak.events.EventBuilder.error(EventBuilder.java:164)
+	at org.keycloak.authentication.AuthenticationProcessor.handleBrowserException(AuthenticationProcessor.java:615)
+	at org.keycloak.services.resources.LoginActionsService.processFlow(LoginActionsService.java:370)
+	at org.keycloak.services.resources.LoginActionsService.processAuthentication(LoginActionsService.java:347)
+	at org.keycloak.services.resources.LoginActionsService.authenticateForm(LoginActionsService.java:401)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:138)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:101)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:395)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.HibernateException: Transaction was rolled back in a different thread!
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorTrackingImpl.processAnyDelayedAfterCompletion(SynchronizationCallbackCoordinatorTrackingImpl.java:90)
+	at org.hibernate.internal.SessionImpl.delayedAfterCompletion(SessionImpl.java:627)
+	at org.hibernate.internal.SessionImpl.checkTransactionSynchStatus(SessionImpl.java:2219)
+	at org.hibernate.internal.SessionImpl.getSessionFactory(SessionImpl.java:1980)
+	at org.hibernate.internal.SessionImpl.getSessionFactory(SessionImpl.java:164)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.sfi(AbstractEntityManagerImpl.java:1473)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.markForRollbackOnly(AbstractEntityManagerImpl.java:1501)
+	at org.hibernate.jpa.internal.EntityManagerImpl.checkOpen(EntityManagerImpl.java:95)
+	at org.hibernate.jpa.internal.EntityManagerImpl.checkOpen(EntityManagerImpl.java:88)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1144)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.keycloak.connections.jpa.PersistenceExceptionConverter.invoke(PersistenceExceptionConverter.java:49)
+	... 55 more
+
+2017-11-10 19:41:52,409 WARN  [org.keycloak.events] (default task-10) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=invalid_user_credentials, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/, code_id=9d041f16-b53d-4de8-9643-17251e5fa2d5, username=menbacollegeadmin@pace.com
+2017-11-10 19:41:52,415 WARN  [com.arjuna.ats.arjuna] (default task-10) ARJUNA012077: Abort called on already aborted atomic action 0:ffff7f000101:-1242bdc8:5a05900e:31b
+2017-11-10 19:41:52,415 ERROR [io.undertow.request] (default task-10) UT005023: Exception handling request to /auth/realms/demo/login-actions/authenticate: org.jboss.resteasy.spi.UnhandledException: java.lang.NullPointerException
+	at org.jboss.resteasy.core.ExceptionHandler.handleApplicationException(ExceptionHandler.java:76)
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:212)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:168)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:411)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:202)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.keycloak.services.filters.KeycloakSessionServletFilter.doFilter(KeycloakSessionServletFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:60)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at org.keycloak.forms.login.freemarker.FreeMarkerLoginFormsProvider.createResponse(FreeMarkerLoginFormsProvider.java:314)
+	at org.keycloak.forms.login.freemarker.FreeMarkerLoginFormsProvider.createErrorPage(FreeMarkerLoginFormsProvider.java:484)
+	at org.keycloak.services.ErrorPage.error(ErrorPage.java:30)
+	at org.keycloak.authentication.AuthenticationProcessor.handleBrowserException(AuthenticationProcessor.java:616)
+	at org.keycloak.services.resources.LoginActionsService.processFlow(LoginActionsService.java:370)
+	at org.keycloak.services.resources.LoginActionsService.processAuthentication(LoginActionsService.java:347)
+	at org.keycloak.services.resources.LoginActionsService.authenticateForm(LoginActionsService.java:401)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:139)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:295)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:249)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:138)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:101)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:395)
+	... 37 more
+
+2017-11-10 19:41:52,417 ERROR [io.undertow.request] (default task-10) UT005071: Undertow request failed HttpServerExchange{ POST /auth/realms/demo/login-actions/authenticate request {Accept=[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8], Accept-Language=[en-US,en;q=0.9], Cache-Control=[max-age=0], Accept-Encoding=[gzip, deflate, br], Origin=[http://localhost:8180], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36], Connection=[keep-alive], Content-Length=[66], Content-Type=[application/x-www-form-urlencoded], Cookie=[KC_RESTART=eyJhbGciOiJIUzI1NiIsImtpZCIgOiAiNDQ3MmYyZmMtMGRmYy00OTVlLWIxNjktOWFjODNlMGVmNTAyIn0.eyJjcyI6IjlkMDQxZjE2LWI1M2QtNGRlOC05NjQzLTE3MjUxZTVmYTJkNSIsImNpZCI6ImRoaSIsInB0eSI6Im9wZW5pZC1jb25uZWN0IiwicnVyaSI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDIwMC8iLCJhY3QiOiJBVVRIRU5USUNBVEUiLCJub3RlcyI6eyJhdXRoX3R5cGUiOiJjb2RlIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvZGVtbyIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwicmVkaXJlY3RfdXJpIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwLyIsInN0YXRlIjoiNDA5Yzg0ZGQtNzBhYS00M2ZiLTg1MzQtNGY2NzA4MjM0ZThlIiwiY29kZV9jaGFsbGVuZ2VfbWV0aG9kIjoicGxhaW4iLCJub25jZSI6IjljZGYyOGJjLTBkYjYtNDkwZC1iMWNhLTg4MjIyMGVhNjg3OCIsInJlc3BvbnNlX21vZGUiOiJmcmFnbWVudCJ9fQ.qIRjstg4-plVB2uAIjgMz304jZW7PClUIhwlqdhuJSM; _ga=GA1.1.960110565.1510317662; _gid=GA1.1.311446825.1510317662], Referer=[http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth?client_id=dhi&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F&state=409c84dd-70aa-43fb-8534-4f6708234e8e&nonce=9cdf28bc-0db6-490d-b1ca-882220ea6878&response_mode=fragment&response_type=code&scope=openid], Upgrade-Insecure-Requests=[1], Host=[localhost:8180]} response {}}: java.lang.NullPointerException
+	at io.undertow.servlet.spec.ServletContextImpl.getContextPath(ServletContextImpl.java:159)
+	at io.undertow.servlet.spec.HttpServletRequestImpl.getContextPath(HttpServletRequestImpl.java:252)
+	at io.undertow.servlet.handlers.ServletDebugPageHandler.handleRequest(ServletDebugPageHandler.java:95)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:317)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,421 ERROR [org.xnio.listener] (default task-10) XNIO001007: A channel event listener threw an exception: java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:588)
+	at org.xnio.channels.EmptyStreamSourceChannel.shutdownReads(EmptyStreamSourceChannel.java:184)
+	at io.undertow.servlet.spec.ServletInputStreamImpl.close(ServletInputStreamImpl.java:258)
+	at io.undertow.servlet.spec.HttpServletRequestImpl.closeAndDrainRequest(HttpServletRequestImpl.java:612)
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:89)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1564)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:316)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:296)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:80)
+	at org.xnio.Connection.close(Connection.java:142)
+	at io.undertow.server.AbstractServerConnection.close(AbstractServerConnection.java:159)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:606)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1979)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.writeBufferBlocking(ServletOutputStreamImpl.java:565)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.close(ServletOutputStreamImpl.java:600)
+	at io.undertow.io.BlockingSenderImpl.close(BlockingSenderImpl.java:174)
+	at io.undertow.io.DefaultIoCallback.onComplete(DefaultIoCallback.java:54)
+	at io.undertow.io.BlockingSenderImpl.invokeOnComplete(BlockingSenderImpl.java:230)
+	at io.undertow.io.BlockingSenderImpl.send(BlockingSenderImpl.java:99)
+	at io.undertow.io.BlockingSenderImpl.send(BlockingSenderImpl.java:121)
+	at io.undertow.server.handlers.error.SimpleErrorPageHandler$1.handleDefaultResponse(SimpleErrorPageHandler.java:70)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1546)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:226)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2017-11-10 19:41:52,437 INFO  [org.jboss.as] (MSC service thread 1-4) WFLYSRV0050: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) stopped in 382ms

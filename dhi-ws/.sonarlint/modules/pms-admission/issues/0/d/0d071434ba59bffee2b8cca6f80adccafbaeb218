@@ -1,0 +1,27 @@
+
+Ysquid:S1172t"&Remove these unused method parameters.(¼Ø½àúÿÿÿÿHðËRMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(ò¨ö€HñËRMAJORZ
+CODE_SMELL
+Usquid:S1172’"&Remove these unused method parameters.(¿æ÷îHòËRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLine}"<This block of commented-out lines of code should be removed.(º—£ÙüÿÿÿÿHóËRMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢´Å©HôËRMAJORZ
+CODE_SMELL
+fsquid:S1948"5Make "handlingDepartments" transient or serializable.(º´Ñ­HõËRCRITICALZ
+CODE_SMELL
+ysquid:UnusedPrivateMethod„"<Remove this unused private "validateOtherParameters" method.(ÜÎ¯ÑHöËRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLinen"<This block of commented-out lines of code should be removed.(ÆŽ×±H÷ËRMAJORZ
+CODE_SMELL
+esquid:S1172j"2Remove this unused method parameter "dateOfBirth".(©Ç­ÖýÿÿÿÿHøËRMAJORZ
+CODE_SMELL
+ƒsquid:S00100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ×â‹úÿÿÿÿHùËRMINORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(ÀÄ¶áHúËRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(ßýèêùÿÿÿÿHûËRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(¢ãˆ¶HüËRMAJORZ
+CODE_SMELL

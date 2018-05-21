@@ -1,0 +1,13 @@
+
+…squid:S1192y"UDefine a constant instead of duplicating this literal "Course Exception: {}" 5 times.(Šœ«&HÏ¾RCRITICALZ
+CODE_SMELL
+[squid:S1602‰",Remove useless curly braces around statement(Âû‘ÔHÍ¾RMINORZ
+CODE_SMELL
+`squid:S1602«",Remove useless curly braces around statement(Çšñ“ûÿÿÿÿHÎ¾RMINORZ
+CODE_SMELL
+[squid:S1612Ò",Replace this lambda with a method reference.(Å¯³…HÌ¾RMINORZ
+CODE_SMELL
+‰squid:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(˜¬´ôùÿÿÿÿHË¾RCRITICALZ
+CODE_SMELL
+[squid:S1612¯",Replace this lambda with a method reference.(Å¯³…HÊ¾RMINORZ
+CODE_SMELL

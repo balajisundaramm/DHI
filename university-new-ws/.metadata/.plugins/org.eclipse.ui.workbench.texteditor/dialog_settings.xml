@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="createTabulateStructureBasedOnQuestionPaper" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="createTabulateStructureBasedOnQuestionPaper"/>
+			<item value="setIsOption"/>
+			<item value="collegeFacultyNominationStatus"/>
+			<item value="getupdatednominationdetails"/>
+			<item value="GET_UPDATED_NOMINATION_DETAILS"/>
+			<item value="getupdatedstatus"/>
+			<item value="pending"/>
+			<item value="NO_FACULTIES_FOUND"/>
+			<item value="LOG"/>
+			<item value="courseCode"/>
+			<item value="DigitalEvaluationFacultyNominationException.NO_FACULTIES_NOMINATED_BY_COLLEGE"/>
+			<item value="Faculties are not"/>
+			<item value="EvaluationCourseDetailsDto"/>
+			<item value="findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseType"/>
+			<item value="getMe"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="398" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="606" key="DIALOG_HEIGHT"/>
+		<item value="107" key="DIALOG_X_ORIGIN"/>
+		<item value="134" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

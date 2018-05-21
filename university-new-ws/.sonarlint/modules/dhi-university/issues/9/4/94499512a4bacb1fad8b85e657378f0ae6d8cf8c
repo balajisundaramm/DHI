@@ -1,0 +1,41 @@
+
+Ysquid:S1148—"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿH¿RMINORZVULNERABILITY
+ˆsquid:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(‡¿±£ÿÿÿÿÿH¶RCRITICALZ
+CODE_SMELL
+ƒsquid:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ìŒ§¡HºRCRITICALZ
+CODE_SMELL
+squid:S3776±"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(®çƒ§ûÿÿÿÿ8™öÛï­,H±RCRITICALZ
+CODE_SMELL
+]squid:S3655Y"7Call "Optional#isPresent()" before accessing the value.(ÅÊ¾¬H¾RMAJORZBUG
+f
+squid:S106Í"9Replace this use of System.out or System.err by a logger.(É«×øHÂRMAJORZ
+CODE_SMELL
+ƒsquid:S3776Ÿ"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¹©ðþH·RCRITICALZ
+CODE_SMELL
+™squid:S1488F"lImmediately return this expression instead of assigning it to the temporary variable "universityDetailsDTO".(ã¼èþH¼RMINORZ
+CODE_SMELL
+ssquid:UselessImportCheck"4Remove this unused import 'java.util.LinkedHashSet'.(àŽ€¼úÿÿÿÿH²RMINORZ
+CODE_SMELL
+k
+squid:S106Ò"9Replace this use of System.out or System.err by a logger.(ÃÛÙˆøÿÿÿÿH­RMAJORZ
+CODE_SMELL
+f
+squid:S106Â"9Replace this use of System.out or System.err by a logger.(ôÀ¬ÃH½RMAJORZ
+CODE_SMELL
+Žsquid:S3923¼"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ŸØ¥¡ûÿÿÿÿ8™öÛï­,H®RMAJORZBUG
+Ysquid:S1148¸"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿH³RMINORZVULNERABILITY
+msquid:UselessImportCheck".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿH°RMINORZ
+CODE_SMELL
+ssquid:S1854º"ERemove this useless assignment to local variable "academicCalendars".(ëý²H»RMAJORZ
+CODE_SMELL
+Ysquid:S1148–"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿH´RMINORZVULNERABILITY
+isquid:UselessImportCheck	"*Remove this unused import 'java.util.Map'.(¼è½ÒþÿÿÿÿH¸RMINORZ
+CODE_SMELL
+„squid:UselessImportCheck#"CRemove this unused import 'scala.tools.scalap.scalax.rules.OrElse'.(’üìÊ8™öÛï­,H¹RMINORZ
+CODE_SMELL
+Xsquid:S1148>"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÀRMINORZVULNERABILITY
+Ysquid:S1148Ý"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHµRMINORZVULNERABILITY
+‡squid:S3776i"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÔÅô¿øÿÿÿÿH¯RCRITICALZ
+CODE_SMELL
+ˆsquid:S3776þ"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(˜•£ üÿÿÿÿHÁRCRITICALZ
+CODE_SMELL

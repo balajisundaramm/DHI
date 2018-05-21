@@ -1,0 +1,55 @@
+
+“squid:UselessImportCheck0"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8óß¸°,H·±RMINORZ
+CODE_SMELL
+usquid:S1854Œ":Remove this useless assignment to local variable "script".(¿øÈ™ÿÿÿÿÿ8óß¸°,H¸±RMAJORZ
+CODE_SMELL
+–squid:UselessImportCheck<"ORemove this unused import 'com.spaneos.dhi.examination.domain.UEQuestionPaper'.(‰ªÀ¥üÿÿÿÿ8óß¸°,H¹±RMINORZ
+CODE_SMELL
+asquid:S1075"&Remove this hard-coded path-delimiter.(’Ï£²şÿÿÿÿ8ñ‚ºş±,Hº±RMINORZ
+CODE_SMELL
+‹squid:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¤¥Ö¸8À‘–Ğ«,H»±RCRITICALZ
+CODE_SMELL
+‡squid:S1192ó"IDefine a constant instead of duplicating this literal "semester" 4 times.(‡¨‘µıÿÿÿÿ8óß¸°,H¼±RCRITICALZ
+CODE_SMELL
+€squid:S1192ô"GDefine a constant instead of duplicating this literal "scheme" 4 times.(°±ÅÜ8óß¸°,H½±RCRITICALZ
+CODE_SMELL
+asquid:S1075"&Remove this hard-coded path-delimiter.(’Ï£²şÿÿÿÿ8ñ‚ºş±,H¾±RMINORZ
+CODE_SMELL
+„squid:S1192õ"KDefine a constant instead of duplicating this literal "courseCode" 4 times.( ¯°Š8óß¸°,H¿±RCRITICALZ
+CODE_SMELL
+‚squid:S1192ò"IDefine a constant instead of duplicating this literal "degreeId" 4 times.(û™ë8óß¸°,HÀ±RCRITICALZ
+CODE_SMELL
+s
+squid:S106¤"9Replace this use of System.out or System.err by a logger.(ÂÚ‘‚ûÿÿÿÿ8ñ‚ºş±,HÁ±RMAJORZ
+CODE_SMELL
+vsquid:UselessImportCheck"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ8óß¸°,HÂ±RMINORZ
+CODE_SMELL
+„squid:S1192÷"KDefine a constant instead of duplicating this literal "termNumber" 6 times.(²‰ü8óß¸°,HÃ±RCRITICALZ
+CODE_SMELL
+s
+squid:S106¡"9Replace this use of System.out or System.err by a logger.(‚æÙ¼ıÿÿÿÿ8ñ‚ºş±,HÄ±RMAJORZ
+CODE_SMELL
+†squid:S1192ñ"MDefine a constant instead of duplicating this literal "academicYear" 4 times.(Ä»²Û8óß¸°,HÅ±RCRITICALZ
+CODE_SMELL
+asquid:S1075"&Remove this hard-coded path-delimiter.(’Ï£²şÿÿÿÿ8ñ‚ºş±,HÆ±RMINORZ
+CODE_SMELL
+asquid:S1075 "&Remove this hard-coded path-delimiter.(û¬°Áüÿÿÿÿ8ñ‚ºş±,HÇ±RMINORZ
+CODE_SMELL
+‘squid:UselessImportCheckH"ORemove this unused import 'com.spaneos.dhi.examination.dto.UEQuestionPaperDto'.(óºó 8óß¸°,HÈ±RMINORZ
+CODE_SMELL
+‹squid:S3776³"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Çö á8Øğµ¯,HÉ±RCRITICALZ
+CODE_SMELL
+squid:CommentedOutCodeLineœ"<This block of commented-out lines of code should be removed.(õ…„8Ñ°á›´,HÊ±RMAJORZ
+CODE_SMELL
+†squid:CommentedOutCodeLineŸ"<This block of commented-out lines of code should be removed.(´¹•öøÿÿÿÿ8Ñ°á›´,HË±RMAJORZ
+CODE_SMELL
+dsquid:S1481ú")Remove this unused "page" local variable.(Üò…æÿÿÿÿÿ8Ñ°á›´,HÌ±RMINORZ
+CODE_SMELL
+€squid:UselessImportCheck"9Remove this unused import 'java.io.ByteArrayInputStream'.(Ëôæ±ûÿÿÿÿ8Ñ°á›´,HÍ±RMINORZ
+CODE_SMELL
+squid:UselessImportCheck&"?Remove this unused import 'org.apache.pdfbox.util.ImageIOUtil'.(é§µÇ8Ñ°á›´,HÎ±RMINORZ
+CODE_SMELL
+{squid:UselessImportCheck#"9Remove this unused import 'org.apache.pdfbox.PDFToImage'.(Ô¾È8Ñ°á›´,HÏ±RMINORZ
+CODE_SMELL
+rsquid:UselessImportCheck"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8Ñ°á›´,HĞ±RMINORZ
+CODE_SMELL

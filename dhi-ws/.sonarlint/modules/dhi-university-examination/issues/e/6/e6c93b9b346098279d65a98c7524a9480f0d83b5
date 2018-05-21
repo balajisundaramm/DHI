@@ -1,0 +1,5 @@
+
+¼%squid:RedundantThrowsDeclarationCheckË"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¹£ş8Å¤Ü¸°,Hü‹RMINORZ
+CODE_SMELL
+ysquid:UselessImportCheck"2Remove this unused import 'javax.ws.rs.FormParam'.(ëûÒßşÿÿÿÿ8Å¤Ü¸°,Hı‹RMINORZ
+CODE_SMELL

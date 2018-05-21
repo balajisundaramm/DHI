@@ -1,0 +1,29 @@
+
+]squid:S1066ğ"/Merge this if statement with the enclosing one.(‹ÅÇûH¾)RMAJORZ
+CODE_SMELL
+Xsquid:S00108À")Either remove or fill this block of code.(”ı¾H¿)RMAJORZ
+CODE_SMELL
+bsquid:S1066ø"/Merge this if statement with the enclosing one.(³´ÅĞúÿÿÿÿHÀ)RMAJORZ
+CODE_SMELL
+ƒsquid:S3776 "RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(àÙİÅHÁ)RCRITICALZ
+CODE_SMELL
+ƒsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Õ‰“ÌHÂ)RCRITICALZ
+CODE_SMELL
+Ysquid:S1148ú"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÃ)RMINORZVULNERABILITY
+Ysquid:S1148Ä"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÄ)RMINORZVULNERABILITY
+Ysquid:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÅ)RMINORZVULNERABILITY
+„squid:S00117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä­áÜÿÿÿÿÿHÆ)RMINORZ
+CODE_SMELL
+Ysquid:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÇ)RMINORZVULNERABILITY
+Ysquid:S1148ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÈ)RMINORZVULNERABILITY
+ƒsquid:S3776¹"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(™‚Œ…HÉ)RCRITICALZ
+CODE_SMELL
+ˆsquid:S3776Ø"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(˜¿Ê©ùÿÿÿÿHÊ)RCRITICALZ
+CODE_SMELL
+Ysquid:S1148—"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHË)RMINORZVULNERABILITY
+…squid:S1192İ"OUse already-defined constant 'KARNATAKA' instead of duplicating its value here.(­ï¹ùÿÿÿÿHÌ)RCRITICALZ
+CODE_SMELL
+Xsquid:S00108Ò")Either remove or fill this block of code.(”ı¾HÍ)RMAJORZ
+CODE_SMELL
+ƒsquid:S3776€"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¦»àôHÎ)RCRITICALZ
+CODE_SMELL

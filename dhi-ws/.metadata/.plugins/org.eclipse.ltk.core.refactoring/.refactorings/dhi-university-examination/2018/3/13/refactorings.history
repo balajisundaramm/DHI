@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.spaneos.dhi.examination.domain.NominationDetails&apos; to &apos;FacultyNominationDetails&apos;&#x0A;- Original project: &apos;dhi-university-examination&apos;&#x0A;- Original element: &apos;com.spaneos.dhi.examination.domain.NominationDetails&apos;&#x0A;- Renamed element: &apos;com.spaneos.dhi.examination.domain.FacultyNominationDetails&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;NominationDetails&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.spaneos.dhi.examination.domain{NominationDetails.java[NominationDetails" matchStrategy="1" name="FacultyNominationDetails" qualified="false" references="true" similarDeclarations="false" stamp="1522141989107" textual="false" version="1.0"/>
+</session>

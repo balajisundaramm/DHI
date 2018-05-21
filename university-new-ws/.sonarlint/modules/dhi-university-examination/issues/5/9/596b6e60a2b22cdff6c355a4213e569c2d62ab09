@@ -1,0 +1,44 @@
+
+€squid:S1192@"KDefine a constant instead of duplicating this literal "courseCode" 8 times.(ìÓğ‡úÿÿÿÿHàRCRITICALZ
+CODE_SMELL
+€squid:S1192E"PDefine a constant instead of duplicating this literal "$_id.courseName" 3 times.(‹£©ÍHáRCRITICALZ
+CODE_SMELL
+{squid:S1192;"KDefine a constant instead of duplicating this literal "semesterId" 4 times.(Ë·ó¢HâRCRITICALZ
+CODE_SMELL
+~squid:S1192A"NDefine a constant instead of duplicating this literal "questionPaper" 3 times.(˜ÅôHãRCRITICALZ
+CODE_SMELL
+€squid:S1192D"PDefine a constant instead of duplicating this literal "$_id.courseCode" 3 times.(Å¹ÚHäRCRITICALZ
+CODE_SMELL
+€squid:S1192@"KDefine a constant instead of duplicating this literal "courseName" 6 times.(ìÓğ‡úÿÿÿÿHåRCRITICALZ
+CODE_SMELL
+ysquid:S1192;"IDefine a constant instead of duplicating this literal "degreeId" 4 times.(Ë·ó¢HæRCRITICALZ
+CODE_SMELL
+}squid:S1192:"MDefine a constant instead of duplicating this literal "academicYear" 4 times.(ö¤Æ¹HçRCRITICALZ
+CODE_SMELL
+squid:S1192;"ODefine a constant instead of duplicating this literal "syllabusScheme" 4 times.(Ë·ó¢HèRCRITICALZ
+CODE_SMELL
+ƒsquid:S1192Š"RDefine a constant instead of duplicating this literal "faculty.facultyId" 3 times.(¡Î„HéRCRITICALZ
+CODE_SMELL
+xsquid:S1192="IDefine a constant instead of duplicating this literal "faculty" 10 times.(Ïü®	HêRCRITICALZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine­"<This block of commented-out lines of code should be removed.(êÅ²¹HëRMAJORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(·ßµHìRMAJORZ
+CODE_SMELL
+k
+squid:S106´"9Replace this use of System.out or System.err by a logger.(½ıÛûÿÿÿÿHíRMAJORZ
+CODE_SMELL
+k
+squid:S106¹"9Replace this use of System.out or System.err by a logger.(ºš•´şÿÿÿÿHîRMAJORZ
+CODE_SMELL
+©squid:UselessImportCheck"jRemove this unused import 'org.springframework.data.mongodb.core.aggregation.AggregationOperationContext'.(Û¢ŸœÿÿÿÿÿHïRMINORZ
+CODE_SMELL
+vsquid:UselessImportCheck"<Remove this unused import 'javax.ws.rs.core.MultivaluedMap'.(Ï¢×äHğRMINORZ
+CODE_SMELL
+ksquid:UselessImportCheck"1Remove this unused import 'com.mongodb.DBObject'.(‡ÿå´HñRMINORZ
+CODE_SMELL
+‡squid:UselessImportCheck"MRemove this unused import 'com.spaneos.dhi.examination.domain.FacultyDetail'.(ìúØùHòRMINORZ
+CODE_SMELL
+ssquid:UselessImportCheck"4Remove this unused import 'org.bson.types.ObjectId'.(Ü¡‰çıÿÿÿÿHóRMINORZ
+CODE_SMELL
+Xsquid:S1148}"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHôRMINORZVULNERABILITY

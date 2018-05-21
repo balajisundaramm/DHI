@@ -1,0 +1,62 @@
+
+_squid:S3655"7Call "Optional#isPresent()" before accessing the value.(å­ºÏHÌŒRMAJORZBUG
+usquid:S4034š"GReplace this "filter().findFirst().isPresent()" chain with "anyMatch()"(ˆ³—HÍŒRMINORZ
+CODE_SMELL
+‚squid:S1602Î"SRemove useless curly braces around statement and then remove useless return keyword(áé¢ìHÎŒRMINORZ
+CODE_SMELL
+esquid:S2629W"7Use the built-in formatting to construct this argument.(×ô‘ĞHÏŒRMAJORZ
+CODE_SMELL
+l
+squid:S106Â"9Replace this use of System.out or System.err by a logger.(Åã„ûÿÿÿÿHĞŒRMAJORZ
+CODE_SMELL
+ksquid:S2629°"7Use the built-in formatting to construct this argument.(½”¶ÑşÿÿÿÿHÑŒRMAJORZ
+CODE_SMELL
+šsquid:S1192"cDefine a constant instead of duplicating this literal "Problem occured in updating Degree" 3 times.(‘„ëıùÿÿÿÿHÒŒRCRITICALZ
+CODE_SMELL
+`squid:S1612á",Replace this lambda with a method reference.(¯Ù‡ıÿÿÿÿHÓŒRMINORZ
+CODE_SMELL
+[squid:S1612",Replace this lambda with a method reference.(å­ºÏHÔŒRMINORZ
+CODE_SMELL
+Vsquid:S2201Á"/The return value of "orElseThrow" must be used.(¡³7HÕŒRMAJORZBUG
+‰squid:S1602¸"SRemove useless curly braces around statement and then remove useless return keyword(áé¢ì8Š×©¼°,HÖŒRMINORZ
+CODE_SMELL
+l
+squid:S106Ö"9Replace this use of System.out or System.err by a logger.(şÉëÙúÿÿÿÿH×ŒRMAJORZ
+CODE_SMELL
+[squid:S1602è",Remove useless curly braces around statement(ïŒ§ÉHØŒRMINORZ
+CODE_SMELL
+`squid:S1602º",Remove useless curly braces around statement(«À‡óûÿÿÿÿHÙŒRMINORZ
+CODE_SMELL
+s
+squid:S106›"9Replace this use of System.out or System.err by a logger.(ş¿™¥ıÿÿÿÿ8Š×©¼°,HÚŒRMAJORZ
+CODE_SMELL
+isquid:S1854…":Remove this useless assignment to local variable "degree".(÷„¶şHÛŒRMAJORZ
+CODE_SMELL
+Vsquid:S2201¥"/The return value of "orElseThrow" must be used.(¡³7HÜŒRMAJORZBUG
+f
+squid:S106F"9Replace this use of System.out or System.err by a logger.(üÜëHİŒRMAJORZ
+CODE_SMELL
+`squid:S1612Á",Replace this lambda with a method reference.(á…ÇôüÿÿÿÿHŞŒRMINORZ
+CODE_SMELL
+‘squid:S1488ˆ"bImmediately return this expression instead of assigning it to the temporary variable "university".(‰ÚíĞHßŒRMINORZ
+CODE_SMELL
+Wsquid:S2201é"/The return value of "orElseThrow" must be used.(×ç‡HàŒRMAJORZBUG
+Vsquid:S2201Œ"/The return value of "orElseThrow" must be used.(¡³7HáŒRMAJORZBUG
+[squid:S1612Ê",Replace this lambda with a method reference.(®”ÂçHâŒRMINORZ
+CODE_SMELL
+‚squid:S1602µ"SRemove useless curly braces around statement and then remove useless return keyword(¢ôíòHãŒRMINORZ
+CODE_SMELL
+fsquid:S2629ê"7Use the built-in formatting to construct this argument.(“‰…€HäŒRMAJORZ
+CODE_SMELL
+tsquid:S1854›"@Remove this useless assignment to local variable "updatedegree".(ÔŞÚ´ıÿÿÿÿHåŒRMAJORZ
+CODE_SMELL
+Zsquid:S1148‘"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHæŒRMINORZVULNERABILITY
+“squid:S1488"dImmediately return this expression instead of assigning it to the temporary variable "academicYear".(å­ºÏHçŒRMINORZ
+CODE_SMELL
+Vsquid:S2201ì"/The return value of "orElseThrow" must be used.(¡³7HèŒRMAJORZBUG
+—squid:S1192½"YDefine a constant instead of duplicating this literal "Degree id cannot be null" 3 times.(²Ä——ÿÿÿÿÿ8Š×©¼°,HéŒRCRITICALZ
+CODE_SMELL
+Zsquid:S1148ç"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHêŒRMINORZVULNERABILITY
+g
+squid:S106´"9Replace this use of System.out or System.err by a logger.(»†§òHëŒRMAJORZ
+CODE_SMELL

@@ -1,0 +1,15 @@
+
+Tsquid:S1075‰"&Remove this hard-coded path-delimiter.(ßîéÃHœmRMINORZ
+CODE_SMELL
+¦squid:S1192ï"uDefine a constant instead of duplicating this literal "Lab IA Configuration is not availble for this course" 4 times.(í¾™ŸHmRCRITICALZ
+CODE_SMELL
+`squid:S2093÷"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHmRCRITICALZ
+CODE_SMELL
+`squid:S2093Æ"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHŸmRCRITICALZ
+CODE_SMELL
+psquid:S00107…	"<Method has 8 parameters, which is greater than 7 authorized.(ÅÍœÄúÿÿÿÿH mRMAJORZ
+CODE_SMELL
+Zsquid:S1602Š",Remove useless curly braces around statement(¼è‰ƒH¡mRMINORZ
+CODE_SMELL
+Ysquid:S1148ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH¢mRMINORZVULNERABILITY
+Ysquid:S1148¡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH£mRMINORZVULNERABILITY

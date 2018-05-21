@@ -1,0 +1,19 @@
+
+{squid:S1192("JDefine a constant instead of duplicating this literal "evaluator" 4 times.( •Ì¢HİÍRCRITICALZ
+CODE_SMELL
+zsquid:S1192$"IDefine a constant instead of duplicating this literal "semester" 4 times.(ÁôºØHŞÍRCRITICALZ
+CODE_SMELL
+zsquid:S1192""IDefine a constant instead of duplicating this literal "degreeId" 4 times.(Ó“ˆÿHßÍRCRITICALZ
+CODE_SMELL
+~squid:S1192 "MDefine a constant instead of duplicating this literal "academicYear" 8 times.(ÛÙœÊHàÍRCRITICALZ
+CODE_SMELL
+}squid:S1192%"GDefine a constant instead of duplicating this literal "scheme" 4 times.(ğæ±úÿÿÿÿHáÍRCRITICALZ
+CODE_SMELL
+squid:S1192#"KDefine a constant instead of duplicating this literal "termNumber" 4 times.(½™Œ™ıÿÿÿÿHâÍRCRITICALZ
+CODE_SMELL
+}squid:S1192)"GDefine a constant instead of duplicating this literal "tenant" 4 times.(“éÇûÿÿÿÿHãÍRCRITICALZ
+CODE_SMELL
+{squid:S1192&"KDefine a constant instead of duplicating this literal "courseCode" 4 times.(Ğ®=HäÍRCRITICALZ
+CODE_SMELL
+squid:S1192'"KDefine a constant instead of duplicating this literal "script-ref" 4 times.(ÕßóÒüÿÿÿÿHåÍRCRITICALZ
+CODE_SMELL

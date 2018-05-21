@@ -1,0 +1,12 @@
+
+Ysquid:S3958œ"2Refactor the code so this stream pipeline is used.(Ç²ñ HìURMAJORZBUG
+wsquid:S4034C"EReplace this "filter().findAny().isPresent()" chain with "anyMatch()"(œ¹«³ûÿÿÿÿHíURMINORZ
+CODE_SMELL
+rsquid:S4034_"EReplace this "filter().findAny().isPresent()" chain with "anyMatch()"(›—Ä”HîURMINORZ
+CODE_SMELL
+[squid:S1125ò"(Remove the literal "true" boolean value.(º­Å•øÿÿÿÿHïURMINORZ
+CODE_SMELL
+[squid:S1125þ"(Remove the literal "true" boolean value.(¡²…üÿÿÿÿÿHðURMINORZ
+CODE_SMELL
+csquid:S3655þ"7Call "Optional#isPresent()" before accessing the value.(¡²…üÿÿÿÿÿHñURMAJORZBUG
+csquid:S3655ò"7Call "Optional#isPresent()" before accessing the value.(º­Å•øÿÿÿÿHòURMAJORZBUG

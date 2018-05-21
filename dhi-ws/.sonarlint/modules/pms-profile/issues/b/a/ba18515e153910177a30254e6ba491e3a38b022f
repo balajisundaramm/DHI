@@ -1,0 +1,30 @@
+
+`squid:S1602¶",Remove useless curly braces around statement(ÿ„ò¤ûÿÿÿÿHÜÌRMINORZ
+CODE_SMELL
+squid:S1602X"SRemove useless curly braces around statement and then remove useless return keyword(ÛİÌ¤HçÌRMINORZ
+CODE_SMELL
+‚squid:S1602·"SRemove useless curly braces around statement and then remove useless return keyword(ÛİÌ¤HİÌRMINORZ
+CODE_SMELL
+[squid:S1612",Replace this lambda with a method reference.(’ŞáHäÌRMINORZ
+CODE_SMELL
+‚squid:S1602Ä"SRemove useless curly braces around statement and then remove useless return keyword(ÛİÌ¤HßÌRMINORZ
+CODE_SMELL
+asquid:S1602€",Remove useless curly braces around statement(–Ã€~8ä ¿¦,HãÌRMINORZ
+CODE_SMELL
+‡squid:S1602®"SRemove useless curly braces around statement and then remove useless return keyword(Ê³“ ùÿÿÿÿHêÌRMINORZ
+CODE_SMELL
+†squid:S1602I"SRemove useless curly braces around statement and then remove useless return keyword(Ê³“ ùÿÿÿÿHæÌRMINORZ
+CODE_SMELL
+l
+squid:S106¯"9Replace this use of System.out or System.err by a logger.(¤Íµ¯ÿÿÿÿÿHŞÌRMAJORZ
+CODE_SMELL
+‰squid:S3776İ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(€ÄÏ´ûÿÿÿÿHåÌRCRITICALZ
+CODE_SMELL
+\squid:S10687"'Remove this unused "LOG" private field.(˜Ğâï8ÈéÖ¦,HâÌRMAJORZ
+CODE_SMELL
+‚squid:S1602ƒ"SRemove useless curly braces around statement and then remove useless return keyword(ÛİÌ¤HèÌRMINORZ
+CODE_SMELL
+‡squid:S1602¤"SRemove useless curly braces around statement and then remove useless return keyword(Ê³“ ùÿÿÿÿHáÌRMINORZ
+CODE_SMELL
+‡squid:S1602í"SRemove useless curly braces around statement and then remove useless return keyword(Ê³“ ùÿÿÿÿHéÌRMINORZ
+CODE_SMELL

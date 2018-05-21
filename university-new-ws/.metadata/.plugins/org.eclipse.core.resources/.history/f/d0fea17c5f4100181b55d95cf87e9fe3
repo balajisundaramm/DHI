@@ -1,0 +1,679 @@
+package com.spaneos.dhi.university.service;
+
+import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.spaneos.dhi.university.domain.AcademicCalendar;
+import com.spaneos.dhi.university.domain.DegreeDetails;
+import com.spaneos.dhi.university.domain.DegreeTermData;
+import com.spaneos.dhi.university.domain.DepartmentDetails;
+import com.spaneos.dhi.university.domain.TermDetail;
+import com.spaneos.dhi.university.domain.UECategoryType;
+import com.spaneos.dhi.university.domain.UniversityCategory;
+import com.spaneos.dhi.university.domain.UniversityCollegeDetail;
+import com.spaneos.dhi.university.domain.UniversityDetails;
+import com.spaneos.dhi.university.dto.SchemeDto;
+import com.spaneos.dhi.university.dto.SemesterDto;
+import com.spaneos.dhi.university.dto.UniversityDetailsDTO;
+import com.spaneos.dhi.university.exception.UniversityDetailException;
+import com.spaneos.dhi.university.repository.CollegeDetailsRepository;
+import com.spaneos.dhi.university.repository.UniversityCategoryRepository;
+import com.spaneos.dhi.university.repository.UniversityDetailRepository;
+
+@Service
+public class UniversityDetailServiceImpl implements UniversityDetailService {
+
+	public static final Logger Log = LoggerFactory.getLogger(UniversityDetailServiceImpl.class);
+
+	@Autowired
+	UniversityDetailRepository universityDetailRepository;
+	
+	@Autowired
+	CollegeDetailsRepository collegeDetailRepository;
+	
+	
+	
+	
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Autowired
+	private UniversityCategoryRepository universityCategoryRepository;
+
+	@Autowired
+	private CollegeDetailsRepository collegeDetailsRepository;
+
+	@Override
+	public UniversityDetails addUniversityDetails(UniversityDetails universityDetailObj) {
+		try {
+			return universityDetailRepository.save(universityDetailObj);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	@Override
+	public UniversityDetailsDTO getUniversityDetails() {
+		UniversityDetails universityDetails = universityDetailRepository.findAll().get(0);
+		UniversityDetailsDTO universityDetailsDTO = modelMapper.map(universityDetails, UniversityDetailsDTO.class);
+		return universityDetailsDTO;
+	}
+
+	@Override
+	public List<UniversityCategory> getUniversityCategories() {
+		return universityCategoryRepository.findAll();
+	}
+
+	@Override
+	public UniversityCategory getUniversityCategory(UECategoryType categoryType) {
+		return universityCategoryRepository.findByCategoryType(categoryType);
+	}
+
+	@Override
+	public DegreeDetails getDegreeDetailsByDegreeId(String degreeId) {
+		List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+		if (universityDetails != null && !universityDetails.isEmpty()) {
+			UniversityDetails universityDetail = universityDetails.get(0);
+			DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+					.filter(university -> university.getDegreeId().equals(degreeId)).findAny().get();
+			if (degreeDetail != null) {
+				return degreeDetail;
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND);
+			}
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 */
+	@Override
+	public UniversityDetails setAllDegrees() {
+		List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+		List<UniversityCollegeDetail> universityCollegeDetails = collegeDetailsRepository.findAll();
+		List<DegreeDetails> degreeDetailss = new ArrayList<>();
+		try {
+			if (universityDetails != null && !universityDetails.isEmpty()
+					&& universityDetails.get(0).getDegrees() != null
+					&& !universityDetails.get(0).getDegrees().isEmpty()) {
+				for (DegreeDetails eachDegreeDetail : universityDetails.get(0).getDegrees()) {
+					if (universityCollegeDetails != null && !universityCollegeDetails.isEmpty()) {
+						DegreeDetails degreeDetails = checkDegreeDetails(universityCollegeDetails,
+								eachDegreeDetail.getDegreeId());
+						if (degreeDetails != null) {
+							degreeDetailss.add(degreeDetails);
+						} else {
+							degreeDetailss.add(eachDegreeDetail);
+						}
+					}
+				}
+				universityDetails.get(0).setDegrees(new ArrayList<>());
+				universityDetails.get(0).setDegrees(degreeDetailss);
+				universityDetailRepository.save(universityDetails);
+				return universityDetails.get(0);
+			} else {
+				List<String> degress = new ArrayList<>();
+				degress.add("All");
+				degress.add("BE");
+				degress.add("MBA");
+				degress.add("DIPLOMA");
+				for (String degree : degress) {
+					DegreeDetails degreeDetails = checkDegreeDetails(universityCollegeDetails, degree);
+					if (degreeDetails != null) {
+						degreeDetailss.add(degreeDetails);
+					}
+				}
+				if (!degreeDetailss.isEmpty()) {
+					UniversityDetails universityDetails2 = new UniversityDetails();
+					universityDetails2.setDegrees(degreeDetailss);
+					universityDetailRepository.save(universityDetails2);
+					return universityDetails2;
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+		}
+	}
+
+	private DegreeDetails checkDegreeDetails(List<UniversityCollegeDetail> universityCollegeDetails, String degree) {
+		for (UniversityCollegeDetail universityCollegeDetail : universityCollegeDetails) {
+			if (universityCollegeDetail.getDegrees() != null && !universityCollegeDetail.getDegrees().isEmpty()) {
+				for (DegreeDetails eachDegree : universityCollegeDetail.getDegrees()) {
+					if (eachDegree.getDegreeId().equals(degree)) {
+						return eachDegree;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param termNumber
+	 * @param schemeYear
+	 * @return
+	 */
+	@Override
+	public List<AcademicCalendar> getAllSemestersBasedOnSchemeAndTermnumber(String degreeId, int termNumber,
+			String schemeYear) {
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				List<AcademicCalendar> academicCalendars = new ArrayList<>();
+				academicCalendars = degreeDetail.getTermDetails().stream()
+						.filter(degree -> degree.getTermNumber() == termNumber && degree.isCurrent()).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND))
+						.getAcademicCalendar().stream().filter(academic -> academic.getSchemeYear().equals(schemeYear))
+						.collect(Collectors.toList());
+				if (academicCalendars != null && !academicCalendars.isEmpty()) {
+
+					return academicCalendars;
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND, e.getMessage());
+			throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param academicYear
+	 * @return
+	 */
+	@Override
+	public List<Integer> getTermNumberByDegreeIdAndAcademicYear(String degreeId, String academicYear) {
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				if (degreeDetail.getTermDetails() != null && !degreeDetail.getTermDetails().isEmpty()) {
+					return getTermNumbers(degreeDetail.getTermDetails(), academicYear);
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.TERM_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+		}
+	}
+
+	
+	
+	
+	
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param termDetails
+	 * @param academicYear
+	 * @return
+	 */
+	private List<Integer> getTermNumbers(List<TermDetail> termDetails, String academicYear) {
+		List<Integer> termNumbers = new ArrayList<>();
+		for (TermDetail term : termDetails) {
+			if (term.getAcademicYear().equals(academicYear))
+				termNumbers.add(term.getTermNumber());
+		}
+		if (!termNumbers.isEmpty()) {
+			return termNumbers;
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 */
+	@Override
+	public Set<SchemeDto> getSchemesByDegreeIdAndAcademicYearAndTermNumber(String degreeId) {
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				if (degreeDetail.getTermDetails() != null && !degreeDetail.getTermDetails().isEmpty()) {
+					return new HashSet<>(getSchemes(degreeDetail.getTermDetails()));
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.TERM_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param termDetails
+	 * @param academicYear
+	 * @param termNumber
+	 * @return
+	 */
+	private List<SchemeDto> getSchemes(List<TermDetail> termDetails) {
+		List<SchemeDto> schemeDtos = new ArrayList<>();
+		for (TermDetail termDetail : termDetails) {
+			if (termDetail != null && termDetail.getAcademicCalendar() != null
+					&& !termDetail.getAcademicCalendar().isEmpty()) {
+				for (AcademicCalendar academicCalendar : termDetail.getAcademicCalendar()) {
+					if (academicCalendar != null) {
+						SchemeDto schemeDto = new SchemeDto();
+						schemeDto.setSchemeName(academicCalendar.getSchemeName());
+						schemeDto.setSchemeYear(academicCalendar.getSchemeYear());
+						schemeDtos.add(schemeDto);
+					}
+				}
+			}
+		}
+		if (!schemeDtos.isEmpty()) {
+			return schemeDtos;
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.SCHEME_NO_FOUND);
+		}
+	}
+
+	@Override
+	public List<String> getAllAcademicYears(String degreeId) {
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				if (degreeDetail.getTermDetails() != null && !degreeDetail.getTermDetails().isEmpty()) {
+					List<String> academicYears = new ArrayList<>();
+					for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+						academicYears.add(termDetail.getAcademicYear());
+					}
+					return academicYears;
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.TERM_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.TERM_NOT_FOUND);
+		}
+	}
+
+	
+	@Override
+	public List<String> getAllSemesters(String degreeId, String scheme) {
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				Set<String> sems = new HashSet();
+				for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+					if (termDetail != null && termDetail.getAcademicCalendar() != null
+							&& !termDetail.getAcademicCalendar().isEmpty()) {
+						for (AcademicCalendar academicCalendar : termDetail.getAcademicCalendar()) {
+							if (academicCalendar != null && academicCalendar.getSchemeYear().equals(scheme)) {
+								sems.add(academicCalendar.getSemId());
+							}
+						}
+					}
+				}
+				if (sems != null && !sems.isEmpty()) {
+					return new ArrayList<>(sems);
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.SEMESTER_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.SEMESTER_NOT_FOUND, e.getMessage());
+			throw new UniversityDetailException(UniversityDetailException.SEMESTER_NOT_FOUND);
+
+		}
+
+	}
+
+	/**
+	 * @author Pushpankar
+	 */
+
+	// All current academic year---------------------------------------
+	public List<String> getCurrentAcademicYears() {
+
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				Set<String> academicYears = new HashSet<>();
+				for (DegreeDetails degreeDetail : universityDetail.getDegrees()) {
+					if (degreeDetail != null) {
+						for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+							if (termDetail != null && termDetail.isCurrent())
+								academicYears.add(termDetail.getAcademicYear());
+						}
+					}
+				}
+				if (academicYears != null && !academicYears.isEmpty()) {
+
+					return new ArrayList<>(academicYears);
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.error(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+		}
+
+	}
+	
+	@Override
+	public List<String> getAcademicYears() {
+
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				Set<String> academicYears = new HashSet<>();
+				for (DegreeDetails degreeDetail : universityDetail.getDegrees()) {
+					if (degreeDetail != null) {
+						for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+							if (termDetail != null)
+								academicYears.add(termDetail.getAcademicYear());
+						}
+					}
+				}
+				if (academicYears != null && !academicYears.isEmpty()) {
+
+					return new ArrayList<>(academicYears);
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.error(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+		}
+
+	}
+	
+
+	// All degrees in university based on academic
+	// year------------------------------
+	public List<String> getDegresId(String academicYear) {
+		System.err.println(academicYear);
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				Set<String> degreedetails = new HashSet<>();
+				for (DegreeDetails degreeDetail : universityDetail.getDegrees()) {
+					if (degreeDetail != null) {
+						for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+							if (termDetail != null && academicYear.equals(termDetail.getAcademicYear()))
+								degreedetails.add(degreeDetail.getDegreeId());
+							System.err.println("termDetailssssssssss" + termDetail);
+						}
+
+					}
+				}
+				System.err.println(degreedetails);
+				if (degreedetails != null && !degreedetails.isEmpty()) {
+
+					return new ArrayList<>(degreedetails);
+				} else {
+					throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+				}
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.error(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND, e);
+			throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+		}
+	}
+
+	@Override
+	public String getCurrentAcademicYear(String degreeId) {
+		boolean isCurrent = false;
+		String academicYear = null;
+		List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+		if (universityDetails != null && !universityDetails.isEmpty()) {
+			UniversityDetails universityDetail = universityDetails.get(0);
+			DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+					.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+					.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+			for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+				if (termDetail != null && termDetail.isCurrent()) {
+					isCurrent = true;
+					academicYear = termDetail.getAcademicYear();
+					break;
+				}
+			}
+			if (isCurrent)
+				return academicYear;
+			else
+				throw new UniversityDetailException(UniversityDetailException.CURRENT_TERM_NOT_FOUND);
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+		}
+	}
+
+	@Override
+	public int getCurrentTermNumber(String degreeId) {
+		boolean isCurrent = false;
+		int termNumber = 0;
+		List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+		if (universityDetails != null && !universityDetails.isEmpty()) {
+			UniversityDetails universityDetail = universityDetails.get(0);
+			DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+					.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+					.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+			for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+				if (termDetail != null && termDetail.isCurrent()) {
+					isCurrent = true;
+					termNumber = termDetail.getTermNumber();
+					break;
+				}
+			}
+			if (isCurrent)
+				return termNumber;
+			else
+				throw new UniversityDetailException(UniversityDetailException.CURRENT_TERM_NOT_FOUND);
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+		}
+	}
+
+	@Override
+	public List<DegreeTermData> getCurrentTermsForDegrees() {
+		List<UniversityDetails> universityDetailsList = universityDetailRepository.findAll();
+		List<DegreeTermData> degreeTermDataList = new ArrayList<>();
+
+		if (universityDetailsList != null && !universityDetailsList.isEmpty()) {
+			UniversityDetails universityDetail = universityDetailsList.get(0);
+			if (universityDetail.getDegrees().isEmpty())
+				throw new UniversityDetailException(UniversityDetailException.DEGREE_DETAILS_NOT_FOUND);
+			universityDetail.getDegrees().forEach(degree -> {
+				for (TermDetail term : degree.getTermDetails()) {
+					if (term.isCurrent()) {
+						DegreeTermData degreeTermData = new DegreeTermData();
+						degreeTermData.setDegreeId(degree.getDegreeId());
+						degreeTermData.setTermDetail(term);
+						degreeTermDataList.add(degreeTermData);
+					}
+				}
+			});
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.UNIVERSITY_NOT_FOUND);
+		}
+		return degreeTermDataList;
+	}
+	
+
+	@Override
+	public List<String> getdepartments(String degreeId, String academicYear,int termNumber) {
+		List<UniversityDetails> universityDetailsList = universityDetailRepository.findAll();
+		//List<DegreeTermData> degreeTermDataList = new ArrayList<>();
+		
+		if (universityDetailsList != null && !universityDetailsList.isEmpty()) {
+			UniversityDetails universityDetail = universityDetailsList.get(0);
+			Set <String>departmentlist=new HashSet<>();
+			if (universityDetail.getDegrees().isEmpty())
+				throw new UniversityDetailException(UniversityDetailException.DEGREE_DETAILS_NOT_FOUND);
+			universityDetail.getDegrees().forEach(degree -> {
+				for (TermDetail term : degree.getTermDetails()) {
+					if (term.isCurrent()) {
+						for (DepartmentDetails dept: degree.getDepartments()) {
+							if((term.getAcademicYear().equals(academicYear))&& (term.getTermNumber()==termNumber) && degree.getDegreeId().equals(degreeId)) {
+								departmentlist.add(dept.getDeptId());
+							}
+					}
+				}
+			}
+				
+			});
+			return  new ArrayList<>(departmentlist);	
+		}
+			
+		
+		else {
+			throw new UniversityDetailException(UniversityDetailException.UNIVERSITY_NOT_FOUND);
+		}
+	}
+	
+	@Override
+	public List<String> getcolleges(String degreeId, String academicYear,int termNumber,String department) {
+		List<UniversityDetails> universityDetailsList = universityDetailRepository.findAll();
+		List <UniversityCollegeDetail> universityCollegeDetails= collegeDetailRepository.findAll();
+		List<UniversityDetails>  universityCollegeDetailslist=universityDetailRepository.findAll();
+		if (universityDetailsList != null && !universityDetailsList.isEmpty()&&universityCollegeDetails!=null && !universityCollegeDetails.isEmpty()) {
+			UniversityDetails universityDetail = universityDetailsList.get(0);
+			UniversityCollegeDetail universityCollegeDetail=universityCollegeDetails.get(0);
+			Set <String>collegelist=new HashSet<>();
+			if (universityDetail.getDegrees().isEmpty())
+				throw new UniversityDetailException(UniversityDetailException.DEGREE_DETAILS_NOT_FOUND);
+			universityCollegeDetail.getDegrees().forEach(departments->{
+//				universityDetail.getDegrees().forEach(degree -> {
+				  for (TermDetail term : departments.getTermDetails()) {
+					if (term.isCurrent()) {
+						for (DepartmentDetails dept: departments.getDepartments()) {
+							if((term.getAcademicYear().equals(academicYear))&& (term.getTermNumber()==termNumber) && (departments.getDegreeId().equals(degreeId)) &&dept.getDeptId().equals(department)) {
+								collegelist.add(universityCollegeDetail.getTenantId());
+								
+							}
+					}
+				}
+				}
+//			});
+		  
+		});
+					
+			return  new ArrayList<>(collegelist);	
+		}
+			
+		
+		else {
+			throw new UniversityDetailException(UniversityDetailException.UNIVERSITY_NOT_FOUND);
+		}
+	}
+	
+	
+	@Override
+	public List<DegreeDetails> getAllDegrees() {
+		List<UniversityDetails> universityDetailsList = universityDetailRepository.findAll();
+		if (!universityDetailsList.isEmpty() && universityDetailsList.get(0).getDegrees() != null
+				&& !universityDetailsList.get(0).getDegrees().isEmpty()) {
+			return universityDetailsList.get(0).getDegrees();
+		} else {
+			throw new UniversityDetailException(UniversityDetailException.DEGREE_DETAILS_NOT_FOUND);
+		}
+	}
+
+	@Override
+	public List<SemesterDto> getAllSemesters(String academicYear,String degreeId, int termNumber) {
+		List<SemesterDto> semesterDetails = new ArrayList<>();
+		try {
+			List<UniversityDetails> universityDetails = universityDetailRepository.findAll();
+			if (universityDetails != null && !universityDetails.isEmpty()) {
+				UniversityDetails universityDetail = universityDetails.get(0);
+				DegreeDetails degreeDetail = universityDetail.getDegrees().stream()
+						.filter(university -> university.getDegreeId().equals(degreeId)).findAny()
+						.orElseThrow(() -> new UniversityDetailException(UniversityDetailException.DEGREE_NOT_FOUND));
+				for (TermDetail termDetail : degreeDetail.getTermDetails()) {
+					if (termDetail.getAcademicYear().equals(academicYear) && termDetail.getTermNumber() == termNumber) {
+						for (AcademicCalendar academicCalendar : termDetail.getAcademicCalendar()) {
+							SemesterDto semDto = new SemesterDto();
+							semDto.setSemId(academicCalendar.getSemId());
+							semDto.setSchemeYear(academicCalendar.getSchemeYear());
+							semDto.setSchemeName(academicCalendar.getSchemeName());
+							semesterDetails.add(semDto);
+						}
+
+					}
+				}
+				return semesterDetails;
+			} else {
+				throw new UniversityDetailException(UniversityDetailException.COLLEGE_NOT_FOUND);
+			}
+		} catch (Exception e) {
+			Log.error(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND, e.getMessage());
+			throw new UniversityDetailException(UniversityDetailException.ACADEMIC_CALENDAR_NOT_FOUND);
+		}
+
+	}
+}

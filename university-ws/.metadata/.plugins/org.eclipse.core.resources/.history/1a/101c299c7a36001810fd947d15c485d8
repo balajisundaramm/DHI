@@ -1,0 +1,60 @@
+package com.spaneos.dhi.examination.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import com.spaneos.dhi.examination.domain.FacultyNomination;
+
+@Repository
+public interface FacultyNominationRepository extends MongoRepository<FacultyNomination, String> {
+
+	List<FacultyNomination> findByDegreeIdAndSemesterIdAndSyllabusScheme(String degreeId, String semesterId,
+			String syllabusScheme);
+
+	FacultyNomination findByDegreeIdAndSemesterIdAndSyllabusSchemeAndCourseCode(String degreeId, String semester,
+			String syllabusScheme, String courseCode);
+
+	List<FacultyNomination> findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYear(String degreeId,
+			String semester, String syllabusScheme, String academicYear);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param syllabusScheme
+	 * @param academicYear
+	 * @param termnumber
+	 * @return
+	 */
+	List<FacultyNomination> findByDegreeIdAndSyllabusSchemeAndAcademicYearAndTermNumber(String degreeId,
+			String syllabusScheme, String academicYear, int termnumber);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param academicYear
+	 * @param termNumber
+	 * @param semester
+	 * @return
+	 */
+	List<FacultyNomination> findByDegreeIdAndSyllabusSchemeAndAcademicYearAndTermNumberAndSemesterIdAndFacultyNominationStatus(String degreeId,
+			String scheme, String academicYear, int termNumber, String semester, String status);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param academicYear
+	 * @param termNumber
+	 * @param semester
+	 * @return
+	 */
+	FacultyNomination findByDegreeIdAndSyllabusSchemeAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(
+			String degreeId, String scheme, String academicYear, int termNumber, String semester, String courseCode);
+
+}

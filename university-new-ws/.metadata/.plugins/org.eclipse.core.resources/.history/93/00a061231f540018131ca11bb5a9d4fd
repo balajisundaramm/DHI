@@ -1,0 +1,108 @@
+package com.spaneos.dhi.examination.domain;
+
+import java.util.List;
+import java.util.Map;
+
+public class ScriptDetail {
+
+	private String usn;
+	private String answerScriptNumber;
+	private String answerScriptPath;
+	private int maxMarks;
+	private int marksObtained;
+	private int numberOfQuestionsToAttempt;
+	private int totalNoOfQuestions;
+	private Map<String, Integer> partwiseQuestions;
+	private QuestionPaperType questionPaperType;
+	private TabulationStatus tabulationStatus;
+	private List<TabulateScore> scores;
+
+	public String getUsn() {
+		return usn;
+	}
+
+	public void setUsn(String usn) {
+		this.usn = usn;
+	}
+
+	public String getAnswerScriptNumber() {
+		return answerScriptNumber;
+	}
+
+	public void setAnswerScriptNumber(String answerScriptNumber) {
+		this.answerScriptNumber = answerScriptNumber;
+	}
+
+	public String getAnswerScriptPath() {
+		return answerScriptPath;
+	}
+
+	public void setAnswerScriptPath(String answerScriptPath) {
+		this.answerScriptPath = answerScriptPath;
+	}
+
+	public int getMaxMarks() {
+		return maxMarks;
+	}
+
+	public void setMaxMarks(int maxMarks) {
+		this.maxMarks = maxMarks;
+	}
+
+	public int getMarksObtained() {
+		return marksObtained;
+	}
+
+	public void setMarksObtained(int marksObtained) {
+		this.marksObtained = marksObtained;
+	}
+
+	public int getTotalNoOfQuestions() {
+		return totalNoOfQuestions;
+	}
+
+	public void setTotalNoOfQuestions(int totalNoOfQuestions) {
+		this.totalNoOfQuestions = totalNoOfQuestions;
+	}
+
+	public QuestionPaperType getQuestionPaperType() {
+		return questionPaperType;
+	}
+
+	public void setQuestionPaperType(QuestionPaperType questionPaperType) {
+		this.questionPaperType = questionPaperType;
+	}
+
+	public List<TabulateScore> getScores() {
+		return scores;
+	}
+
+	public void setScores(List<TabulateScore> scores) {
+		this.scores = scores;
+	}
+
+	public TabulationStatus getTabulationStatus() {
+		return tabulationStatus;
+	}
+
+	public void setTabulationStatus(TabulationStatus tabulationStatus) {
+		this.tabulationStatus = tabulationStatus;
+	}
+
+	public int getNumberOfQuestionsToAttempt() {
+		return numberOfQuestionsToAttempt;
+	}
+
+	public void setNumberOfQuestionsToAttempt(int numberOfQuestionsToAttempt) {
+		this.numberOfQuestionsToAttempt = numberOfQuestionsToAttempt;
+	}
+
+	public Map<String, Integer> getPartwiseQuestions() {
+		return partwiseQuestions;
+	}
+
+	public void setPartwiseQuestions(Map<String, Integer> partwiseQuestions) {
+		this.partwiseQuestions = partwiseQuestions;
+	}
+
+}

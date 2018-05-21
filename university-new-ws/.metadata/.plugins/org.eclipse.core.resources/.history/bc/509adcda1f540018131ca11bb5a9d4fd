@@ -1,0 +1,227 @@
+package com.spaneos.dhi.examination.dto;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.data.annotation.Id;
+
+import com.spaneos.dhi.coursemanagement.domain.CourseType;
+import com.spaneos.dhi.examination.domain.QuestionPaperType;
+import com.spaneos.dhi.examination.domain.TabulateScore;
+import com.spaneos.dhi.examination.domain.TabulationStatus;
+
+public class UEScoreTabulateDTO {
+
+	@Id
+	private String id;
+	private String academicYear;
+	private String evaluationId;
+	private String academicPeriod;
+	private String degree;
+	private String deptId;
+	private String deptName;
+	private String semId;
+	private String courseName;
+	private String courseCode;
+	private CourseType courseType;
+	private String courseShortName;
+	private String usn;
+	private String answerScriptNumber;
+	private String answerScriptPath;
+	private int marksObtained;
+	private int maxMarks;
+	private int numberOfQuestionsToAttempt;
+	private int numberOfQuestions;
+	private Map<String, Integer> partwiseQuestions;
+	private QuestionPaperType questionPaperType;
+	private TabulationStatus tabulationStatus;
+	private List<TabulateScoreDTO> scores;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getAcademicYear() {
+		return academicYear;
+	}
+
+	public void setAcademicYear(String academicYear) {
+		this.academicYear = academicYear;
+	}
+
+	public String getAcademicPeriod() {
+		return academicPeriod;
+	}
+
+	public void setAcademicPeriod(String academicPeriod) {
+		this.academicPeriod = academicPeriod;
+	}
+
+	public String getDegree() {
+		return degree;
+	}
+
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+
+	public String getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(String deptId) {
+		this.deptId = deptId;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	public String getSemId() {
+		return semId;
+	}
+
+	public void setSemId(String semId) {
+		this.semId = semId;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+	public CourseType getCourseType() {
+		return courseType;
+	}
+
+	public void setCourseType(CourseType courseType) {
+		this.courseType = courseType;
+	}
+
+	public String getCourseShortName() {
+		return courseShortName;
+	}
+
+	public void setCourseShortName(String courseShortName) {
+		this.courseShortName = courseShortName;
+	}
+
+	public String getUsn() {
+		return usn;
+	}
+
+	public void setUsn(String usn) {
+		this.usn = usn;
+	}
+
+	public String getAnswerScriptNumber() {
+		return answerScriptNumber;
+	}
+
+	public void setAnswerScriptNumber(String answerScriptNumber) {
+		this.answerScriptNumber = answerScriptNumber;
+	}
+
+	public String getAnswerScriptPath() {
+		return answerScriptPath;
+	}
+
+	public void setAnswerScriptPath(String answerScriptPath) {
+		this.answerScriptPath = answerScriptPath;
+	}
+
+	public int getMaxMarks() {
+		return maxMarks;
+	}
+
+	public void setMaxMarks(int maxMarks) {
+		this.maxMarks = maxMarks;
+	}
+
+	public int getMarksObtained() {
+		return marksObtained;
+	}
+
+	public void setMarksObtained(int marksObtained) {
+		this.marksObtained = marksObtained;
+	}
+
+	public int getNumberOfQuestionsToAttempt() {
+		return numberOfQuestionsToAttempt;
+	}
+
+	public void setNumberOfQuestionsToAttempt(int numberOfQuestionsToAttempt) {
+		this.numberOfQuestionsToAttempt = numberOfQuestionsToAttempt;
+	}
+
+	
+
+	public int getNumberOfQuestions() {
+		return numberOfQuestions;
+	}
+
+	public void setNumberOfQuestions(int numberOfQuestions) {
+		this.numberOfQuestions = numberOfQuestions;
+	}
+
+	public QuestionPaperType getQuestionPaperType() {
+		return questionPaperType;
+	}
+
+	public void setQuestionPaperType(QuestionPaperType questionPaperType) {
+		this.questionPaperType = questionPaperType;
+	}
+
+	public TabulationStatus getTabulationStatus() {
+		return tabulationStatus;
+	}
+
+	public void setTabulationStatus(TabulationStatus tabulationStatus) {
+		this.tabulationStatus = tabulationStatus;
+	}
+
+	
+	public List<TabulateScoreDTO> getScores() {
+		return scores;
+	}
+
+	public void setScores(List<TabulateScoreDTO> scores) {
+		this.scores = scores;
+	}
+
+	public Map<String, Integer> getPartwiseQuestions() {
+		return partwiseQuestions;
+	}
+
+	public void setPartwiseQuestions(Map<String, Integer> partwiseQuestions) {
+		this.partwiseQuestions = partwiseQuestions;
+	}
+
+	public String getEvaluationId() {
+		return evaluationId;
+	}
+
+	public void setEvaluationId(String evaluationId) {
+		this.evaluationId = evaluationId;
+	}
+
+}

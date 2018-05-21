@@ -1,0 +1,7 @@
+
+lsquid:S1161":Add the "@Override" annotation above this method signature(ü¬ö’ùÿÿÿÿHßRMAJORZ
+CODE_SMELL
+_squid:S1948"/Make "feeComponents" transient or serializable.(ïáàªHÞRCRITICALZ
+CODE_SMELL
+…squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(÷ÔßÔHÝRMINORZBUG
+Šsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(Ë˜ÄïÿÿÿÿÿHÜRMINORZBUG

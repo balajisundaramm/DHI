@@ -1,0 +1,6 @@
+
+lsquid:S1161{":Add the "@Override" annotation above this method signature(ü¬ö’ùÿÿÿÿH€RMAJORZ
+CODE_SMELL
+Œsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(÷ÔßÔ8¿®ËÙ¦,HRMINORZBUG
+^squid:S1948")Make "faculty" transient or serializable.(®¥öëùÿÿÿÿHÿRCRITICALZ
+CODE_SMELL

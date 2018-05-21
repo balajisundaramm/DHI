@@ -1,0 +1,36 @@
+
+asquid:S1148”"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼ûØ°,Hê‹RMINORZVULNERABILITY
+…squid:S1192‹"LUse already-defined constant 'DEPTID' instead of duplicating its value here.(±ÒçÃ8¼ûØ°,Hë‹RCRITICALZ
+CODE_SMELL
+ squid:S1192u"cDefine a constant instead of duplicating this literal "faculty.universityAllocationStatus" 3 times.(ĞåÄäùÿÿÿÿ8¼ûØ°,Hì‹RCRITICALZ
+CODE_SMELL
+ƒsquid:S1192?"KDefine a constant instead of duplicating this literal "termNumber" 4 times.(åíŠ×8¼ûØ°,Hí‹RCRITICALZ
+CODE_SMELL
+Šsquid:S1192‹"QUse already-defined constant 'COURSE_NAME' instead of duplicating its value here.(±ÒçÃ8¼ûØ°,Hî‹RCRITICALZ
+CODE_SMELL
+Šsquid:S1192t"MDefine a constant instead of duplicating this literal "faculty.name" 3 times.(˜ó´¶úÿÿÿÿ8¼ûØ°,Hï‹RCRITICALZ
+CODE_SMELL
+‚squid:S1192s"JDefine a constant instead of duplicating this literal "facultyId" 4 times.(¹óÿ 8¼ûØ°,Hğ‹RCRITICALZ
+CODE_SMELL
+Šsquid:S1192s"RDefine a constant instead of duplicating this literal "faculty.facultyId" 3 times.(¹óÿ 8¼ûØ°,Hñ‹RCRITICALZ
+CODE_SMELL
+‡squid:S1192€"NUse already-defined constant 'DEGREEID' instead of duplicating its value here.(Ïå‘à8¼ûØ°,Hò‹RCRITICALZ
+CODE_SMELL
+Œsquid:S1192t"ODefine a constant instead of duplicating this literal "faculty.deptId" 3 times.(˜ó´¶úÿÿÿÿ8¼ûØ°,Hó‹RCRITICALZ
+CODE_SMELL
+…squid:S1192?"MDefine a constant instead of duplicating this literal "academicYear" 4 times.(åíŠ×8¼ûØ°,Hô‹RCRITICALZ
+CODE_SMELL
+˜squid:S1192q"`Define a constant instead of duplicating this literal "faculty.collegeAllocationStatus" 3 times.(Ìœ‡¬8¼ûØ°,Hõ‹RCRITICALZ
+CODE_SMELL
+‘squid:S1192t"TDefine a constant instead of duplicating this literal "faculty.designation" 3 times.(˜ó´¶úÿÿÿÿ8¼ûØ°,Hö‹RCRITICALZ
+CODE_SMELL
+‰squid:S1192t"LDefine a constant instead of duplicating this literal "designation" 4 times.(˜ó´¶úÿÿÿÿ8¼ûØ°,H÷‹RCRITICALZ
+CODE_SMELL
+…squid:S1192r"HDefine a constant instead of duplicating this literal "faculty" 3 times.(ÁÀíÄüÿÿÿÿ8¼ûØ°,Hø‹RCRITICALZ
+CODE_SMELL
+Šsquid:S1192‹"QUse already-defined constant 'COURSE_CODE' instead of duplicating its value here.(±ÒçÃ8¼ûØ°,Hù‹RCRITICALZ
+CODE_SMELL
+ˆsquid:S1192?"PUse already-defined constant 'TERMNUMBER' instead of duplicating its value here.(åíŠ×8¼ûØ°,Hú‹RCRITICALZ
+CODE_SMELL
+squid:S1192Œ"UUse already-defined constant 'SYLLABUS_SCHEME' instead of duplicating its value here.(Ó—Ñ8¼ûØ°,Hû‹RCRITICALZ
+CODE_SMELL

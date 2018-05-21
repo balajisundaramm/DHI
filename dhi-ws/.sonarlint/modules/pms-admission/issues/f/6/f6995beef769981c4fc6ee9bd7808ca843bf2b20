@@ -1,0 +1,19 @@
+
+Xsquid:S1948"'Make "years" transient or serializable.(÷È°·H²ÌRCRITICALZ
+CODE_SMELL
+csquid:S1948"-Make "departments" transient or serializable.(ñ©²ëşÿÿÿÿH³ÌRCRITICALZ
+CODE_SMELL
+nsquid:S1161–":Add the "@Override" annotation above this method signature(ü¬ö’ùÿÿÿÿH´ÌRMAJORZ
+CODE_SMELL
+Œsquid:UselessImportCheck"LRemove this unused import 'org.apache.commons.io.filefilter.TrueFileFilter'.(ÇˆšùÿÿÿÿHµÌRMINORZ
+CODE_SMELL
+‹squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(ÊëíÑûÿÿÿÿH¶ÌRMINORZBUG
+csquid:S1948"-Make "termDetails" transient or serializable.(íÿÆ³ÿÿÿÿÿH·ÌRCRITICALZ
+CODE_SMELL
+]squid:S1948",Make "university" transient or serializable.(ßñ˜æH¸ÌRCRITICALZ
+CODE_SMELL
+†squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(º½­‡H¹ÌRMINORZBUG
+bsquid:S1948"1Make "modeOfAdmission" transient or serializable.(¶¿˜ƒHºÌRCRITICALZ
+CODE_SMELL
+†squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(½»ºĞH»ÌRMINORZBUG
+‹squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(¥¤¾ÁùÿÿÿÿH¼ÌRMINORZBUG

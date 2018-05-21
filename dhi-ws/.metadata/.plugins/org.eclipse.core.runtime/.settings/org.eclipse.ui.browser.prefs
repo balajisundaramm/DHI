@@ -1,0 +1,3 @@
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\n<web-browsers current\="0">\n<system/>\n<external location\="/usr/bin/firefox" name\="Firefox"/>\n<external location\="/usr/bin/google-chrome" name\="Chrome"/>\n</web-browsers>
+eclipse.preferences.version=1
+internalWebBrowserHistory=https\://bitbucket.org/dhispaneos/dhi-server/pull-requests/new?source\=development&t\=1|*|file\:/home/spaneos/Balaji/DHI/dhi-ws/.metadata/.plugins/org.springsource.ide.eclipse.commons.gettingstarted/dashboard/1519382730619/index.html|*|file\:/opt/sts-bundle/sts-3.9.1.RELEASE/plugins/org.springsource.ide.eclipse.commons.gettingstarted_3.9.1.201710100503-RELEASE/resources/welcome/index.html|*|

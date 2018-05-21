@@ -1,0 +1,98 @@
+package com.spaneos.dhi.examination.endpoint;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response.Status;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.spaneos.dhi.consts.URIConsts.CollegeExamCoordinatorUriConsts;
+import com.spaneos.dhi.examination.builder.SuccessMessage;
+import com.spaneos.dhi.examination.builder.SuccessMessageBuilder;
+import com.spaneos.dhi.examination.domain.CollegeFacultyNominationDetail;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.service.FacultyNominationService;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
+
+/**
+ * 
+ * @author Tejasvi K
+ *
+ */
+@Component
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@Path(CollegeExamCoordinatorUriConsts.EXAM_COORDINATOR)
+public class FacultyNominationEndpoint {
+
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+
+	/**
+	 * <tt>getFacultyByCopurseCode</tt> get faculty list based on course code
+	 * 
+	 * @author Tejasvi K
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_FACULTY_LIST_BASED_ON_COURSE_CODE)
+	@ApiOperation(value = "This method is get the faculty list based on course code", notes = "This method is get the faculty list based on course code")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "get the faculty List of successfully"),
+			@ApiResponse(code = 400, message = "NO Faculty Found"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<FacultyDetail> getFacultyByCopurseCode(@QueryParam("coursecode") String courseCode) {
+		return facultyNominationService.getFacultyByCourseCode(courseCode);
+	}
+
+	/**
+	 * <tt>saveFacultyNomination</tt> method for save nominated faculty list for
+	 * Question Setting
+	 * 
+	 * @author Tejasvi K
+	 * @param facultyNominationDto
+	 * @return
+	 */
+	@POST
+	@Path(CollegeExamCoordinatorUriConsts.SAVE_FACULTY_NOMINATION)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Save the MIninated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Save is not done"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public SuccessMessage saveFacultyNomination(FacultyNominationDto facultyNominationDto) {
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.saveFacultyNomination(facultyNominationDto)).build();
+	}
+
+	/**
+	 * <tt>getFacultyNominationData</tt> get faculty nomination data
+	 * 
+	 * @author Tejasvi K
+	 * @param collegeName
+	 * @param tenantId
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.FACULTY_NOMINATION_DETAILS)
+	@ApiOperation(value = "Fetch College details based on tenant name")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "College details has been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive the College details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<CollegeFacultyNominationDetail> getFacultyNominationData(@QueryParam("collegename") String collegeName,
+			@QueryParam("tenantid") String tenantId) {
+		SuccessMessageBuilder.statusCode(Status.ACCEPTED).message("Success").build();
+		return facultyNominationService.getFacultyNominationData(collegeName, tenantId);
+	}
+
+}

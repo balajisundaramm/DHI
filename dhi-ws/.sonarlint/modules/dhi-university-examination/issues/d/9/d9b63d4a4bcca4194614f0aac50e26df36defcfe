@@ -1,0 +1,9 @@
+
+tsquid:S1118n":Add a private constructor to hide the implicit public one.(¸¥Öùıÿÿÿÿ8ï…ø¢,Hˆ±RMAJORZ
+CODE_SMELL
+šsquid:S1192š"aUse already-defined constant 'GET_ALL_FACULTIES_BY_COURSE' instead of duplicating its value here.(¬„Ÿğ8ãÿ±°,H‰±RCRITICALZ
+CODE_SMELL
+hsquid:S11184":Add a private constructor to hide the implicit public one.(«–äÊHŠ±RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(‹¦½à8ãÿ±°,H‹±RMAJORZ
+CODE_SMELL

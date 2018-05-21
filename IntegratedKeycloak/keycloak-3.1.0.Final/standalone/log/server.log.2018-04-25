@@ -1,0 +1,839 @@
+2018-04-25 09:43:21,793 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2018-04-25 09:43:22,115 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-25 09:43:22,217 INFO  [org.jboss.as] (MSC service thread 1-5) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2018-04-25 09:43:22,219 DEBUG [org.jboss.as.config] (MSC service thread 1-5) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final
+	jboss.host.name = ssy0577
+	jboss.modules.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = ssy0577
+	jboss.qualified.host.name = ssy0577
+	jboss.server.base.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = ssy0577
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 1
+	line.separator = 
+
+	logging.configuration = file:/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-121-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/jboss-modules.jar -mp /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final -Djboss.server.base.dir=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=1
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2018-04-25 09:43:22,220 DEBUG [org.jboss.as.config] (MSC service thread 1-5) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2018-04-25 09:43:23,864 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2018-04-25 09:43:23,886 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.3.4.Final
+2018-04-25 09:43:23,907 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.3.4.Final
+2018-04-25 09:43:23,970 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-04-25 09:43:23,977 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2018-04-25 09:43:24,023 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2018-04-25 09:43:24,026 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2018-04-25 09:43:24,027 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2018-04-25 09:43:24,029 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-04-25 09:43:24,046 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2018-04-25 09:43:24,063 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2018-04-25 09:43:24,111 INFO  [org.jboss.remoting] (MSC service thread 1-4) JBoss Remoting version 4.0.18.Final
+2018-04-25 09:43:24,113 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2018-04-25 09:43:24,179 INFO  [org.jboss.as.security] (MSC service thread 1-3) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2018-04-25 09:43:24,267 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2018-04-25 09:43:24,268 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2018-04-25 09:43:24,309 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.3.15.Final starting
+2018-04-25 09:43:24,309 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2018-04-25 09:43:24,510 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2018-04-25 09:43:24,525 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2018-04-25 09:43:24,531 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+2018-04-25 09:43:24,586 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2018-04-25 09:43:24,586 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2018-04-25 09:43:24,752 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8081
+2018-04-25 09:43:25,321 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2018-04-25 09:43:25,334 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2018-04-25 09:43:25,909 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) WFLYDS0013: Started FileSystemDeploymentService for directory /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/deployments
+2018-04-25 09:43:25,949 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2018-04-25 09:43:26,273 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-3) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 09:43:26,272 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-8) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 09:43:26,272 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-5) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 09:43:26,272 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 09:43:26,825 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started realms cache from keycloak container
+2018-04-25 09:43:26,825 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 49) WFLYCLINF0002: Started work cache from keycloak container
+2018-04-25 09:43:26,850 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started users cache from keycloak container
+2018-04-25 09:43:26,853 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started authorization cache from keycloak container
+2018-04-25 09:43:26,854 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started keys cache from keycloak container
+2018-04-25 09:43:26,855 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2018-04-25 09:43:26,855 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started sessions cache from keycloak container
+2018-04-25 09:43:26,857 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2018-04-25 09:43:27,092 ERROR [io.undertow] (MSC service thread 1-5) UT005024: Could not register resource change listener for caching resource manager, automatic invalidation of cached resource will not work: java.lang.RuntimeException: java.io.IOException: User limit of inotify watches reached
+	at org.xnio.nio.WatchServiceFileSystemWatcher.watchPath(WatchServiceFileSystemWatcher.java:183)
+	at io.undertow.server.handlers.resource.PathResourceManager.registerResourceChangeListener(PathResourceManager.java:180)
+	at org.wildfly.extension.undertow.deployment.ServletResourceManager.registerResourceChangeListener(ServletResourceManager.java:82)
+	at io.undertow.server.handlers.resource.CachingResourceManager.<init>(CachingResourceManager.java:64)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService.createServletConfig(UndertowDeploymentInfoService.java:579)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService.start(UndertowDeploymentInfoService.java:281)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: User limit of inotify watches reached
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:364)
+	... 1 more
+
+2018-04-25 09:43:28,277 INFO  [org.keycloak.services] (ServerService Thread Pool -- 53) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2018-04-25 09:43:30,256 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2018-04-25 09:43:30,271 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2018-04-25 09:43:33,183 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 53) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2018-04-25 09:43:33,276 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 53) HHH000412: Hibernate Core {5.0.7.Final}
+2018-04-25 09:43:33,278 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 53) HHH000206: hibernate.properties not found
+2018-04-25 09:43:33,281 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 53) HHH000021: Bytecode provider name : javassist
+2018-04-25 09:43:33,326 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 53) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-04-25 09:43:33,544 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 53) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-04-25 09:43:33,553 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 53) HHH000431: Unable to determine H2 database version, certain features may not work
+2018-04-25 09:43:33,610 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 53) Envers integration enabled? : true
+2018-04-25 09:43:34,454 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 53) HV000001: Hibernate Validator 5.2.3.Final
+2018-04-25 09:43:35,626 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 53) HHH000397: Using ASTQueryTranslatorFactory
+2018-04-25 09:43:39,858 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,860 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,862 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,862 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,862 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,863 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,863 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,863 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,863 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,863 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 53) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 09:43:39,968 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) WFLYUT0021: Registered web context: /auth
+2018-04-25 09:43:40,019 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2018-04-25 09:43:40,178 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9991/management
+2018-04-25 09:43:40,178 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9991
+2018-04-25 09:43:40,179 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 18900ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2018-04-25 10:02:59,747 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-20) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 10:02:59,751 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) client dhi_local
+2018-04-25 10:02:59,751 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 10:03:00,080 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 10:03:00,083 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) supportsCredentialType is returning : true
+2018-04-25 10:03:00,083 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) isvalid entry : 6
+2018-04-25 10:03:00,084 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 10:03:00,084 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) user in getpassword is instance of useradapter
+2018-04-25 10:03:00,084 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 10:03:00,084 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) url :http://localhost:8083/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 10:03:00,271 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) isValid is returning : true
+2018-04-25 10:03:00,271 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) isValid get true
+2018-04-25 10:03:00,282 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) supportsCredentialType is returning : false
+2018-04-25 10:03:02,660 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-25) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 10:03:02,660 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 10:03:02,662 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) client dhi_local
+2018-04-25 10:03:02,662 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 10:03:02,809 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 10:03:21,634 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-27) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 10:03:21,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client dhi_local
+2018-04-25 10:03:21,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 10:03:21,687 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 10:03:21,687 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) supportsCredentialType is returning : true
+2018-04-25 10:03:21,687 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) isvalid entry : 6
+2018-04-25 10:03:21,687 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 10:03:21,687 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) user in getpassword is instance of useradapter
+2018-04-25 10:03:21,688 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 10:03:21,688 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) url :http://localhost:8083/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 10:03:21,902 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) isValid is returning : true
+2018-04-25 10:03:21,903 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) isValid get true
+2018-04-25 10:03:21,906 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) supportsCredentialType is returning : false
+2018-04-25 10:03:24,483 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-36) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 10:03:24,483 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 10:03:24,483 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) client dhi_local
+2018-04-25 10:03:24,483 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 10:03:24,525 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 12:54:27,012 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-35) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 12:54:27,187 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) client account
+2018-04-25 12:54:27,188 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) client admin-cli
+2018-04-25 12:54:27,188 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) client broker
+2018-04-25 12:54:27,188 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) client dhi_local
+2018-04-25 12:54:27,188 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 12:54:27,296 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) error while fetching user RESTEASY004655: Unable to invoke request
+2018-04-25 12:54:27,299 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 12:54:27,300 WARN  [org.keycloak.events] (default task-35) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=952bd4cc-a779-4516-886a-336a6fa37ff1, username=examcoordinator@spaneos.com
+2018-04-25 12:54:31,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-42) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 12:54:31,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) client realm-management
+2018-04-25 12:54:31,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) client security-admin-console
+2018-04-25 12:54:31,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) client dhi_local
+2018-04-25 12:54:31,914 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 12:54:31,928 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) error while fetching user RESTEASY004655: Unable to invoke request
+2018-04-25 12:54:31,930 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-42) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 12:54:31,930 WARN  [org.keycloak.events] (default task-42) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=952bd4cc-a779-4516-886a-336a6fa37ff1, username=examcoordinator@spaneos.com
+2018-04-25 12:55:01,912 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-43) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 12:55:01,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client realm-management
+2018-04-25 12:55:01,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client security-admin-console
+2018-04-25 12:55:01,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client dhi_local
+2018-04-25 12:55:01,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 12:55:02,676 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) supportsCredentialType is returning : true
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) isvalid entry : 6
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) user in getpassword is instance of useradapter
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 12:55:02,677 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) url :http://localhost:8090/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 12:55:02,886 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) isValid is returning : true
+2018-04-25 12:55:02,886 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) isValid get true
+2018-04-25 12:55:02,889 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) supportsCredentialType is returning : false
+2018-04-25 12:55:08,154 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-49) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 12:55:08,154 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 12:55:08,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client realm-management
+2018-04-25 12:55:08,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client security-admin-console
+2018-04-25 12:55:08,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client dhi_local
+2018-04-25 12:55:08,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 12:55:08,373 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:15:57,437 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-57) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:15:57,440 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:15:57,441 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) client realm-management
+2018-04-25 14:15:57,441 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) client security-admin-console
+2018-04-25 14:15:57,441 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) client dhi_local
+2018-04-25 14:15:57,441 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:15:57,636 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-57) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:16:01,865 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-5) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:16:01,865 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:16:01,865 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) client realm-management
+2018-04-25 14:16:01,865 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) client security-admin-console
+2018-04-25 14:16:01,866 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) client dhi_local
+2018-04-25 14:16:01,866 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:16:01,979 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-5) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:17:14,070 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-1) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:17:14,071 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:17:14,071 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) client realm-management
+2018-04-25 14:17:14,071 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) client security-admin-console
+2018-04-25 14:17:14,071 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) client dhi_local
+2018-04-25 14:17:14,071 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:17:14,257 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-1) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:17:19,409 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-7) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:17:19,410 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:17:19,410 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client realm-management
+2018-04-25 14:17:19,410 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client security-admin-console
+2018-04-25 14:17:19,410 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client dhi_local
+2018-04-25 14:17:19,410 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:17:19,501 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:18:49,349 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-13) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:18:49,351 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:18:49,351 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) client realm-management
+2018-04-25 14:18:49,351 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) client security-admin-console
+2018-04-25 14:18:49,352 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) client dhi_local
+2018-04-25 14:18:49,352 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:18:49,509 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-12) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) client realm-management
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) client security-admin-console
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) client dhi_local
+2018-04-25 14:18:56,654 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:18:56,719 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-12) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:19:15,998 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-23) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:19:15,999 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client realm-management
+2018-04-25 14:19:15,999 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client security-admin-console
+2018-04-25 14:19:16,000 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client dhi_local
+2018-04-25 14:19:16,000 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:19:16,128 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:19:16,128 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) supportsCredentialType is returning : true
+2018-04-25 14:19:16,128 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) isvalid entry : 6
+2018-04-25 14:19:16,129 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 14:19:16,129 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) user in getpassword is instance of useradapter
+2018-04-25 14:19:16,129 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:19:16,129 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) url :http://localhost:8090/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 14:19:16,358 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) isValid is returning : true
+2018-04-25 14:19:16,358 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) isValid get true
+2018-04-25 14:19:16,366 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) supportsCredentialType is returning : false
+2018-04-25 14:19:21,489 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-26) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:19:21,489 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:19:21,489 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client realm-management
+2018-04-25 14:19:21,490 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client security-admin-console
+2018-04-25 14:19:21,490 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client dhi_local
+2018-04-25 14:19:21,490 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:19:21,648 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:26:08,379 WARN  [org.keycloak.events] (default task-34) type=REFRESH_TOKEN_ERROR, realmId=master, clientId=security-admin-console, userId=null, ipAddress=127.0.0.1, error=invalid_token, grant_type=refresh_token, client_auth_method=client-secret
+2018-04-25 14:30:18,296 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-36) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:30:18,297 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) client realm-management
+2018-04-25 14:30:18,297 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) client security-admin-console
+2018-04-25 14:30:18,297 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) client dhi_local
+2018-04-25 14:30:18,297 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:30:18,352 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) supportsCredentialType is returning : true
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) isvalid entry : 6
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) user in getpassword is instance of useradapter
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:30:18,353 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) url :http://localhost:8090/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 14:30:18,556 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) isValid is returning : true
+2018-04-25 14:30:18,556 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) isValid get true
+2018-04-25 14:30:18,560 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-36) supportsCredentialType is returning : false
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-27) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client realm-management
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client security-admin-console
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client dhi_local
+2018-04-25 14:30:22,635 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:30:22,688 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:32:13,580 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-48) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:32:13,580 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:32:13,580 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client realm-management
+2018-04-25 14:32:13,580 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client security-admin-console
+2018-04-25 14:32:13,581 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client dhi_local
+2018-04-25 14:32:13,581 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:32:13,667 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-43) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client realm-management
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client security-admin-console
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) client dhi_local
+2018-04-25 14:32:13,981 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:32:14,043 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-43) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:32:21,631 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-50) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:32:21,631 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:32:21,631 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) client realm-management
+2018-04-25 14:32:21,631 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) client security-admin-console
+2018-04-25 14:32:21,631 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) client dhi_local
+2018-04-25 14:32:21,632 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:32:21,699 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-50) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:32:21,922 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-49) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:32:21,923 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:32:21,923 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client realm-management
+2018-04-25 14:32:21,923 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client security-admin-console
+2018-04-25 14:32:21,923 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client dhi_local
+2018-04-25 14:32:21,924 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:32:22,046 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:33:55,691 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-54) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:33:55,693 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:33:55,693 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client realm-management
+2018-04-25 14:33:55,693 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client security-admin-console
+2018-04-25 14:33:55,693 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client dhi_local
+2018-04-25 14:33:55,693 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:33:55,784 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-61) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) client realm-management
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) client security-admin-console
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) client dhi_local
+2018-04-25 14:34:02,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:34:02,737 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-61) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:36:32,612 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-56) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:36:32,613 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:36:32,613 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) client realm-management
+2018-04-25 14:36:32,613 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) client security-admin-console
+2018-04-25 14:36:32,613 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) client dhi_local
+2018-04-25 14:36:32,613 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:36:32,682 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-56) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 14:36:39,338 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-55) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 14:36:39,339 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 14:36:39,339 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) client realm-management
+2018-04-25 14:36:39,339 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) client security-admin-console
+2018-04-25 14:36:39,339 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) client dhi_local
+2018-04-25 14:36:39,339 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) url in email:http://localhost:8090/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 14:36:39,400 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:20:51,261 WARN  [org.keycloak.events] (default task-9) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/
+2018-04-25 16:21:02,196 WARN  [org.keycloak.events] (default task-12) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/?redirect_fragment=%2Fwrapper
+2018-04-25 16:22:43,643 WARN  [org.keycloak.events] (default task-16) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/
+2018-04-25 16:25:00,385 WARN  [org.keycloak.events] (default task-20) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/
+2018-04-25 16:26:09,064 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-31) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:26:09,065 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 16:26:09,065 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) client dhi_local
+2018-04-25 16:26:09,065 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:26:09,170 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) error while fetching user RESTEASY004655: Unable to invoke request
+2018-04-25 16:27:32,683 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-35) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:27:32,683 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) client dhi_local
+2018-04-25 16:27:32,683 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:27:32,706 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) error while fetching user RESTEASY004655: Unable to invoke request
+2018-04-25 16:27:32,717 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-35) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:27:32,718 WARN  [org.keycloak.events] (default task-35) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4200/?redirect_fragment=%2Funiversityexamination%2Ffacultyallocationlanding, code_id=358e414b-fd4f-4ae8-b9b9-778779d74496, username=examcoordinator@spaneos.com
+2018-04-25 16:28:02,140 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-33) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:28:02,140 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) client dhi_local
+2018-04-25 16:28:02,140 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:28:02,241 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:28:02,241 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) supportsCredentialType is returning : true
+2018-04-25 16:28:02,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) isvalid entry : 6
+2018-04-25 16:28:02,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 16:28:02,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) user in getpassword is instance of useradapter
+2018-04-25 16:28:02,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:28:02,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) url :http://localhost:8085/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 16:28:02,442 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) isValid is returning : true
+2018-04-25 16:28:02,442 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) isValid get true
+2018-04-25 16:28:02,445 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-33) supportsCredentialType is returning : false
+2018-04-25 16:28:05,398 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-20) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:28:05,399 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 16:28:05,399 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) client dhi_local
+2018-04-25 16:28:05,399 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:28:05,453 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-20) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:28:08,557 WARN  [org.keycloak.events] (default task-19) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/
+2018-04-25 16:28:19,620 WARN  [org.keycloak.events] (default task-36) type=LOGIN_ERROR, realmId=dhi_univ, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=invalid_redirect_uri, redirect_uri=http://localhost:4300/
+2018-04-25 16:28:59,146 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-27) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:28:59,146 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 16:28:59,146 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client realm-management
+2018-04-25 16:28:59,147 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client security-admin-console
+2018-04-25 16:28:59,147 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client dhi_local
+2018-04-25 16:28:59,147 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:28:59,374 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client admin-cli
+2018-04-25 16:28:59,374 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client account
+2018-04-25 16:28:59,374 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-27) client broker
+2018-04-25 16:33:27,493 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-38) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:33:27,493 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client realm-management
+2018-04-25 16:33:27,493 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client security-admin-console
+2018-04-25 16:33:27,493 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client dhi_local
+2018-04-25 16:33:27,493 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:33:27,686 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client admin-cli
+2018-04-25 16:33:27,686 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client account
+2018-04-25 16:33:27,686 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client broker
+2018-04-25 16:33:27,688 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:33:27,688 WARN  [org.keycloak.events] (default task-38) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=6274ab4c-ade4-4d7a-b6f5-c1c250c981bf, username=examcoordinator@spaneos.com
+2018-04-25 16:33:51,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-48) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:33:51,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client realm-management
+2018-04-25 16:33:51,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client security-admin-console
+2018-04-25 16:33:51,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client dhi_local
+2018-04-25 16:33:51,891 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:33:51,966 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client admin-cli
+2018-04-25 16:33:51,966 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client account
+2018-04-25 16:33:51,966 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) client broker
+2018-04-25 16:33:51,968 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-48) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:33:51,968 WARN  [org.keycloak.events] (default task-48) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=6274ab4c-ade4-4d7a-b6f5-c1c250c981bf, username=examcoordinator@spaneos.com
+2018-04-25 16:33:59,937 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-45) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:33:59,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client realm-management
+2018-04-25 16:33:59,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client security-admin-console
+2018-04-25 16:33:59,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client dhi_local
+2018-04-25 16:33:59,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:33:59,996 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client admin-cli
+2018-04-25 16:33:59,996 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client account
+2018-04-25 16:33:59,996 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) client broker
+2018-04-25 16:33:59,998 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-45) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:33:59,998 WARN  [org.keycloak.events] (default task-45) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=6274ab4c-ade4-4d7a-b6f5-c1c250c981bf, username=examcoordinator@spaneos.com
+2018-04-25 16:34:36,600 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-54) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:34:36,600 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client realm-management
+2018-04-25 16:34:36,600 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client security-admin-console
+2018-04-25 16:34:36,600 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client dhi_local
+2018-04-25 16:34:36,600 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:34:36,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client admin-cli
+2018-04-25 16:34:36,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client account
+2018-04-25 16:34:36,674 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client broker
+2018-04-25 16:34:36,676 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:34:36,676 WARN  [org.keycloak.events] (default task-54) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=6274ab4c-ade4-4d7a-b6f5-c1c250c981bf, username=examcoordinator@spaneos.com
+2018-04-25 16:37:39,718 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-10) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:37:39,719 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client realm-management
+2018-04-25 16:37:39,719 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client security-admin-console
+2018-04-25 16:37:39,719 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client dhi_local
+2018-04-25 16:37:39,720 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:37:39,799 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client admin-cli
+2018-04-25 16:37:39,799 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client account
+2018-04-25 16:37:39,799 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) client broker
+2018-04-25 16:37:39,802 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:37:39,803 WARN  [org.keycloak.events] (default task-10) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=6274ab4c-ade4-4d7a-b6f5-c1c250c981bf, username=examcoordinator@spaneos.com
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-64) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client realm-management
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client security-admin-console
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client dhi_local
+2018-04-25 16:37:57,726 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:37:57,820 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client admin-cli
+2018-04-25 16:37:57,820 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client account
+2018-04-25 16:37:57,820 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-64) client broker
+2018-04-25 16:38:03,298 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-23) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:38:03,298 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client realm-management
+2018-04-25 16:38:03,298 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client security-admin-console
+2018-04-25 16:38:03,298 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client dhi_local
+2018-04-25 16:38:03,298 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:38:03,362 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client admin-cli
+2018-04-25 16:38:03,363 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client account
+2018-04-25 16:38:03,363 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) client broker
+2018-04-25 16:38:03,366 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-23) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:38:03,366 WARN  [org.keycloak.events] (default task-23) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=a193c09a-8011-4295-a97f-f4516d103c6a, username=examcoordinator@spaneos.com
+2018-04-25 16:40:54,648 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2018-04-25 16:40:54,919 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2018-04-25 16:40:54,923 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 61) WFLYUT0022: Unregistered web context: /auth
+2018-04-25 16:40:54,968 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (ServerService Thread Pool -- 61) <<<<<< Closing factory
+2018-04-25 16:40:55,109 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0019: Host default-host stopping
+2018-04-25 16:40:55,124 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-04-25 16:40:55,130 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-04-25 16:40:55,185 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTP listener default suspending
+2018-04-25 16:40:55,188 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-04-25 16:40:55,191 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0004: Undertow 1.3.15.Final stopping
+2018-04-25 16:40:55,259 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2018-04-25 16:40:55,260 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2018-04-25 16:40:55,267 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0003: Stopped users cache from keycloak container
+2018-04-25 16:40:55,264 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0003: Stopped realms cache from keycloak container
+2018-04-25 16:40:55,270 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped keys cache from keycloak container
+2018-04-25 16:40:55,273 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2018-04-25 16:40:55,275 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2018-04-25 16:40:55,277 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0003: Stopped work cache from keycloak container
+2018-04-25 16:40:55,289 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 502ms
+2018-04-25 16:40:55,306 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-1) WFLYCLINF0003: Stopped realmRevisions cache from keycloak container
+2018-04-25 16:40:55,314 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-1) WFLYCLINF0003: Stopped userRevisions cache from keycloak container
+2018-04-25 16:40:55,348 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) stopped in 476ms
+2018-04-25 16:40:58,426 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2018-04-25 16:40:58,855 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2018-04-25 16:40:58,991 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2018-04-25 16:40:58,996 DEBUG [org.jboss.as.config] (MSC service thread 1-8) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_161-b12
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b12
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final
+	jboss.host.name = ssy0577
+	jboss.modules.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = ssy0577
+	jboss.qualified.host.name = ssy0577
+	jboss.server.base.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = ssy0577
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 1
+	line.separator = 
+
+	logging.configuration = file:/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-121-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/jboss-modules.jar -mp /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final -Djboss.server.base.dir=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=1
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2018-04-25 16:40:58,999 DEBUG [org.jboss.as.config] (MSC service thread 1-8) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2018-04-25 16:41:02,471 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2018-04-25 16:41:02,572 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.4.Final
+2018-04-25 16:41:02,632 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.4.Final
+2018-04-25 16:41:02,849 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.18.Final
+2018-04-25 16:41:02,917 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2018-04-25 16:41:02,983 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2018-04-25 16:41:03,056 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2018-04-25 16:41:03,177 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2018-04-25 16:41:03,189 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-04-25 16:41:03,221 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2018-04-25 16:41:03,269 INFO  [org.jboss.as.security] (MSC service thread 1-6) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2018-04-25 16:41:03,375 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2018-04-25 16:41:03,538 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2018-04-25 16:41:03,684 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+2018-04-25 16:41:03,679 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2018-04-25 16:41:03,689 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = h2
+2018-04-25 16:41:03,694 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 1.3.15.Final starting
+2018-04-25 16:41:03,694 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2018-04-25 16:41:04,136 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2018-04-25 16:41:04,160 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0012: Started server default-server.
+2018-04-25 16:41:04,162 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2018-04-25 16:41:04,491 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2018-04-25 16:41:04,491 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2018-04-25 16:41:04,641 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8081
+2018-04-25 16:41:05,246 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2018-04-25 16:41:05,254 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2018-04-25 16:41:05,848 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) WFLYDS0013: Started FileSystemDeploymentService for directory /home/spaneos/Balaji/DHI/IntegratedKeycloak/keycloak-3.1.0.Final/standalone/deployments
+2018-04-25 16:41:05,849 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2018-04-25 16:41:06,851 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 16:41:06,850 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-8) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 16:41:06,847 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-2) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2018-04-25 16:41:08,093 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started users cache from keycloak container
+2018-04-25 16:41:08,096 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started sessions cache from keycloak container
+2018-04-25 16:41:08,093 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2018-04-25 16:41:08,099 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started realms cache from keycloak container
+2018-04-25 16:41:08,100 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started keys cache from keycloak container
+2018-04-25 16:41:08,102 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 49) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2018-04-25 16:41:08,104 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started work cache from keycloak container
+2018-04-25 16:41:08,115 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started authorization cache from keycloak container
+2018-04-25 16:41:11,218 INFO  [org.keycloak.services] (ServerService Thread Pool -- 52) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2018-04-25 16:41:14,205 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2018-04-25 16:41:14,236 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2018-04-25 16:41:19,807 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 52) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2018-04-25 16:41:19,914 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 52) HHH000412: Hibernate Core {5.0.7.Final}
+2018-04-25 16:41:19,916 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 52) HHH000206: hibernate.properties not found
+2018-04-25 16:41:19,919 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 52) HHH000021: Bytecode provider name : javassist
+2018-04-25 16:41:19,982 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 52) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-04-25 16:41:20,320 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 52) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-04-25 16:41:20,342 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 52) HHH000431: Unable to determine H2 database version, certain features may not work
+2018-04-25 16:41:20,466 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 52) Envers integration enabled? : true
+2018-04-25 16:41:21,811 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 52) HV000001: Hibernate Validator 5.2.3.Final
+2018-04-25 16:41:24,817 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 52) HHH000397: Using ASTQueryTranslatorFactory
+2018-04-25 16:41:32,734 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,737 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,737 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,737 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,738 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,738 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,738 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,738 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,739 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,739 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 52) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2018-04-25 16:41:32,932 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 52) WFLYUT0021: Registered web context: /auth
+2018-04-25 16:41:33,060 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2018-04-25 16:41:33,642 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9991/management
+2018-04-25 16:41:33,644 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9991
+2018-04-25 16:41:33,644 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 35871ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2018-04-25 16:42:21,390 WARN  [org.keycloak.events] (default task-2) type=LOGIN_ERROR, realmId=dhi_local, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2018-04-25 16:42:21,403 WARN  [org.keycloak.events] (default task-1) type=LOGIN_ERROR, realmId=dhi_local, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2018-04-25 16:47:54,080 WARN  [org.keycloak.events] (default task-31) type=LOGIN_ERROR, realmId=dhi_local, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2018-04-25 16:48:24,243 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-46) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:48:24,468 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client account
+2018-04-25 16:48:24,468 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client admin-cli
+2018-04-25 16:48:24,468 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client broker
+2018-04-25 16:48:24,468 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client dhi_local
+2018-04-25 16:48:24,468 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:48:24,824 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client realm-management
+2018-04-25 16:48:24,825 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client security-admin-console
+2018-04-25 16:48:24,828 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:48:24,829 WARN  [org.keycloak.events] (default task-46) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=7ebc854a-0419-4c9f-a357-9901dbc4a2df, username=examcoordinator@spaneos.com
+2018-04-25 16:50:48,255 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-54) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:50:48,260 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client realm-management
+2018-04-25 16:50:48,263 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client security-admin-console
+2018-04-25 16:50:48,264 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client dhi_local
+2018-04-25 16:50:48,264 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:50:48,378 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client admin-cli
+2018-04-25 16:50:48,378 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client account
+2018-04-25 16:50:48,378 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) client broker
+2018-04-25 16:50:48,381 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-54) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:50:48,381 WARN  [org.keycloak.events] (default task-54) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=7ebc854a-0419-4c9f-a357-9901dbc4a2df, username=examcoordinator@spaneos.com
+2018-04-25 16:51:43,852 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-62) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:51:43,856 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client realm-management
+2018-04-25 16:51:43,856 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client security-admin-console
+2018-04-25 16:51:43,856 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client dhi_local
+2018-04-25 16:51:43,856 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) url in email:http://localhost:8083/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 16:51:43,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client admin-cli
+2018-04-25 16:51:43,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client account
+2018-04-25 16:51:43,938 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) client broker
+2018-04-25 16:51:43,941 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-62) username from userprovider implementation is : examcoordinator@spaneos.com
+2018-04-25 16:51:43,941 WARN  [org.keycloak.events] (default task-62) type=LOGIN_ERROR, realmId=dhi_local, clientId=dhi_local, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:4300/, code_id=7ebc854a-0419-4c9f-a357-9901dbc4a2df, username=examcoordinator@spaneos.com
+2018-04-25 16:51:56,016 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-6) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:51:56,017 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) client realm-management
+2018-04-25 16:51:56,017 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) client security-admin-console
+2018-04-25 16:51:56,017 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) client dhi_local
+2018-04-25 16:51:56,017 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 16:51:56,157 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:51:56,168 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) supportsCredentialType is returning : true
+2018-04-25 16:51:56,169 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) isvalid entry : 6
+2018-04-25 16:51:56,170 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 16:51:56,170 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) user in getpassword is instance of useradapter
+2018-04-25 16:51:56,170 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 16:51:56,170 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) url :http://localhost:8083/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 16:51:56,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) isValid is returning : true
+2018-04-25 16:51:56,404 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) isValid get true
+2018-04-25 16:51:56,413 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) supportsCredentialType is returning : false
+2018-04-25 16:52:01,249 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-7) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 16:52:01,252 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 16:52:01,252 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client realm-management
+2018-04-25 16:52:01,252 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client security-admin-console
+2018-04-25 16:52:01,253 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) client dhi_local
+2018-04-25 16:52:01,253 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 16:52:01,321 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-7) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:13:06,232 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-26) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:13:06,240 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:13:06,241 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client realm-management
+2018-04-25 17:13:06,241 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client security-admin-console
+2018-04-25 17:13:06,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) client dhi_local
+2018-04-25 17:13:06,242 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:13:06,453 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:13:13,403 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-28) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:13:13,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:13:13,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) client realm-management
+2018-04-25 17:13:13,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) client security-admin-console
+2018-04-25 17:13:13,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) client dhi_local
+2018-04-25 17:13:13,404 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:13:13,501 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-28) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-31) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) client realm-management
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) client security-admin-console
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) client dhi_local
+2018-04-25 17:15:39,978 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:15:40,125 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-31) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:15:44,334 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-32) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:15:44,335 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:15:44,335 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) client realm-management
+2018-04-25 17:15:44,335 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) client security-admin-console
+2018-04-25 17:15:44,335 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) client dhi_local
+2018-04-25 17:15:44,335 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:15:44,455 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-32) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:16:45,689 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-37) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:16:45,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:16:45,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) client realm-management
+2018-04-25 17:16:45,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) client security-admin-console
+2018-04-25 17:16:45,700 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) client dhi_local
+2018-04-25 17:16:45,701 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:16:45,858 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-37) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:16:51,057 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-38) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:16:51,057 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) External ID from getUserById method is : examcoordinator@gmail.com
+2018-04-25 17:16:51,058 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client realm-management
+2018-04-25 17:16:51,058 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client security-admin-console
+2018-04-25 17:16:51,058 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) client dhi_local
+2018-04-25 17:16:51,058 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) url in email:http://localhost:8083/api/login?email=examcoordinator@gmail.com&college=dhi_local
+2018-04-25 17:16:51,155 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-38) email and pwd from api-server is : examcoordinator@gmail.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:23:41,548 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-39) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:23:41,550 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 17:23:41,800 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) client account
+2018-04-25 17:23:41,800 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) client admin-cli
+2018-04-25 17:23:41,800 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) client broker
+2018-04-25 17:23:41,800 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) client dhi_local
+2018-04-25 17:23:41,801 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 17:23:41,852 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:23:43,874 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-46) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:23:43,879 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) client dhi_local
+2018-04-25 17:23:43,879 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 17:23:43,916 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:23:43,916 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) supportsCredentialType is returning : true
+2018-04-25 17:23:43,917 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) isvalid entry : 6
+2018-04-25 17:23:43,917 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) usermodel class name is : org.spaneos.rest.storage.user.UserAdapter
+2018-04-25 17:23:43,917 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) user in getpassword is instance of useradapter
+2018-04-25 17:23:43,917 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) password in getPassword is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 17:23:43,917 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) url :http://localhost:8085/api/login/validatepwd?pwd=$2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS&enteredpwd=dhi001&college=dhi_local
+2018-04-25 17:23:44,131 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) isValid is returning : true
+2018-04-25 17:23:44,131 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) isValid get true
+2018-04-25 17:23:44,134 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-46) supportsCredentialType is returning : false
+2018-04-25 17:23:46,627 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-49) Logging from RestExampleUserStorageProviderFactory create method
+2018-04-25 17:23:46,627 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) External ID from getUserById method is : examcoordinator@spaneos.com
+2018-04-25 17:23:46,627 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) client dhi_local
+2018-04-25 17:23:46,627 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) url in email:http://localhost:8085/api/login?email=examcoordinator@spaneos.com&college=dhi_local
+2018-04-25 17:23:46,705 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-49) email and pwd from api-server is : examcoordinator@spaneos.com  pwd is $2a$10$inEYssSNWfMj9lLn3JPdnu8QdXWROappGCnyjBCc1mNtOw973RidS
+2018-04-25 19:38:29,064 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2018-04-25 19:38:29,150 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2018-04-25 19:38:29,280 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0022: Unregistered web context: /auth
+2018-04-25 19:38:29,367 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (ServerService Thread Pool -- 59) <<<<<< Closing factory
+2018-04-25 19:38:29,403 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0019: Host default-host stopping
+2018-04-25 19:38:29,415 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-04-25 19:38:29,439 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-04-25 19:38:29,445 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTP listener default suspending
+2018-04-25 19:38:29,455 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2018-04-25 19:38:29,458 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped users cache from keycloak container
+2018-04-25 19:38:29,459 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-04-25 19:38:29,467 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2018-04-25 19:38:29,468 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2018-04-25 19:38:29,474 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2018-04-25 19:38:29,475 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0003: Stopped keys cache from keycloak container
+2018-04-25 19:38:29,475 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 1.3.15.Final stopping
+2018-04-25 19:38:29,475 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 252ms
+2018-04-25 19:38:29,489 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0003: Stopped work cache from keycloak container
+2018-04-25 19:38:29,552 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0003: Stopped realms cache from keycloak container
+2018-04-25 19:38:29,568 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-3) WFLYCLINF0003: Stopped realmRevisions cache from keycloak container
+2018-04-25 19:38:29,572 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-3) WFLYCLINF0003: Stopped userRevisions cache from keycloak container
+2018-04-25 19:38:29,599 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) stopped in 340ms

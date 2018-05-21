@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=/home/spaneos/Balaji/DHI/dhi_cms/.git\:/home/spaneos/Balaji/DHI/dhi-university-server/.git\:
+GitRepositoriesView.GitDirectories.relative=/home/spaneos/Balaji/DHI/dhi_cms/.git\:/home/spaneos/Balaji/DHI/dhi-university-server/.git\:
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

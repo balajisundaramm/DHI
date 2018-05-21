@@ -1,0 +1,11 @@
+
+‡squid:S11921"KDefine a constant instead of duplicating this literal "courseType" 3 times.(”ß†ÿÿÿÿÿ8ÁÃœ°,H€RCRITICALZ
+CODE_SMELL
+£squid:UselessImportCheck"bRemove this unused import 'com.spaneos.dhi.examination.domain.DigitalEvaluationFacultyNomination'.(˜ÀŸ©8ÉÆ’°,HËRMINORZ
+CODE_SMELL
+•squid:UselessImportCheck"ORemove this unused import 'com.spaneos.dhi.examination.dto.AcademicDetailsDto'.(Öõ¦„ıÿÿÿÿ8ÉÆ’°,HÌRMINORZ
+CODE_SMELL
+¢squid:UselessImportCheck"aRemove this unused import 'com.spaneos.dhi.examination.domain.UniversityFacultyAllocationStatus'.(Ü‘…Š8ÉÆ’°,HÍRMINORZ
+CODE_SMELL
+qsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÉÆ’°,HÎRMINORZ
+CODE_SMELL

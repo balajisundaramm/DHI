@@ -1,0 +1,260 @@
+
+rsquid:UnusedPrivateMethodŠ"5Remove this unused private "checkForFromDate" method.(é‰£ Hä®RMAJORZ
+CODE_SMELL
+—squid:UnusedPrivateMethodâ"URemove this unused private "createHeaderRowForModeOfPaymentWiseReportForItem" method.(‰šÒùÿÿÿÿHå®RMAJORZ
+CODE_SMELL
+‰squid:UnusedPrivateMethodÚ"LRemove this unused private "writeBookForModeOfPAymentReportForItems" method.(ûõÒ»Hæ®RMAJORZ
+CODE_SMELL
+Psquid:S1643ÿ"Use a StringBuilder instead.(ªĞëÀøÿÿÿÿHç®RMINORZ
+CODE_SMELL
+csquid:EmptyStatementUsageCheckò"Remove this empty statement.(Åñ­õşÿÿÿÿHè®RMINORZ
+CODE_SMELL
+Ssquid:S2629õ"$Invoke method(s) only conditionally.(îı‡ÍHé®RMAJORZ
+CODE_SMELL
+Zsquid:S3958û"2Refactor the code so this stream pipeline is used.(™ ôÄHê®RMAJORZBUG
+…squid:S1192ã"SDefine a constant instead of duplicating this literal "Transportation Fee" 3 times.(º…¬ØHë®RCRITICALZ
+CODE_SMELL
+„squid:S1192ã"RDefine a constant instead of duplicating this literal "Hostel Fee (Mess)" 3 times.(º…¬ØHì®RCRITICALZ
+CODE_SMELL
+ƒsquid:S1192ğ"QUse already-defined constant 'EXCEL_SHEET' instead of duplicating its value here.(î‡¤Hí®RCRITICALZ
+CODE_SMELL
+~squid:S1192â"LDefine a constant instead of duplicating this literal "College Fee" 3 times.(­ Ö™Hî®RCRITICALZ
+CODE_SMELL
+squid:S1192Ó"lDefine a constant instead of duplicating this literal "Error while generating fee Collection Excel" 4 times.(ùáŞ¸Hï®RCRITICALZ
+CODE_SMELL
+~squid:S1192â"LDefine a constant instead of duplicating this literal "Tuition Fee" 5 times.(­ Ö™Hğ®RCRITICALZ
+CODE_SMELL
+~squid:S1192Ó"GDefine a constant instead of duplicating this literal "degree" 3 times.(¿Ÿ©¬ıÿÿÿÿHñ®RCRITICALZ
+CODE_SMELL
+‚squid:S1192Ó"KDefine a constant instead of duplicating this literal "department" 3 times.(¿Ÿ©¬ıÿÿÿÿHò®RCRITICALZ
+CODE_SMELL
+}squid:S1192 "KDefine a constant instead of duplicating this literal "DEPARTMENT" 3 times.(îçµüHó®RCRITICALZ
+CODE_SMELL
+†squid:S1192À"ODefine a constant instead of duplicating this literal "Fee Collection" 3 times.(²ëÍ½ÿÿÿÿÿHô®RCRITICALZ
+CODE_SMELL
+squid:S1192Ó"JDefine a constant instead of duplicating this literal "payeeName" 3 times.(¿Ÿ©¬ıÿÿÿÿHõ®RCRITICALZ
+CODE_SMELL
+‚squid:S1192Ó"KDefine a constant instead of duplicating this literal "paidAmount" 3 times.(¿Ÿ©¬ıÿÿÿÿHö®RCRITICALZ
+CODE_SMELL
+‡squid:S1192â"UDefine a constant instead of duplicating this literal "HostelFee (Boarding)" 3 times.(­ Ö™H÷®RCRITICALZ
+CODE_SMELL
+Šsquid:S1192ê"YDefine a constant instead of duplicating this literal "Error while writing book" 4 times.(Ò¦&Hø®RCRITICALZ
+CODE_SMELL
+^squid:S1066«"/Merge this if statement with the enclosing one.(“’Hù®RMAJORZ
+CODE_SMELL
+]squid:S1066ä"/Merge this if statement with the enclosing one.(¾øñwHú®RMAJORZ
+CODE_SMELL
+csquid:S1066ğ"/Merge this if statement with the enclosing one.(Çû§¬üÿÿÿÿHû®RMAJORZ
+CODE_SMELL
+^squid:S1066Å"/Merge this if statement with the enclosing one.(ÂüÔ´Hü®RMAJORZ
+CODE_SMELL
+]squid:S1066à"/Merge this if statement with the enclosing one.(úÈİHı®RMAJORZ
+CODE_SMELL
+csquid:S1066ó"/Merge this if statement with the enclosing one.(­ŒğáøÿÿÿÿHş®RMAJORZ
+CODE_SMELL
+csquid:S1066‘"/Merge this if statement with the enclosing one.(­ŒğáøÿÿÿÿHÿ®RMAJORZ
+CODE_SMELL
+csquid:S1066£"/Merge this if statement with the enclosing one.(­ŒğáøÿÿÿÿH€¯RMAJORZ
+CODE_SMELL
+•squid:S4165§"hRemove this useless assignment; "amountDtos" already holds the assigned value along all execution paths.(ÑÅ£ÿøÿÿÿÿH¯RMAJORZBUG
+tsquid:S2095…"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H‚¯RBLOCKERZBUG
+tsquid:S2095¶
+"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷Hƒ¯RBLOCKERZBUG
+tsquid:S2095¬"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H„¯RBLOCKERZBUG
+tsquid:S2095»"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H…¯RBLOCKERZBUG
+tsquid:S2095¿"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H†¯RBLOCKERZBUG
+tsquid:S2095¨"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H‡¯RBLOCKERZBUG
+tsquid:S2095İ"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷Hˆ¯RBLOCKERZBUG
+tsquid:S2095Á"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(ŸŞÏ÷H‰¯RBLOCKERZBUG
+squid:CommentedOutCodeLineî"<This block of commented-out lines of code should be removed.(›ôÓüùÿÿÿÿHŠ¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineí"<This block of commented-out lines of code should be removed.(Û€Ä¿úÿÿÿÿH‹¯RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineğ"<This block of commented-out lines of code should be removed.(³êHŒ¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineĞ
+"<This block of commented-out lines of code should be removed.(óüğ H¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÓ"<This block of commented-out lines of code should be removed.(ãõÔ÷ùÿÿÿÿH¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(§¼H¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(¸¶ªˆşÿÿÿÿH¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(ô½ßÌH‘¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(ô½ßÌH’¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÃ"<This block of commented-out lines of code should be removed.(‹¢¾÷H“¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÌ"<This block of commented-out lines of code should be removed.(‘Üã«H”¯RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineÙ"<This block of commented-out lines of code should be removed.(ÇCH•¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÜ"<This block of commented-out lines of code should be removed.(„§ñ£H–¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineŞ"<This block of commented-out lines of code should be removed.(ÑşÊªıÿÿÿÿH—¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineœ"<This block of commented-out lines of code should be removed.(×…ÔõÿÿÿÿÿH˜¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine¤"<This block of commented-out lines of code should be removed.(ÅëÜÜıÿÿÿÿH™¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(¢¡ ¸úÿÿÿÿHš¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(‡Ü•åH›¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÌ"<This block of commented-out lines of code should be removed.(Œæ™ÊùÿÿÿÿHœ¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineæ"<This block of commented-out lines of code should be removed.(„§ñ£H¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÇÅóèøÿÿÿÿH¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineŸ"<This block of commented-out lines of code should be removed.(¼£Ì’HŸ¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(‘Ú­‘ıÿÿÿÿH ¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine«"<This block of commented-out lines of code should be removed.(ìµÁÊüÿÿÿÿH¡¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine¸"<This block of commented-out lines of code should be removed.(µøøŞH¢¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLineÌ"<This block of commented-out lines of code should be removed.(£ÄêH£¯RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineÑ"<This block of commented-out lines of code should be removed.(è™fH¤¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine‘"<This block of commented-out lines of code should be removed.(²Ê§îH¥¯RMAJORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine•"<This block of commented-out lines of code should be removed.(ŠÉ÷¦H¦¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(û²ÃùÿÿÿÿH§¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineö"<This block of commented-out lines of code should be removed.(‰î²òùÿÿÿÿH¨¯RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineŒ "<This block of commented-out lines of code should be removed.(¡‡æåşÿÿÿÿH©¯RMAJORZ
+CODE_SMELL
+l
+squid:S106¸"9Replace this use of System.out or System.err by a logger.(ç”¾ÓûÿÿÿÿHª¯RMAJORZ
+CODE_SMELL
+g
+squid:S106İ"9Replace this use of System.out or System.err by a logger.(ú´á”H«¯RMAJORZ
+CODE_SMELL
+l
+squid:S106Ş"9Replace this use of System.out or System.err by a logger.(äêŒüÿÿÿÿH¬¯RMAJORZ
+CODE_SMELL
+f
+squid:S106"9Replace this use of System.out or System.err by a logger.(»†âoH­¯RMAJORZ
+CODE_SMELL
+g
+squid:S106‘"9Replace this use of System.out or System.err by a logger.(ö­ù¨H®¯RMAJORZ
+CODE_SMELL
+l
+squid:S106”"9Replace this use of System.out or System.err by a logger.(ªóå•øÿÿÿÿH¯¯RMAJORZ
+CODE_SMELL
+l
+squid:S106£"9Replace this use of System.out or System.err by a logger.(çÃÎ®úÿÿÿÿH°¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck¿"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H±¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck¶
+"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H²¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheckÁ"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H³¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck¬"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H´¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheckİ"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷Hµ¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck¨"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H¶¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck»"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H·¯RMAJORZ
+CODE_SMELL
+wsquid:HiddenFieldCheck…"=Rename "workbook" which hides the field declared at line 167.(ŸŞÏ÷H¸¯RMAJORZ
+CODE_SMELL
+isquid:S1141Ü"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿH¹¯RMAJORZ
+CODE_SMELL
+csquid:S1133½"5Do not forget to remove this deprecated code someday.(®×ÕöHº¯RINFOZ
+CODE_SMELL
+esquid:S1135€"2Complete the task associated to this TODO comment.(ãíöÎÿÿÿÿÿH»¯RINFOZ
+CODE_SMELL
+\squid:S1481ì"(Remove this unused "fee" local variable.(›³îßúÿÿÿÿH¼¯RMINORZ
+CODE_SMELL
+bsquid:S1481£".Remove this unused "formatter" local variable.(…× óşÿÿÿÿH½¯RMINORZ
+CODE_SMELL
+_squid:S1481ñ"+Remove this unused "number" local variable.(–Î–ËúÿÿÿÿH¾¯RMINORZ
+CODE_SMELL
+hsquid:MissingDeprecatedCheck½"(Add the missing @deprecated Javadoc tag.(®×ÕöH¿¯RMAJORZ
+CODE_SMELL
+„squid:S3776…"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¨¿ÒşHÀ¯RCRITICALZ
+CODE_SMELL
+„squid:S3776Ä"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(•ÔéÜHÁ¯RCRITICALZ
+CODE_SMELL
+„squid:S3776£"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(‹÷ÊªHÂ¯RCRITICALZ
+CODE_SMELL
+„squid:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(¿ö¿ğHÃ¯RCRITICALZ
+CODE_SMELL
+ƒsquid:S3776ˆ"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÏãqHÄ¯RCRITICALZ
+CODE_SMELL
+„squid:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(‚Ò‡HÅ¯RCRITICALZ
+CODE_SMELL
+„squid:S3776ÿ"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“°ßøHÆ¯RCRITICALZ
+CODE_SMELL
+ƒsquid:S3776¿"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ğÃÂwHÇ¯RCRITICALZ
+CODE_SMELL
+‰squid:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 51 to the 15 allowed.(ÀæÙ—şÿÿÿÿHÈ¯RCRITICALZ
+CODE_SMELL
+‰squid:S3776ì"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(˜åÀ­øÿÿÿÿHÉ¯RCRITICALZ
+CODE_SMELL
+‚squid:CallToDeprecatedMethodı"BRemove this use of "generateFeeCollectionExcel"; it is deprecated.(š§™ƒHÊ¯RMINORZ
+CODE_SMELL
+‚squid:CallToDeprecatedMethod“	"BRemove this use of "generateFeeCollectionExcel"; it is deprecated.(š§™ƒHË¯RMINORZ
+CODE_SMELL
+usquid:CallToDeprecatedMethodÂ"0Remove this use of "getHours"; it is deprecated.( Ô‚ùÿÿÿÿÿHÌ¯RMINORZ
+CODE_SMELL
+wsquid:CallToDeprecatedMethodÂ"2Remove this use of "getMinutes"; it is deprecated.( Ô‚ùÿÿÿÿÿHÍ¯RMINORZ
+CODE_SMELL
+ƒsquid:S00100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼›à’ûÿÿÿÿHÎ¯RMINORZ
+CODE_SMELL
+csquid:S1172Ñ"4Remove this unused method parameter "excelFilePath".(í„àHÏ¯RMAJORZ
+CODE_SMELL
+[squid:S1172Ú",Remove this unused method parameter "sheet".(ûõÒ»HĞ¯RMAJORZ
+CODE_SMELL
+vsquid:S2259É"NA "NullPointerException" could be thrown; "paymentReportDto" is nullable here.(³¥óÖHÑ¯RMAJORZBUG
+Zsquid:S1168ã	"+Return an empty collection instead of null.(¥¹ïHÒ¯RMAJORZ
+CODE_SMELL
+Zsquid:S1168Ó"+Return an empty collection instead of null.(¥¹ïHÓ¯RMAJORZ
+CODE_SMELL
+`squid:S1602›",Remove useless curly braces around statement(Âí‰ÇøÿÿÿÿHÔ¯RMINORZ
+CODE_SMELL
+`squid:S1602ç",Remove useless curly braces around statement(™â±ˆúÿÿÿÿHÕ¯RMINORZ
+CODE_SMELL
+`squid:S1602…",Remove useless curly braces around statement(™â±ˆúÿÿÿÿHÖ¯RMINORZ
+CODE_SMELL
+Wsquid:S1604è"(Make this anonymous inner class a lambda(‹Ã‰H×¯RMAJORZ
+CODE_SMELL
+\squid:S1604ï"(Make this anonymous inner class a lambda(šâ‰¨ÿÿÿÿÿHØ¯RMAJORZ
+CODE_SMELL
+{squid:S00112õ"FDefine and throw a dedicated exception instead of using a generic one.(º’ÂìşÿÿÿÿHÙ¯RMAJORZ
+CODE_SMELL
+zsquid:S1854¶"FRemove this useless assignment to local variable "totalBalanceAmount".(˜¾±şÿÿÿÿHÚ¯RMAJORZ
+CODE_SMELL
+qsquid:S1854£"=Remove this useless assignment to local variable "formatter".(…× óşÿÿÿÿHÛ¯RMAJORZ
+CODE_SMELL
+tsquid:S1854¹"@Remove this useless assignment to local variable "paidStudents".(¸—ûòüÿÿÿÿHÜ¯RMAJORZ
+CODE_SMELL
+nsquid:S1854ñ":Remove this useless assignment to local variable "number".(–Î–ËúÿÿÿÿHİ¯RMAJORZ
+CODE_SMELL
+psquid:S1854©"<Remove this useless assignment to local variable "payments".(±ÙÅàúÿÿÿÿHŞ¯RMAJORZ
+CODE_SMELL
+psquid:S1854Û"<Remove this useless assignment to local variable "payments".(±ÙÅàúÿÿÿÿHß¯RMAJORZ
+CODE_SMELL
+squid:S00117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É£ŠËHà¯RMINORZ
+CODE_SMELL
+†squid:S00117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜½…øÿÿÿÿHá¯RMINORZ
+CODE_SMELL
+Zsquid:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHâ¯RMINORZVULNERABILITY
+Zsquid:S1148Å"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHã¯RMINORZVULNERABILITY
+Zsquid:S1148‚"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHä¯RMINORZVULNERABILITY
+Zsquid:S1148¾"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHå¯RMINORZVULNERABILITY
+Zsquid:S1148ğ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHæ¯RMINORZVULNERABILITY
+Zsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHç¯RMINORZVULNERABILITY
+Zsquid:S1148½"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHè¯RMINORZVULNERABILITY
+Zsquid:S1148·"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHé¯RMINORZVULNERABILITY

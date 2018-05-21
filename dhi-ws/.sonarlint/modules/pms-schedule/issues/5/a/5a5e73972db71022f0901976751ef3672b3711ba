@@ -1,0 +1,22 @@
+
+Ysquid:S1075Ø"&Remove this hard-coded path-delimiter.(Ç°ùÀúÿÿÿÿHÂHRMINORZ
+CODE_SMELL
+Tsquid:S1075×"&Remove this hard-coded path-delimiter.(¾¼Â’HÃHRMINORZ
+CODE_SMELL
+Tsquid:S1075×"&Remove this hard-coded path-delimiter.(¾¼Â’HÄHRMINORZ
+CODE_SMELL
+‡squid:S1192ı"QUse already-defined constant 'DEGREE_NAME' instead of duplicating its value here.(ŸôÏØùÿÿÿÿHÅHRCRITICALZ
+CODE_SMELL
+‰squid:S1192ü"SUse already-defined constant 'ACADEMIC_YEAR' instead of duplicating its value here.(šŒ¾§ùÿÿÿÿHÆHRCRITICALZ
+CODE_SMELL
+‡squid:S1192ÿ"QUse already-defined constant 'SEMESTER_ID' instead of duplicating its value here.(‚ïèÜùÿÿÿÿHÇHRCRITICALZ
+CODE_SMELL
+ˆsquid:S1192€"RUse already-defined constant 'SECTION_NAME' instead of duplicating its value here.(ú¹ßúÿÿÿÿHÈHRCRITICALZ
+CODE_SMELL
+‰squid:S1192ş"SUse already-defined constant 'DEPARTMENT_ID' instead of duplicating its value here.(í—ùèıÿÿÿÿHÉHRCRITICALZ
+CODE_SMELL
+`squid:S2093ì"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHÊHRCRITICALZ
+CODE_SMELL
+Ysquid:S1148°"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHËHRMINORZVULNERABILITY
+Ysquid:S1148²"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÌHRMINORZVULNERABILITY
+Ysquid:S1148—"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÍHRMINORZVULNERABILITY

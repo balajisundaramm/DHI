@@ -1,0 +1,340 @@
+package com.spaneos.dhi.examination.endpoint;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Set;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriInfo;
+
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import com.spaneos.dhi.consts.URIConsts.CollegeExamCoordinatorUriConsts;
+import com.spaneos.dhi.examination.builder.SuccessMessage;
+import com.spaneos.dhi.examination.builder.SuccessMessageBuilder;
+import com.spaneos.dhi.examination.domain.CollegeFacultyNominationDetail;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.domain.FacultyNomination;
+import com.spaneos.dhi.examination.domain.FacultyNominationStatus;
+import com.spaneos.dhi.examination.dto.AllocatedFacultiesDto;
+import com.spaneos.dhi.examination.dto.CourseDetailsDto;
+import com.spaneos.dhi.examination.dto.FacultyAllocationDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDetailsCourseWiseDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationStatusDto;
+import com.spaneos.dhi.examination.dto.UEQuestionAndAnswerScriptDto;
+import com.spaneos.dhi.examination.service.FacultyNominationService;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
+
+/**
+ * 
+ * @author Tejasvi K
+ *
+ */
+@Component
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@Path(CollegeExamCoordinatorUriConsts.EXAM_COORDINATOR)
+public class FacultyNominationEndpoint {
+
+	private static final Logger LOG = LoggerFactory.getLogger(FacultyNominationEndpoint.class);
+
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+
+	/**
+	 * <tt>getFacultyByCopurseCode</tt> get faculty list based on course code
+	 * 
+	 * @author Tejasvi K
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_FACULTY_LIST_BASED_ON_COURSE_CODE)
+	@ApiOperation(value = "This method is get the faculty list based on course code", notes = "This method is get the faculty list based on course code")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "get the faculty List of successfully"),
+			@ApiResponse(code = 400, message = "NO Faculty Found"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<FacultyDetail> getFacultyByCourseCode(@QueryParam("coursecode") String courseCode) {
+		return facultyNominationService.getFacultyByCourseCode(courseCode);
+	}
+
+	/**
+	 * <tt>saveFacultyNomination</tt> method for save nominated faculty list for
+	 * Question Setting
+	 * 
+	 * @author Tejasvi K
+	 * @param facultyNominationDto
+	 * @return
+	 */
+	@POST
+	@Path(CollegeExamCoordinatorUriConsts.SAVE_FACULTY_NOMINATION)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Save the MIninated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Save is not done"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public SuccessMessage saveFacultyNomination(FacultyNominationDto facultyNominationDto) {
+		LOG.error("{}", "save faculty nomination");
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.saveFacultyNomination(facultyNominationDto)).build();
+	}
+
+	/**
+	 * <tt>getFacultyNominationData</tt> get faculty nomination data
+	 * 
+	 * @author Tejasvi K
+	 * @param collegeName
+	 * @param tenantId
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.FACULTY_NOMINATION_DETAILS)
+	@ApiOperation(value = "Fetch College details based on tenant name")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "College details has been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive the College details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<CollegeFacultyNominationDetail> getFacultyNominationData(@QueryParam("collegename") String collegeName,
+			@QueryParam("tenantid") String tenantId) {
+		SuccessMessageBuilder.statusCode(Status.ACCEPTED).message("Success").build();
+		return facultyNominationService.getFacultyNominationData(collegeName, tenantId);
+	}
+
+	/**
+	 * <tt>getNominationStatusByDegreeIdAndScheme</tt> get faculty nomination
+	 * status details by degree id and scheme year
+	 * 
+	 * @author balaji
+	 * @since 23-Mar-2018
+	 * @param degreeId
+	 * @param schemeyear
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_FACULTY_NOMINATION_STATUS)
+	@ApiOperation(value = "Fetch Faculty nomination status details based on degree id and scheme year")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty nomination status details have been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive Faculty nomination status details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyNominationStatusDto> getNominationStatusByDegreeIdAndScheme(
+			@QueryParam("degreeid") String degreeId, @QueryParam("schemeyear") String schemeyear) {
+		return facultyNominationService.getNominatonStatusByDegreeIdAndScheme(degreeId, schemeyear);
+	}
+
+	/**
+	 * <tt>getFacultyAllocationStatusByCourseCode</tt> get course-wise faculty
+	 * allocation status details.
+	 * 
+	 * @author balaji
+	 * @since 23-Mar-2018
+	 * @param degreeId
+	 * @param schemeyear
+	 * @param semester
+	 * @returndegree.getDegreeId()
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_FACULTY_NOMINATION_DETAILS_COURSE_WISE)
+	@ApiOperation(value = "Fetch course-wise Faculty nomination details based on degree id and scheme year and semester")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Course-wise faculty nomination details have been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive Course-wise faculty nomination details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public FacultyNominationDetailsCourseWiseDto getCourseWiseFacultyAllocationStatus(
+			@QueryParam("degreeid") String degreeId, @QueryParam("schemeyear") String schemeyear,
+			@QueryParam("semester") String semester) {
+		return facultyNominationService.getCourseWiseNominationDetails(degreeId, schemeyear, semester);
+	}
+
+	/**
+	 * <tt>getCourseList</tt> Get course list based on degree id, scheme year
+	 * and semester.
+	 * 
+	 * @author balaji
+	 * @since 28-Mar-2018
+	 * @param degreeId
+	 * @param schemeYear
+	 * @param semester
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_COURSE_LIST)
+	@ApiOperation(value = "Fetch course details based on college name")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Course list have been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive course list"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public Set<CourseDetailsDto> getCourseList(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String schemeYear, @QueryParam("semester") String semester) {
+
+		return facultyNominationService.getCourseList(degreeId, schemeYear, semester);
+	}
+
+	/**
+	 * <tt>getFacultyNominationDetailsByCourseCode</tt> Get faculty nomination
+	 * details based on course code.
+	 * 
+	 * @author balaji
+	 * @since 28-Mar-2018
+	 * @param degreeId
+	 * @param schemeYear
+	 * @param semester
+	 * @param courseCode
+	 * @param tenantId
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_FACULTY_NOMINATION_DETAILS)
+	@ApiOperation(value = "Fetch Faculty nomination details based on course code")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty nomination details have been retrived successfully"),
+			@ApiResponse(code = 400, message = "Unable to retrive faculty nomination details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public FacultyNominationDto getFacultyNominationDetailsByCourseCode(@QueryParam("degreeid") String degreeId,
+			@QueryParam("scheme") String schemeYear, @QueryParam("semester") String semester,
+			@QueryParam("coursecode") String courseCode, @QueryParam("tenant") String tenantId) {
+		return facultyNominationService.getFacultyNominationdetails(degreeId, schemeYear, semester, courseCode,
+				tenantId);
+	}
+
+	/**
+	 * <tt>submitFacultyNominationDetails</tt> Submit faculty nomination details
+	 * in college and university.
+	 * 
+	 * @author balaji
+	 * @since 28-Mar-2018
+	 * @param facultyNominationDto
+	 * @return
+	 */
+	@POST
+	@Path(CollegeExamCoordinatorUriConsts.SUBMIT_FACULTY_NOMINATION)
+	@ApiOperation(value = "Submitting faculty nomination details.")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty nomination details have been submitted successfully"),
+			@ApiResponse(code = 400, message = "Unable to submit faculty nomination details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public SuccessMessage submitFacultyNominationDetails(
+			FacultyNominationDetailsCourseWiseDto facultyNominationCourseWiseDto) {
+		LOG.error("{}", "submitFacultyNominationDetails end point");
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.submitFacultyNomination(facultyNominationCourseWiseDto)).build();
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param facultyNominations
+	 * @return
+	 */
+	@POST
+	@Path(CollegeExamCoordinatorUriConsts.UPDATE_FACULTY_NOMINATION)
+	@ApiOperation(value = "Updating faculty nomination details.")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty nomination details have been updated successfully"),
+			@ApiResponse(code = 400, message = "Unable to update faculty nomination details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyNomination> saveUpdatedFacultyNomination(List<FacultyNomination> facultyNominations) {
+		LOG.info("Entry Endpoint {} ", facultyNominations.size());
+		return facultyNominationService.saveUpdatedFacultyNomination(facultyNominations);
+	}
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 04-Apr-2018
+	 * @param degreeId
+	 * @param collegeFacultyStatus
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.UPDATE_COLLEGE_FACULTY_NOMINATION_STATUS)
+	@ApiOperation(value = "Updating faculty nomination details.")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty nomination details have been updated successfully"),
+			@ApiResponse(code = 400, message = "Unable to update faculty nomination details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public SuccessMessage submitAllocatedFaculties(@QueryParam("degreeid") String degreeId,
+			@QueryParam("status") FacultyNominationStatus collegeFacultyStatus) {
+		LOG.info("submitAllocatedFaculties {}, {} ", degreeId, collegeFacultyStatus);
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.submitAllocatedFaculties(degreeId, collegeFacultyStatus)).build();
+	}
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 04-Apr-2018
+	 * @param degreeId
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_ALL_ALLOCATED_FACULTIES)
+	@ApiOperation(value = "Getting allocated faculty details.")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "All allocated faculty details have been fetched successfully"),
+			@ApiResponse(code = 400, message = "Unable to fetch allocated faculty details"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<AllocatedFacultiesDto> getAllAllocatedFaculties(@QueryParam("degreeid") String degreeId,
+			@QueryParam("status") FacultyNominationStatus collegeFacultyStatus) {
+		LOG.info("getAllAllocatedFaculties Endpoint {}, {} ", degreeId, collegeFacultyStatus);
+		return facultyNominationService.getAllAllocatedFaculties(degreeId, collegeFacultyStatus);
+
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param facultyNominations
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.UPDATE_FACULTY_NOMINATION_STATUS)
+	@ApiOperation(value = "Updating faculty nomination status.")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Faculty degree.getDegreeId()nomination status have been updated successfully"),
+			@ApiResponse(code = 400, message = "Unable to update faculty nomination status"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<FacultyAllocationDto> getFacultyAllocation() {
+		LOG.info("{}", "Entry Endpoint");
+		return facultyNominationService.getUpdatedFacultyAllocationDetails();
+	}
+
+	/**
+	 * @author Harip
+	 * @return
+	 */
+	@GET
+	@Path(CollegeExamCoordinatorUriConsts.GET_RELEASED_QUESTION_PAPER)
+	@ApiOperation(value = "api to get released question paper")
+	public UEQuestionAndAnswerScriptDto getReleasedQuestionPaper(@Context UriInfo uriInfo) {
+		LOG.info("faculty nomination, get release question paper endpoint");
+		MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
+		return facultyNominationService.getReleasedQuestionPaper(queryParams);
+	}
+
+	@POST
+	@Path(CollegeExamCoordinatorUriConsts.UPLOAD_ANSWER_SCRIPT)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public SuccessMessage uploadSchemeOfEvaluation(@Context UriInfo uriInfo, @FormDataParam("file") InputStream file,
+			@FormDataParam("file") FormDataContentDisposition pdfDetails) throws IOException {
+		LOG.info("upload answer script endpoint");
+		MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.uploadAnswerScript(queryParams, file,pdfDetails)).build();
+	}
+
+}

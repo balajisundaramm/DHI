@@ -1,0 +1,23 @@
+
+|squid:S1192"MUse already-defined constant 'FACULTY' instead of duplicating its value here.(Ç•ÎcH‘mRCRITICALZ
+CODE_SMELL
+‚squid:S1192«"LUse already-defined constant 'UPLOAD' instead of duplicating its value here.(’ş‚”üÿÿÿÿH•mRCRITICALZ
+CODE_SMELL
+squid:S11927"[Use already-defined constant 'STUDENT_DASHBOARD_URI' instead of duplicating its value here.(ù§ûÿÿÿÿH”mRCRITICALZ
+CODE_SMELL
+msquid:S1118ì":Add a private constructor to hide the implicit public one.(Ğı‚ŠúÿÿÿÿH™mRMAJORZ
+CODE_SMELL
+‰squid:S1192©"XUse already-defined constant 'UE_SCORE_OF_COURSE' instead of duplicating its value here.(à‚¸’HmRCRITICALZ
+CODE_SMELL
+ƒsquid:S1192…"MUse already-defined constant 'SUMMARY' instead of duplicating its value here.(²«¥ÔşÿÿÿÿH’mRCRITICALZ
+CODE_SMELL
+‹squid:S1192Ÿ"ZUse already-defined constant 'IA_SCHEDULE_ROOT_URI' instead of duplicating its value here.(º¬½H—mRCRITICALZ
+CODE_SMELL
+ˆsquid:S1192s"XUse already-defined constant 'TIMETABLE_ROOT_URI' instead of duplicating its value here.(ÆÄó½HmRCRITICALZ
+CODE_SMELL
+‚squid:S1192Ó"QUse already-defined constant 'STUDENT_URI' instead of duplicating its value here.(­³¦‰H“mRCRITICALZ
+CODE_SMELL
+§squid:S1192¢"wUse already-defined constant 'INTERNAL_DETAILS_WITH_INTERNAL_NUMBER_FOR_STUDENT' instead of duplicating its value here.(ç§®FH˜mRCRITICALZ
+CODE_SMELL
+’squid:S1192Ø"\Use already-defined constant 'NON_CONFIGURED_COURSES' instead of duplicating its value here.(À¬Î¡øÿÿÿÿH–mRCRITICALZ
+CODE_SMELL

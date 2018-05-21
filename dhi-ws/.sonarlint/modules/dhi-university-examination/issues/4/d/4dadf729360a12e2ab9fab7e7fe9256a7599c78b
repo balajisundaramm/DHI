@@ -1,0 +1,4 @@
+
+`squid:S1168E"+Return an empty collection instead of null.(¥¹ï8·ı ø¢,H«³RMAJORZ
+CODE_SMELL
+wsquid:S2259."PA "NullPointerException" could be thrown; "academicYearDetail" is nullable here.(ì†ûˆH¬³RMAJORZBUG

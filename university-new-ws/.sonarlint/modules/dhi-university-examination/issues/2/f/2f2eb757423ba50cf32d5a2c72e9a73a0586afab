@@ -1,0 +1,16 @@
+
+Šsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(î‚©çúÿÿÿÿHÂRMINORZBUG
+…squid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(÷ÔßÔHÃRMINORZBUG
+Šsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(Ë˜ÄïÿÿÿÿÿHÄRMINORZBUG
+`squid:S1948"+Make "procedure" transient or serializable.(÷‚îËúÿÿÿÿHÅRCRITICALZ
+CODE_SMELL
+^squid:S1948".Make "instructions" transient or serializable.(Ù—›ýHÆRCRITICALZ
+CODE_SMELL
+_squid:S1948""/Make "degreeSemList" transient or serializable.(ÇÆøªHÇRCRITICALZ
+CODE_SMELL
+Zsquid:S1948#"*Make "schedule" transient or serializable.(§´ŒèHÈRCRITICALZ
+CODE_SMELL
+esquid:S1948$"5Make "circularFeeTemplate" transient or serializable.(ø–×ˆHÉRCRITICALZ
+CODE_SMELL
+lsquid:S1161'":Add the "@Override" annotation above this method signature(ü¬ö’ùÿÿÿÿHÊRMAJORZ
+CODE_SMELL

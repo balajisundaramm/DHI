@@ -1,0 +1,5 @@
+
+ssquid:S1126B"AReplace this if-then-else statement by a single return statement.(Îä—àúÿÿÿÿHªRMINORZ
+CODE_SMELL
+Šsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(Í¬ñÕþÿÿÿÿH©RMINORZBUG
+Šsquid:S3437"_Make this value-based field transient so it is not included in the serialization of this class.(¯‰‡ƒýÿÿÿÿH¨RMINORZBUG

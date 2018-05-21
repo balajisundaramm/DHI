@@ -1,0 +1,52 @@
+
+zsquid:CommentedOutCodeLine¸"<This block of commented-out lines of code should be removed.(±œ£êH™‡RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(€üŽ±8“Ö£’­,Hš‡RMAJORZ
+CODE_SMELL
+xsquid:S2259À"PA "NullPointerException" could be thrown; "academicYearDetail" is nullable here.(Æ“ßÅH›‡RMAJORZBUG
+†squid:CommentedOutCodeLineñ"<This block of commented-out lines of code should be removed.(âÓ‹²øÿÿÿÿ8“Ö£’­,Hœ‡RMAJORZ
+CODE_SMELL
+s
+squid:S106ô"9Replace this use of System.out or System.err by a logger.(ËÄÀ„ÿÿÿÿÿ8¢®—­¨,H‡RMAJORZ
+CODE_SMELL
+Zsquid:S1148Ö"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHž‡RMINORZVULNERABILITY
+Zsquid:S1148‰"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHŸ‡RMINORZVULNERABILITY
+gsquid:S1602­",Remove useless curly braces around statement(Üü¹Žþÿÿÿÿ8¢®—­¨,H ‡RMINORZ
+CODE_SMELL
+tsquid:S4034Ž"EReplace this "filter().findAny().isPresent()" chain with "anyMatch()"(ìÄ¾˜H¡‡RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿH¢‡RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿH£‡RMAJORZ
+CODE_SMELL
+`squid:S1612Ï",Replace this lambda with a method reference.(ÐªýÌýÿÿÿÿH¤‡RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLineï"<This block of commented-out lines of code should be removed.(˜¬Ñ™8“Ö£’­,H¥‡RMAJORZ
+CODE_SMELL
+Usquid:S1148¬"#Use a logger to log this exception.(Ç’ÇêH¦‡RMINORZVULNERABILITY
+œsquid:S1488í"gImmediately return this expression instead of assigning it to the temporary variable "feeComponentDto".(…˜ßy8¢®—­¨,H§‡RMINORZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine”"<This block of commented-out lines of code should be removed.(Ú°à¬H¨‡RMAJORZ
+CODE_SMELL
+`squid:S1602ü",Remove useless curly braces around statement(÷”å‡øÿÿÿÿH©‡RMINORZ
+CODE_SMELL
+Zsquid:S1148Û"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHª‡RMINORZVULNERABILITY
+zsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ñ¶«†H«‡RMAJORZ
+CODE_SMELL
+^squid:S1172Õ"/Remove this unused method parameter "detained".(ñÛµ¼H¬‡RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(ÛéØƒ8“Ö£’­,H­‡RMAJORZ
+CODE_SMELL
+s
+squid:S106ó"9Replace this use of System.out or System.err by a logger.(¨î‰ýÿÿÿÿ8¢®—­¨,H®‡RMAJORZ
+CODE_SMELL
+†squid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(õ©þ¼ûÿÿÿÿ8¢®—­¨,H¯‡RMAJORZ
+CODE_SMELL
+squid:S1192Ó"RDefine a constant instead of duplicating this literal "Student not found" 3 times.(ïŸ¦ýûÿÿÿÿ8Õ¸âŠ°,H°‡RCRITICALZ
+CODE_SMELL
+†squid:CommentedOutCodeLineí"<This block of commented-out lines of code should be removed.(ÞñúŽøÿÿÿÿ8¢®—­¨,H±‡RMAJORZ
+CODE_SMELL
+bsquid:S1602ï",Remove useless curly braces around statement(Š§âµ8¢®—­¨,H²‡RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(­«³™ýÿÿÿÿH³‡RMAJORZ
+CODE_SMELL

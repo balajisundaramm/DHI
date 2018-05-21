@@ -1,0 +1,7 @@
+
+psquid:S2259B"DA "NullPointerException" could be thrown; "ipAddr" is nullable here.(ÎÈŒÚüÿÿÿÿH¨›RMAJORZBUG
+jsquid:S2259D"DA "NullPointerException" could be thrown; "ipAddr" is nullable here.(¿öêH©›RMAJORZBUG
+Ûsquid:S1845-"ªRename field "LOGGER" to prevent any misunderstanding/clash with field "logger" defined in superclass "org.springframework.boot.web.support.SpringBootServletInitializer".(‘Â¯¢Hª›RBLOCKERZ
+CODE_SMELL
+€squid:S00116-"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Â¯¢H«›RMINORZ
+CODE_SMELL

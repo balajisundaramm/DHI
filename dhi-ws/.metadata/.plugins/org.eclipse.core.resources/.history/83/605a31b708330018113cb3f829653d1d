@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package com.spaneos.dhi.examination;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import javax.ws.rs.QueryParam;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.spaneos.dhi.examination.dto.FacultyNominationStatusDto;
+import com.spaneos.dhi.examination.service.FacultyNominationService;
+
+/**
+ * @author balaji
+ *
+ */
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class FacultyNominationTest {
+	
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+	
+	@Test
+	public void getNominationStatusByDegreeIdAndScheme(@QueryParam("degreeid") String degreeId, @QueryParam("schemeyear") String schemeyear) {
+		assertTrue(facultyNominationService.getNominatonStatusByDegreeIdAndScheme(degreeId, schemeyear).size()>0);
+	}
+}

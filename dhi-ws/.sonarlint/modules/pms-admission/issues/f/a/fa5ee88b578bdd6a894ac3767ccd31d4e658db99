@@ -1,0 +1,19 @@
+
+Žsquid:S1192€"XDefine a constant instead of duplicating this literal "id is at end point  :{}" 3 times.(‹Ù€ÈýÿÿÿÿH¨'RCRITICALZ
+CODE_SMELL
+}squid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(”Ñ¾ãøÿÿÿÿH©'RMAJORZ
+CODE_SMELL
+}squid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ÎÀé…ûÿÿÿÿHª'RMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLine¯"<This block of commented-out lines of code should be removed.(Öƒ¯áH«'RMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(ÁÛ¥—ûÿÿÿÿH¬'RMAJORZ
+CODE_SMELL
+f
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÓµíH­'RMAJORZ
+CODE_SMELL
+f
+squid:S106“"9Replace this use of System.out or System.err by a logger.(ëç›‡H®'RMAJORZ
+CODE_SMELL
+—squid:S1488Æ"iImmediately return this expression instead of assigning it to the temporary variable "counseledStudents".(ÿÆÀÙH¯'RMINORZ
+CODE_SMELL

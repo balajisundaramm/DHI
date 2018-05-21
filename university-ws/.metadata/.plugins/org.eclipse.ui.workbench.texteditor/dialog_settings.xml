@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="getExamApplicantsBasedOnDegreeDeptSemId" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="localhost"/>
+			<item value="FACULTY_ALLOCATION_DETAILS_EXCEPTION"/>
+			<item value="FACULTY_ALLOCATION_DETAIL"/>
+			<item value="GET_COURSE_LIST"/>
+			<item value="GET_COLLEGE_LIST"/>
+			<item value="CollegeDetailUroConst"/>
+			<item value="college"/>
+			<item value="name"/>
+			<item value="faculty_list"/>
+			<item value="SAVE_FACULTY_NOMINATION"/>
+			<item value="courselist"/>
+			<item value="GET_FACULTY_LIST_BASED_ON_COURSE_CODE"/>
+			<item value="getfacultylist"/>
+			<item value="GET_CIRCULAR_BY_ID"/>
+			<item value="getuniversitycircularbyyear"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="398" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="522" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="111" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

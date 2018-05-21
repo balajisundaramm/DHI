@@ -1,0 +1,22 @@
+
+”squid:S1488ò"aImmediately return this expression instead of assigning it to the temporary variable "mentorDTO".(»İË¢ıÿÿÿÿHÎHRMINORZ
+CODE_SMELL
+Œsquid:S1488å"^Immediately return this expression instead of assigning it to the temporary variable "output".(ÁàóíHÏHRMINORZ
+CODE_SMELL
+squid:S1488x"^Immediately return this expression instead of assigning it to the temporary variable "output".(ÆœÀœùÿÿÿÿHĞHRMINORZ
+CODE_SMELL
+Ysquid:S1148è"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHÑHRMINORZVULNERABILITY
+~squid:CommentedOutCodeLineÇ"<This block of commented-out lines of code should be removed.(åšñ«şÿÿÿÿHÒHRMAJORZ
+CODE_SMELL
+‘squid:S1488„"^Immediately return this expression instead of assigning it to the temporary variable "output".(ÆœÀœùÿÿÿÿHÓHRMINORZ
+CODE_SMELL
+[squid:S1452v"&Remove usage of generic wildcard type.(ÕÂ½ÚúÿÿÿÿHÔHRCRITICALZ
+CODE_SMELL
+•squid:S1488ÿ"bImmediately return this expression instead of assigning it to the temporary variable "menteeDTOs".(¯® øÿÿÿÿHÕHRMINORZ
+CODE_SMELL
+\squid:S1452‚"&Remove usage of generic wildcard type.(®³ÉúúÿÿÿÿHÖHRCRITICALZ
+CODE_SMELL
+Wsquid:S1452â"&Remove usage of generic wildcard type.(ç›äH×HRCRITICALZ
+CODE_SMELL
+squid:S1488Ö"bImmediately return this expression instead of assigning it to the temporary variable "menteeDTOs".(Í—ËHØHRMINORZ
+CODE_SMELL

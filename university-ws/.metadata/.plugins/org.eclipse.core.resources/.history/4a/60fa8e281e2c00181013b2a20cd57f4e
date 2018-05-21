@@ -1,0 +1,243 @@
+package com.spaneos.dhi.examination.endpoint;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response.Status;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.spaneos.dhi.examination.builder.SuccessMessage;
+import com.spaneos.dhi.examination.builder.SuccessMessageBuilder;
+import com.spaneos.dhi.examination.consts.URIConsts.UniversityExaminationUriConst;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.dto.CourseDetailDto;
+import com.spaneos.dhi.examination.dto.CourseDto;
+import com.spaneos.dhi.examination.dto.FacultyAllocationDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.service.CourseServiceImpl;
+import com.spaneos.dhi.examination.service.FacultyNominationService;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
+
+/**
+ * 
+ * @author Tejasvi K
+ *
+ */
+@Component
+@Path(UniversityExaminationUriConst.PARENT)
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+public class FacultyNominationEndpoint {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(FacultyNominationEndpoint.class);
+
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+	
+	
+	@Autowired
+	private CourseServiceImpl courseServiceImpl;
+	
+	
+	
+	@GET
+	@Path(UniversityExaminationUriConst.GET_COURSES)
+	public List<CourseDetailDto> getCoursesBasedOnDegreeSemAcademicYearSchemeYear(@PathParam("degreeId") String degreeId, @PathParam("semester") String semester, @PathParam("syllabusScheme") String syllabusScheme,
+			@PathParam("academicYear") String academicYear){
+		return courseServiceImpl.getCourses(degreeId, semester, syllabusScheme, academicYear);
+	}
+
+	/**
+	 * <tt>saveFacultyNominationDetails</tt> method for fetch faculty nomination
+	 * details of colleges and save in University
+	 * 
+	 * @author Tejasvi K
+	 * @return
+	 */
+	@GET
+	@Path(UniversityExaminationUriConst.SAVE_COLLEGE_FACULTY_NOMINATION_DATA)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Save the MIninated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Save is not done"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public SuccessMessage saveFacultyNominationDetails() {
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.saveFacultyNominationDetails()).build();
+
+	}
+
+	/**
+	 * <tt>getFacultyByCopurseCode</tt> get faculty list based on course code
+	 * 
+	 * @author Tejasvi K
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(UniversityExaminationUriConst.GET_FACULTY_LIST_BASED_ON_COURSE_CODE)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Save the MIninated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Save is not done"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<FacultyDetail> getFacultyByCopurseCode(@QueryParam("coursecode") String courseCode) {
+		return facultyNominationService.getFacultyByCourseCode(courseCode);
+	}
+
+	/**
+	 * <tt>getCourseCodeList</tt> Get method for getting course Details List
+	 * 
+	 * @author Tejasvi K
+	 * @param tenantId
+	 * @param degreeId
+	 * @param deptId
+	 * @param semesterId
+	 * @param syllabusScheme
+	 * @return	private static final Logger LOG = LoggerFactory.getLogger(FacultyNominationEndpoint.class);
+
+	 */
+	/*
+	 * @GET
+	 * 
+	 * @Path(UniversityExaminationUriConst.GET_COURSE_LIST)
+	 * 
+	 * @ApiOperation(value =
+	 * "This method is to save the  list of faculty Nomination", notes =
+	 * "This method is to save the  list of faculty Nomination")
+	 * 
+	 * @ApiResponses(value = { @ApiResponse(code = 200, message =
+	 * "Save the MIninated Faculty List successfully"),
+	 * 
+	 * @ApiResponse(code = 400, message = "Save is not done"),
+	 * 
+	 * @ApiResponse(code = 500, message = "Internal Server Error"), }) public
+	 * List<CourseDto> getCourseCodeList(@QueryParam("tenantid") String tenantId,
+	 * 
+	 * @QueryParam("degreeid") String degreeId, @QueryParam("deptid") String deptId,
+	 * 
+	 * @QueryParam("semesterId") String semesterId, @QueryParam("syllabusscheme")
+	 * String syllabusScheme) { return
+	 * facultyNominationService.getCourseDetailList(tenantId,degreeId,deptId,
+	 * semesterId,syllabusScheme); }
+	 */
+
+	/**
+	 * <tt>getCourseList</tt> get course details based on degreeId semesterId and
+	 * syllabusScheme
+	 * 
+	 * @author Tejasvi K
+	 * @param degreeId
+	 * @param semester
+	 * @param syllabusScheme
+	 * @return
+	 */
+	@GET
+	@Path(UniversityExaminationUriConst.GET_COURSE_LIST)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get the  Course List successfully"),
+			@ApiResponse(code = 400, message = "Don't able to  get Course List"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<CourseDto> getCourseList(@QueryParam("degreeid") String degreeId,
+			@QueryParam("semseter") String semester, @QueryParam("syllabusscheme") String syllabusScheme) {
+		return facultyNominationService.getCourseDetail(degreeId, semester, syllabusScheme);
+	}
+	
+	/**
+	 * @param degreeId
+	 * @param semester
+	 * @param syllabusScheme
+	 * @param academicYear
+	 * @return
+	 */
+	@GET
+	@Path(UniversityExaminationUriConst.GET_COURSE_LIST_FOR_FACULTY_NOMINATION)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get the  Course List successfully"),
+			@ApiResponse(code = 400, message = "Don't able to  get Course List"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<CourseDetailDto> getCourseList(@QueryParam("degreeid") String degreeId,
+			@QueryParam("semseter") String semester, @QueryParam("syllabusscheme") String syllabusScheme, @QueryParam("academicyear") String academicYear) {
+		LOG.error("getCourseList Endpoint : degreeId {}, semester {}, syllabusScheme {}", degreeId, semester, syllabusScheme);
+		return facultyNominationService.getCourseDetailForFacultyNomination(degreeId, semester, syllabusScheme);
+	}
+	/**
+	 * <tt>getFacultyNominatedDetail</tt> method for getting the allocated faculty
+	 * List Based on degreeId semester and syllabusScheme
+	 * 
+	 * @author Tejasvi K
+	 * @param degreeId
+	 * @param semester
+	 * @param syllabusScheme
+	 * @param courseCode
+	 * @return
+	 */
+	@GET
+	@Path(UniversityExaminationUriConst.GET_ALLOCATED_FACULTY)
+	@ApiOperation(value = "This method is for getting list of Allocated faculty", notes = "This method is for getting list of Allocated faculty")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get the  Allocated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Don't able to  get Allocated Faculty List"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public List<FacultyDetailDto> getFacultyNominatedDetail(@QueryParam("degreeid") String degreeId,
+			@QueryParam("semester") String semester, @QueryParam("syllabusscheme") String syllabusScheme,
+			@QueryParam("coursecode") String courseCode) {
+		return facultyNominationService.getAllocatedFaculty(degreeId, semester, syllabusScheme, courseCode);
+	}
+
+	/**
+	 * <tt>getfacultyAllocationDtails</tt> method for getting the Faculty details
+	 * about Allocation Based on CourseCode
+	 * 
+	 * @author Tejasvi K
+	 * @param degreeId
+	 * @param semester
+	 * @param syllabusScheme
+	 * @param courseCode
+	 * @return
+	 */
+
+	@GET
+	@Path(UniversityExaminationUriConst.FACULTY_ALLOCATION_DETAIL)
+	@ApiOperation(value = "This method is to get the details  list of faculty Allocation", notes = "This method is to get the details  list of faculty Allocation")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Get the  Faculty Allocation Details  successfully"),
+			@ApiResponse(code = 400, message = "Don't able to  get Allocated Faculty Details List"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public FacultyAllocationDetailDto getfacultyAllocationDtails(@QueryParam("degreeid") String degreeId,
+			@QueryParam("semester") String semester, @QueryParam("syllabusscheme") String syllabusScheme,
+			@QueryParam("coursecode") String courseCode) {
+		return facultyNominationService.getAllocationFacultyDetail(degreeId, semester, syllabusScheme, courseCode);
+	}
+
+	/**
+	 * <tt>saveFacultyNomination</tt> save nominated faculty list for particular
+	 * course
+	 * 
+	 * @author Tejasvi K
+	 * @param facultyNominationDtoUniversityExaminationUriConst
+	 * @return
+	 */
+
+	@POST
+	@Path(UniversityExaminationUriConst.SAVE_FACULTY_NOMINATION)
+	@ApiOperation(value = "This method is to save the  list of faculty Nomination", notes = "This method is to save the  list of faculty Nomination")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Save the MIninated Faculty List successfully"),
+			@ApiResponse(code = 400, message = "Save is not done"),
+			@ApiResponse(code = 500, message = "Internal Server Error"), })
+	public SuccessMessage saveFacultyNomination(FacultyNominationDto facultyNominationDto) {
+		return SuccessMessageBuilder.statusCode(Status.OK)
+				.message(facultyNominationService.saveFacultyNomination(facultyNominationDto)).build();
+	}
+
+}

@@ -1,0 +1,9 @@
+#
+#Fri May 11 19:29:21 IST 2018
+linkedResources=
+managedNatures=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+subprojectPaths=dhi-university-examination\:pms-academic-outcome\:pms-admission\:pms-apiserver\:pms-attendance\:pms-college\:pms-common\:pms-content-management\:pms-counselling\:pms-course-management\:pms-feedback\:pms-gcp-service\:pms-lms\:pms-nba\:pms-notification\:pms-performance-appraisal\:pms-placement\:pms-profile\:pms-project\:pms-schedule
+derivedResources=.gradle\:build\:dhi-university-examination/build\:pms-academic-outcome/build\:pms-admission/build\:pms-apiserver/build\:pms-attendance/build\:pms-college/build\:pms-common/build\:pms-content-management/build\:pms-counselling/build\:pms-course-management/build\:pms-feedback/build\:pms-gcp-service/build\:pms-lms/build\:pms-nba/build\:pms-notification/build\:pms-performance-appraisal/build\:pms-placement/build\:pms-profile/build\:pms-project/build\:pms-schedule/build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildDir=build

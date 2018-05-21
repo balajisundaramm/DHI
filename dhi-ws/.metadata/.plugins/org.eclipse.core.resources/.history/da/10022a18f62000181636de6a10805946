@@ -1,0 +1,169 @@
+package com.spaneos.pms.admission.endpoint;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.spaneos.pms.admission.consts.URIConsts.AcademicYearEndpointURIConstant;
+import com.spaneos.pms.admission.domain.AcademicYear;
+import com.spaneos.pms.admission.domain.Test;
+import com.spaneos.pms.admission.service.AcademicYearService;
+import com.spaneos.pms.admission.service.TestCountryService;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
+
+/**
+ * <code>AcademicYearEndpoint</code> is a class that acts as a end point for @see AcademicYear
+ * which contains findAllAcademicYear api required to perform operation for
+ * AcademicYear
+ * 
+ * @author Shobhana M
+ * 
+ */
+
+@Component
+@Api(value = "AcademicYear", description = "Endpoint for AcademicYear")
+@Path(AcademicYearEndpointURIConstant.PARENT)
+@Produces(value = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+@Consumes(value = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+
+public class AcademicYearEndpoint {
+
+	private static final Logger LOG = LoggerFactory.getLogger(FeeCalendarEndpoint.class);
+
+	@Autowired
+	private AcademicYearService academicYearService;
+	
+	@Autowired
+	private TestCountryService testService;
+	
+	/**
+	 * <tt>saveAcademicYear</tt> is an endpoint method which saves the @see
+	 * AcademicYear object from the database
+	 * 
+	 * @param academicYear
+	 * @return 
+	 */
+	@POST
+	@ApiOperation(value = "Create AcademicYear", notes = "An Api to create the academicYear")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "AcademicYear created successfully"),
+			@ApiResponse(code = 400, message = "Unable to create the degree"),
+			@ApiResponse(code = 500, message = "Internal server error") })
+	public AcademicYear saveAcademicYear(AcademicYear academicYear) {
+		LOG.info("saveAcademicYear Endpoint");
+		return academicYearService.saveAcademicYear(academicYear);
+	}
+	
+	
+	/**
+	 * <tt>findAllAcademicYear</tt> is an endpoint method which finds the @see
+	 * AcademicYear object from the database
+	 * 
+	 * @param 
+	 * @return 
+	 */
+	@GET
+	@ApiOperation(value = "Find AcademicYear Object from database based on id", notes = "Get AcademicYear Object By feeTemplateId and feeCalendarId")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "AcademicYear is viewed successfully"),
+			@ApiResponse(code = 400, message = "Bad Request Http error"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
+	public List<AcademicYear> findAllAcademicYear() {
+		LOG.info("findAllAcademicYear");
+		return academicYearService.findAllAcademicYear();
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @param qty
+	 */
+	@POST
+	@Path("/testing")
+	public void save(Test test) {
+		testService.save(test);	
+	}
+	/**
+	 * 
+	 * @param id
+	 * @param newName
+	 */
+	@PUT
+	@Path("/testing/{id}")
+	public void update(@PathParam("id") String id,Test test) {
+		testService.update(id, test);
+	}
+	/**
+	 * 
+	 * @param name
+	 * @return
+	 */
+	@GET
+	@Path("/testing/{name}")
+	public List<Test> getByName(@PathParam("name") String name){
+		return testService.getSpecificData(name);
+	}
+	/**
+	 * 
+	 * @param name
+	 * @return
+	 */
+	@DELETE
+	@Path("/testing/{id}")
+	public Test deleteById(@PathParam("id") String id){
+		return testService.delete(id);
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("/testdata")
+	public List<Test> getdata(){
+		return testService.getData();
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("/fetchslow")
+	public List<Test> get(){
+		return testService.get();
+	}
+	/**
+	 * 
+	 * @param qty
+	 * @return
+	 */
+	@GET
+	@Path("/get_by_qty")
+	public List<Test> getByQty(@QueryParam("qty") int qty){
+		return testService.getByQty(qty);
+	}
+	
+	@POST
+	@Path("/save")
+	public void saveMany(List<Test> list) {
+		testService.saveMany(list);
+	}
+
+}

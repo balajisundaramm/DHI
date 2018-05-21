@@ -1,0 +1,22 @@
+
+ƒsquid:S37766"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÓÄ€¬HçÚRCRITICALZ
+CODE_SMELL
+Œsquid:S2293n"YReplace the type specification in this constructor call with the diamond operator ("<>").(×ï¹’şÿÿÿÿHèÚRMINORZ
+CODE_SMELL
+Œsquid:S2293]"YReplace the type specification in this constructor call with the diamond operator ("<>").(û—ØÜûÿÿÿÿHéÚRMINORZ
+CODE_SMELL
+msquid:S1155ï">Use isEmpty() to check whether the collection is empty or not.(Š”¿‡HêÚRMINORZ
+CODE_SMELL
+squid:S2293ò"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜õ¿ŞüÿÿÿÿHëÚRMINORZ
+CODE_SMELL
+Zsquid:S1148ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHìÚRMINORZVULNERABILITY
+ysquid:CommentedOutCodeLine{"<This block of commented-out lines of code should be removed.(ñÆÎ€HíÚRMAJORZ
+CODE_SMELL
+Œsquid:S2293E"YReplace the type specification in this constructor call with the diamond operator ("<>").(îÛÿÿÿÿÿÿHîÚRMINORZ
+CODE_SMELL
+Vsquid:S1125?"(Remove the literal "true" boolean value.(„ş±’HïÚRMINORZ
+CODE_SMELL
+€squid:S1854E"MRemove this useless assignment to local variable "studentsFromFeeCollection".(îÛÿÿÿÿÿÿHğÚRMAJORZ
+CODE_SMELL
+Œsquid:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(åË›ùÿÿÿÿHñÚRMINORZ
+CODE_SMELL

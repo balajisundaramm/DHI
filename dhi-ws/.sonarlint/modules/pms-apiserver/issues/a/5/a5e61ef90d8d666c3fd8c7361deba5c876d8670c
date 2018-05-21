@@ -1,0 +1,5 @@
+
+ˆsquid:S3776Ò"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÉúË‰þÿÿÿÿHélRCRITICALZ
+CODE_SMELL
+„squid:S00117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”½ÌÌýÿÿÿÿHêlRMINORZ
+CODE_SMELL

@@ -1,0 +1,161 @@
+package com.spaneos.dhi.examination.domain;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+
+/**
+ * 
+ * @author Naveen C
+ *
+ */
+public class UEQuestionPaper {
+
+	@Id
+	private String id;
+	private int numberOfQuestions;
+	private String schemeOfEvaluationPath;
+	private String fileName;
+	private LocalDate submittedDate;
+	private LocalDate approvedDate;
+	private int priorityNumber;
+	private QuestionPaperStatus questionPaperStatus;
+	private List<UEQuestion> ueQuestions;
+	private QuestionPaperType questionPaperType;
+	private int maxMarks;
+	private int numberOfQuestionsToAttempt;
+
+	public UEQuestionPaper() {
+		this.id = ObjectId.get().toString();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public int getNumberOfQuestions() {
+		return numberOfQuestions;
+	}
+
+	public void setNumberOfQuestions(int numberOfQuestions) {
+		this.numberOfQuestions = numberOfQuestions;
+	}
+
+	public String getSchemeOfEvaluationPath() {
+		return schemeOfEvaluationPath;
+	}
+
+	public void setSchemeOfEvaluationPath(String schemeOfEvaluationPath) {
+		this.schemeOfEvaluationPath = schemeOfEvaluationPath;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public LocalDate getSubmittedDate() {
+		return submittedDate;
+	}
+
+	public void setSubmittedDate(LocalDate submittedDate) {
+		this.submittedDate = submittedDate;
+	}
+
+	public LocalDate getApprovedDate() {
+		return approvedDate;
+	}
+
+	public void setApprovedDate(LocalDate approvedDate) {
+		this.approvedDate = approvedDate;
+	}
+
+	public int getPriorityNumber() {
+		return priorityNumber;
+	}
+
+	public void setPriorityNumber(int priorityNumber) {
+		this.priorityNumber = priorityNumber;
+	}
+
+	public QuestionPaperStatus getQuestionPaperStatus() {
+		return questionPaperStatus;
+	}
+
+	public void setQuestionPaperStatus(QuestionPaperStatus questionPaperStatus) {
+		this.questionPaperStatus = questionPaperStatus;
+	}
+
+	public List<UEQuestion> getUeQuestions() {
+		return ueQuestions;
+	}
+
+	public void setUeQuestions(List<UEQuestion> ueQuestions) {
+		this.ueQuestions = ueQuestions;
+	}
+
+	public QuestionPaperType getQuestionPaperType() {
+		return questionPaperType;
+	}
+
+	public void setQuestionPaperType(QuestionPaperType questionPaperType) {
+		this.questionPaperType = questionPaperType;
+	}
+
+	public int getMaxMarks() {
+		return maxMarks;
+	}
+
+	public void setMaxMarks(int maxMarks) {
+		this.maxMarks = maxMarks;
+	}
+
+	public int getNumberOfQuestionsToAttempt() {
+		return numberOfQuestionsToAttempt;
+	}
+
+	public void setNumberOfQuestionsToAttempt(int numberOfQuestionsToAttempt) {
+		this.numberOfQuestionsToAttempt = numberOfQuestionsToAttempt;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("UEQuestionPaper [id=");
+		builder.append(id);
+		builder.append(", numberOfQuestions=");
+		builder.append(numberOfQuestions);
+		builder.append(", schemeOfEvaluationPath=");
+		builder.append(schemeOfEvaluationPath);
+		builder.append(", fileName=");
+		builder.append(fileName);
+		builder.append(", submittedDate=");
+		builder.append(submittedDate);
+		builder.append(", approvedDate=");
+		builder.append(approvedDate);
+		builder.append(", priorityNumber=");
+		builder.append(priorityNumber);
+		builder.append(", questionPaperStatus=");
+		builder.append(questionPaperStatus);
+		builder.append(", ueQuestions=");
+		builder.append(ueQuestions);
+		builder.append(", questionPaperType=");
+		builder.append(questionPaperType);
+		builder.append(", maxMarks=");
+		builder.append(maxMarks);
+		builder.append(", numberOfQuestionsToAttempt=");
+		builder.append(numberOfQuestionsToAttempt);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}

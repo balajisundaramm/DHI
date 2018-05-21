@@ -1,0 +1,38 @@
+
+ssquid:S1075R"ARefactor your code to get this URI from a customizable parameter.(›À¡·ûÿÿÿÿHÎRMINORZ
+CODE_SMELL
+wsquid:S1192¸"GDefine a constant instead of duplicating this literal "number" 4 times.(–·ðHÀRCRITICALZ
+CODE_SMELL
+~squid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(öó‹÷ýÿÿÿÿHÅRMAJORZ
+CODE_SMELL
+squid:S1192Û"NDefine a constant instead of duplicating this literal "Academic Year" 3 times.(âüH¿RCRITICALZ
+CODE_SMELL
+}squid:S1192Ä"GDefine a constant instead of duplicating this literal "Column" 3 times.( âêÃùÿÿÿÿHÄRCRITICALZ
+CODE_SMELL
+_squid:S1602æ",Remove useless curly braces around statement(ÿ©ÓþÿÿÿÿHÃRMINORZ
+CODE_SMELL
+Ysquid:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÑRMINORZVULNERABILITY
+}squid:S1192µ"GDefine a constant instead of duplicating this literal "string" 4 times.(‡ûÔÎûÿÿÿÿHÉRCRITICALZ
+CODE_SMELL
+ƒsquid:S1192¶"MDefine a constant instead of duplicating this literal "academicyear" 3 times.(¾Ô•ýþÿÿÿÿHÈRCRITICALZ
+CODE_SMELL
+dsquid:S2629m"7Use the built-in formatting to construct this argument.(ž“®µHÒRMAJORZ
+CODE_SMELL
+isquid:S2629s"7Use the built-in formatting to construct this argument.(˜—ƒ‰þÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+zsquid:S1192Ï"IDefine a constant instead of duplicating this literal "vertical" 3 times.(éÔ¬HÌRCRITICALZ
+CODE_SMELL
+~squid:CommentedOutCodeLineô"<This block of commented-out lines of code should be removed.(ÿŒÁ‰ûÿÿÿÿHÇRMAJORZ
+CODE_SMELL
+ysquid:S1192ê"HDefine a constant instead of duplicating this literal "#ffffff" 3 times.(•´³¡HÏRCRITICALZ
+CODE_SMELL
+squid:S1488"jImmediately return this expression instead of assigning it to the temporary variable "sortedAcademicYear".(Ô±½»üÿÿÿÿHÍRMINORZ
+CODE_SMELL
+Ysquid:S1148©"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÐRMINORZVULNERABILITY
+~squid:CommentedOutCodeLineþ"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿHÆRMAJORZ
+CODE_SMELL
+ysquid:S1192ç"HDefine a constant instead of duplicating this literal "#7A9D96" 4 times.(þ·ªÄHÂRCRITICALZ
+CODE_SMELL
+Ysquid:S1148”"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHÊRMINORZVULNERABILITY
+Xsquid:S3457¤"%String contains no format specifiers.(ø×ÍÊøÿÿÿÿHËRMAJORZ
+CODE_SMELL

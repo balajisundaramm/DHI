@@ -1,0 +1,36 @@
+
+gsquid:S1602ˆ",Remove useless curly braces around statement(¥ãÂ¡ÿÿÿÿÿ8’¤‹°,H€±RMINORZ
+CODE_SMELL
+squid:S1192’"RUse already-defined constant 'DEG_REQUIRED' instead of duplicating its value here.(µ¼½şÿÿÿÿ8šĞ’°,Hƒ±RCRITICALZ
+CODE_SMELL
+¨squid:S1192ş"jDefine a constant instead of duplicating this literal "Error connecting to university server, {}" 3 times.(¶À íıÿÿÿÿ8¨ÿŞÆ³,H‡±RCRITICALZ
+CODE_SMELL
+ksquid:S3655·"7Call "Optional#isPresent()" before accessing the value.(şÆóşûÿÿÿÿ8Ì§Œ°,H‚±RMAJORZBUG
+qsquid:S1854Ú"=Remove this useless assignment to local variable "faculties".(à¾€›şÿÿÿÿHü°RMAJORZ
+CODE_SMELL
+ˆsquid:S1192ò"JDefine a constant instead of duplicating this literal "Status:{}" 3 times.(„ÒÁãùÿÿÿÿ8¨ÿŞÆ³,H†±RCRITICALZ
+CODE_SMELL
+_squid:S1602l",Remove useless curly braces around statement(ÚäàêÿÿÿÿÿHş°RMINORZ
+CODE_SMELL
+`squid:S1602ğ",Remove useless curly braces around statement(‘ÔÕÎùÿÿÿÿHù°RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLineÏ"<This block of commented-out lines of code should be removed.(÷Â°ß8Àö¿’°,H„±RMAJORZ
+CODE_SMELL
+asquid:S1602‚",Remove useless curly braces around statement(®üü(8Éô†°,Hú°RMINORZ
+CODE_SMELL
+gsquid:S2589Î"8Remove this expression which always evaluates to "false"(µŠó‰H±RMAJORZ
+CODE_SMELL
+fsquid:S2589±"7Remove this expression which always evaluates to "true"(¼Ğõ•Hı°RMAJORZ
+CODE_SMELL
+squid:S3776ª"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ïÛóÈüÿÿÿÿ8ÄÉœ°,Hû°RCRITICALZ
+CODE_SMELL
+Šsquid:S3776â"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(½ˆÓr8Éô†°,Hÿ°RCRITICALZ
+CODE_SMELL
+gsquid:S1602‘",Remove useless curly braces around statement(Úäàêÿÿÿÿÿ8íÚğ°,Hø°RMINORZ
+CODE_SMELL
+˜squid:UselessImportCheck#"QRemove this unused import 'com.spaneos.dhi.examination.domain.FacultyNomination'.(İÛÂùÿÿÿÿ8‡ê®’°,H÷°RMINORZ
+CODE_SMELL
+„squid:S3776™"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(óÍŠ”H…±RCRITICALZ
+CODE_SMELL
+qsquid:UselessImportCheck"/Remove this unused import 'org.jfree.util.Log'.(ï¹î8Ì§Œ°,Hö°RMINORZ
+CODE_SMELL

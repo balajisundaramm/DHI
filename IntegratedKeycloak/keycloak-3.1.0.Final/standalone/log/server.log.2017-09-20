@@ -1,0 +1,288 @@
+2017-09-20 15:27:47,518 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+2017-09-20 15:27:47,827 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2017-09-20 15:27:47,927 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) starting
+2017-09-20 15:27:47,929 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /opt/keycloak-3.1.0.Final/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-8-oracle/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_131-b11
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_131
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.131-b11
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /opt/keycloak-3.1.0.Final
+	jboss.host.name = spaneos-a041
+	jboss.modules.dir = /opt/keycloak-3.1.0.Final/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = spaneos-a041
+	jboss.qualified.host.name = spaneos-a041
+	jboss.server.base.dir = /opt/keycloak-3.1.0.Final/standalone
+	jboss.server.config.dir = /opt/keycloak-3.1.0.Final/standalone/configuration
+	jboss.server.data.dir = /opt/keycloak-3.1.0.Final/standalone/data
+	jboss.server.deploy.dir = /opt/keycloak-3.1.0.Final/standalone/data/content
+	jboss.server.log.dir = /opt/keycloak-3.1.0.Final/standalone/log
+	jboss.server.name = spaneos-a041
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /opt/keycloak-3.1.0.Final/standalone/tmp
+	jboss.socket.binding.port-offset = 100
+	line.separator = 
+
+	logging.configuration = file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties
+	module.path = /opt/keycloak-3.1.0.Final/modules
+	org.jboss.boot.log.file = /opt/keycloak-3.1.0.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.4.0-93-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.desktop = gnome
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /opt/keycloak-3.1.0.Final/jboss-modules.jar -mp /opt/keycloak-3.1.0.Final/modules org.jboss.as.standalone -Djboss.home.dir=/opt/keycloak-3.1.0.Final -Djboss.server.base.dir=/opt/keycloak-3.1.0.Final/standalone -Djboss.socket.binding.port-offset=100
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = IN
+	user.dir = /opt/keycloak-3.1.0.Final/bin
+	user.home = /home/spaneos
+	user.language = en
+	user.name = spaneos
+	user.timezone = Asia/Kolkata
+2017-09-20 15:27:47,930 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/opt/keycloak-3.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/opt/keycloak-3.1.0.Final/standalone/configuration/logging.properties 
+2017-09-20 15:27:49,506 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2017-09-20 15:27:49,543 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.4.Final
+2017-09-20 15:27:49,558 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.4.Final
+2017-09-20 15:27:49,625 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 32) WFLYCLINF0001: Activating Infinispan subsystem.
+2017-09-20 15:27:49,631 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 31) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2017-09-20 15:27:49,633 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 27) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2017-09-20 15:27:49,644 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 40) WFLYNAM0001: Activating Naming Subsystem
+2017-09-20 15:27:49,652 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 38) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2017-09-20 15:27:49,656 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 45) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2017-09-20 15:27:49,664 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 44) WFLYSEC0002: Activating Security Subsystem
+2017-09-20 15:27:49,679 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.18.Final
+2017-09-20 15:27:49,706 INFO  [org.jboss.as.connector] (MSC service thread 1-7) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+2017-09-20 15:27:49,707 INFO  [org.jboss.as.security] (MSC service thread 1-5) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+2017-09-20 15:27:49,860 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = h2
+2017-09-20 15:27:49,928 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-09-20 15:27:49,929 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0003: Undertow 1.3.15.Final starting
+2017-09-20 15:27:49,933 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+2017-09-20 15:27:49,945 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2017-09-20 15:27:50,125 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 46) WFLYUT0014: Creating file handler for path '/opt/keycloak-3.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2017-09-20 15:27:50,137 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2017-09-20 15:27:50,144 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0018: Host default-host starting
+2017-09-20 15:27:50,245 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2017-09-20 15:27:50,246 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2017-09-20 15:27:50,289 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8180
+2017-09-20 15:27:50,506 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+2017-09-20 15:27:50,510 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2017-09-20 15:27:50,736 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-5) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/keycloak-3.1.0.Final/standalone/deployments
+2017-09-20 15:27:50,759 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2017-09-20 15:27:50,992 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-2) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-09-20 15:27:50,994 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-7) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-09-20 15:27:50,994 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-6) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+2017-09-20 15:27:51,508 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0002: Started sessions cache from keycloak container
+2017-09-20 15:27:51,510 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started keys cache from keycloak container
+2017-09-20 15:27:51,510 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started work cache from keycloak container
+2017-09-20 15:27:51,511 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2017-09-20 15:27:51,512 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started users cache from keycloak container
+2017-09-20 15:27:51,517 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started realms cache from keycloak container
+2017-09-20 15:27:51,518 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2017-09-20 15:27:51,519 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 49) WFLYCLINF0002: Started authorization cache from keycloak container
+2017-09-20 15:27:52,632 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2017-09-20 15:27:54,360 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2017-09-20 15:27:54,372 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2017-09-20 15:27:57,042 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 54) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2017-09-20 15:27:57,119 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 54) HHH000412: Hibernate Core {5.0.7.Final}
+2017-09-20 15:27:57,121 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 54) HHH000206: hibernate.properties not found
+2017-09-20 15:27:57,124 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 54) HHH000021: Bytecode provider name : javassist
+2017-09-20 15:27:57,165 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 54) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-20 15:27:57,327 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 54) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-09-20 15:27:57,334 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 54) HHH000431: Unable to determine H2 database version, certain features may not work
+2017-09-20 15:27:57,389 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 54) Envers integration enabled? : true
+2017-09-20 15:27:58,103 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 54) HV000001: Hibernate Validator 5.2.3.Final
+2017-09-20 15:27:59,447 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 54) HHH000397: Using ASTQueryTranslatorFactory
+2017-09-20 15:28:01,760 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,762 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,763 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,763 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,763 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,763 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,763 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.ServerVersionResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,764 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,764 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,764 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 54) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2017-09-20 15:28:01,859 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0021: Registered web context: /auth
+2017-09-20 15:28:01,898 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 47) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2017-09-20 15:28:02,040 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:10090/management
+2017-09-20 15:28:02,041 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:10090
+2017-09-20 15:28:02,041 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) started in 15051ms - Started 425 of 783 services (526 services are lazy, passive or on-demand)
+2017-09-20 15:46:42,022 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-16) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 15:46:42,027 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:46:42,365 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:46:42,368 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:46:42,369 WARN  [org.keycloak.events] (default task-16) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=113a6d5f-d90e-438c-9892-888de923d2c3, username=collegeadmin@pace.com
+2017-09-20 15:46:42,434 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:46:42,463 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:46:42,465 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-16) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:47:02,777 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-25) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 15:47:02,777 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:47:02,830 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:47:02,832 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:47:02,832 WARN  [org.keycloak.events] (default task-25) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=113a6d5f-d90e-438c-9892-888de923d2c3, username=collegeadmin@pace.com
+2017-09-20 15:47:02,882 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:47:02,910 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:47:02,913 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-25) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:47:15,986 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-34) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 15:47:15,987 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:47:16,006 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:47:16,008 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:47:16,009 WARN  [org.keycloak.events] (default task-34) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=113a6d5f-d90e-438c-9892-888de923d2c3, username=collegeadmin@pace.com
+2017-09-20 15:47:16,034 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:47:16,052 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:47:16,054 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:58:14,417 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-52) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 15:58:14,418 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:58:14,450 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:58:14,452 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 15:58:14,452 WARN  [org.keycloak.events] (default task-52) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=8fefe3e8-b099-4c71-9ce9-4022b574cd1f, username=collegeadmin@pace.com
+2017-09-20 15:58:14,472 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 15:58:14,488 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 15:58:14,491 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-52) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:01:49,968 WARN  [org.keycloak.events] (default task-64) type=LOGIN_ERROR, realmId=demo, clientId=null, userId=null, ipAddress=127.0.0.1, error=expired_code, restart_after_timeout=true
+2017-09-20 17:03:59,778 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-10) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:03:59,778 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:03:59,828 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:03:59,830 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:03:59,830 WARN  [org.keycloak.events] (default task-10) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=615621ae-b326-4981-9ad7-5b5de503d65a, username=collegeadmin@pace.com
+2017-09-20 17:03:59,852 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:03:59,865 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:03:59,867 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-10) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:09:51,548 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-26) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:09:51,548 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:09:51,560 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:09:51,562 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:09:51,562 WARN  [org.keycloak.events] (default task-26) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=5f467b2a-0732-49cd-9c74-aad0f6831c43, username=collegeadmin@pace.com
+2017-09-20 17:09:51,581 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:09:51,593 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:09:51,595 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-26) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:10:02,352 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-39) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:10:02,352 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:10:02,364 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:10:02,366 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:10:02,367 WARN  [org.keycloak.events] (default task-39) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=5f467b2a-0732-49cd-9c74-aad0f6831c43, username=collegeadmin@pace.com
+2017-09-20 17:10:02,383 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:10:02,394 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:10:02,396 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-39) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:11:06,539 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-55) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:11:06,540 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:11:06,568 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:11:06,570 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:11:06,571 WARN  [org.keycloak.events] (default task-55) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=92fc192a-110a-4172-8b65-c401af972b4d, username=collegeadmin@pace.com
+2017-09-20 17:11:06,589 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:11:06,603 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:11:06,605 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-55) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:12:55,523 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-6) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:12:55,524 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:12:55,535 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:12:55,537 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:12:55,537 WARN  [org.keycloak.events] (default task-6) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=55ec8f41-b8cc-4173-ad38-424966a36b34, username=collegeadmin@pace.com
+2017-09-20 17:12:55,554 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:12:55,566 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:12:55,568 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-6) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:14:40,254 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-13) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:14:40,254 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:14:40,268 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:14:40,274 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:14:40,275 WARN  [org.keycloak.events] (default task-13) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=55ec8f41-b8cc-4173-ad38-424966a36b34, username=collegeadmin@pace.com
+2017-09-20 17:14:40,299 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:14:40,308 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:14:40,310 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-13) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:24:26,371 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-34) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:24:26,371 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:24:26,398 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:24:26,400 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:24:26,401 WARN  [org.keycloak.events] (default task-34) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=9c596185-9350-45f9-a4ba-dbde9ea8f7b2, username=collegeadmin@pace.com
+2017-09-20 17:24:26,422 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:24:26,435 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:24:26,437 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-34) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:44:41,676 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-44) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 17:44:41,676 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:44:41,687 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:44:41,689 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 17:44:41,689 WARN  [org.keycloak.events] (default task-44) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=9c596185-9350-45f9-a4ba-dbde9ea8f7b2, username=collegeadmin@pace.com
+2017-09-20 17:44:41,703 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 17:44:41,714 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 17:44:41,716 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-44) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 18:12:14,862 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (default task-63) Logging from RestExampleUserStorageProviderFactory create method
+2017-09-20 18:12:14,862 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 18:12:14,901 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 18:12:14,903 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 18:12:14,903 WARN  [org.keycloak.events] (default task-63) type=LOGIN_ERROR, realmId=demo, clientId=dhi, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost/keycloakloader/keycloakloader.html, code_id=49303f16-dbd5-4ed0-8762-61d2ab54ee53, username=collegeadmin@pace.com
+2017-09-20 18:12:14,921 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) email from getUserByEmail method is : collegeadmin@pace.com
+2017-09-20 18:12:14,932 ERROR [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) error while fetching user RESTEASY004655: Unable to invoke request
+2017-09-20 18:12:14,935 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProvider] (default task-63) username from userprovider implementation is : collegeadmin@pace.com
+2017-09-20 19:40:50,587 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2017-09-20 19:40:50,663 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0010: Unbound data source [java:jboss/datasources/KeycloakDS]
+2017-09-20 19:40:50,707 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0022: Unregistered web context: /auth
+2017-09-20 19:40:50,725 INFO  [org.spaneos.rest.storage.user.RestExampleUserStorageProviderFactory] (ServerService Thread Pool -- 59) <<<<<< Closing factory
+2017-09-20 19:40:50,743 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0019: Host default-host stopping
+2017-09-20 19:40:50,749 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2017-09-20 19:40:50,751 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2017-09-20 19:40:50,760 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0003: Stopped keys cache from keycloak container
+2017-09-20 19:40:50,764 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTP listener default suspending
+2017-09-20 19:40:50,765 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2017-09-20 19:40:50,765 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0003: Stopped loginFailures cache from keycloak container
+2017-09-20 19:40:50,766 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0003: Stopped work cache from keycloak container
+2017-09-20 19:40:50,767 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0003: Stopped offlineSessions cache from keycloak container
+2017-09-20 19:40:50,769 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0003: Stopped authorization cache from keycloak container
+2017-09-20 19:40:50,769 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0003: Stopped realms cache from keycloak container
+2017-09-20 19:40:50,770 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0004: Undertow 1.3.15.Final stopping
+2017-09-20 19:40:50,771 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped users cache from keycloak container
+2017-09-20 19:40:50,767 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0003: Stopped sessions cache from keycloak container
+2017-09-20 19:40:50,793 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-5) WFLYCLINF0003: Stopped realmRevisions cache from keycloak container
+2017-09-20 19:40:50,797 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment keycloak-server.war (runtime-name: keycloak-server.war) in 168ms
+2017-09-20 19:40:50,802 INFO  [org.jboss.as.clustering.infinispan] (MSC service thread 1-5) WFLYCLINF0003: Stopped userRevisions cache from keycloak container
+2017-09-20 19:40:50,811 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: Keycloak 3.1.0.Final (WildFly Core 2.0.10.Final) stopped in 177ms

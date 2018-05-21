@@ -1,0 +1,9 @@
+#
+#Wed Apr 04 19:59:33 IST 2018
+linkedResources=
+managedNatures=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+subprojectPaths=dhi-university\:dhi-university-apiserver\:dhi-university-config\:dhi-university-course-management\:dhi-university-dashboard\:dhi-university-examination\:dhi-university-notification
+derivedResources=.gradle\:build\:dhi-university/build\:dhi-university-apiserver/build\:dhi-university-config/build\:dhi-university-course-management/build\:dhi-university-dashboard/build\:dhi-university-examination/build\:dhi-university-notification/build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildDir=build

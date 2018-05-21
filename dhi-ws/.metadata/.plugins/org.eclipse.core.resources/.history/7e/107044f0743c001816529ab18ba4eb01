@@ -1,0 +1,809 @@
+package com.spaneos.dhi.examination.service;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.glassfish.jersey.client.ClientConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spaneos.dhi.examination.domain.CollegeFacultyAllocationStatus;
+import com.spaneos.dhi.examination.domain.CollegeFacultyNominationDetail;
+import com.spaneos.dhi.examination.domain.CourseDetails;
+import com.spaneos.dhi.examination.domain.CourseList;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.domain.FacultyExperience;
+import com.spaneos.dhi.examination.domain.FacultyNomination;
+import com.spaneos.dhi.examination.domain.FacultyNominationDetails;
+import com.spaneos.dhi.examination.domain.FacultyNominationStatus;
+import com.spaneos.dhi.examination.domain.UniversityFacultyAllocationStatus;
+import com.spaneos.dhi.examination.dto.AllocatedFacultiesDto;
+import com.spaneos.dhi.examination.dto.CourseDetailsDto;
+import com.spaneos.dhi.examination.dto.FacultyAllocationDto;
+import com.spaneos.dhi.examination.dto.FacultyDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDetailsCourseWiseDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationStatusDto;
+import com.spaneos.dhi.examination.exception.UniversityExaminationException;
+import com.spaneos.dhi.examination.mongotemplate.CollegeExamCoordinatorRepository;
+import com.spaneos.dhi.examination.mongotemplate.FacultyNominationTemplate;
+import com.spaneos.dhi.examination.repository.FacultyNominationRepository;
+import com.spaneos.pms.admission.domain.AcademicCalendar;
+import com.spaneos.pms.admission.domain.College;
+import com.spaneos.pms.admission.domain.Degree;
+import com.spaneos.pms.admission.domain.Employee;
+import com.spaneos.pms.admission.domain.TermDetail;
+import com.spaneos.pms.admission.dto.SchemeDto;
+import com.spaneos.pms.admission.exception.DegreeException;
+import com.spaneos.pms.admission.repository.DegreeRepository;
+import com.spaneos.pms.admission.repository.UserAddmissionRepository;
+import com.spaneos.pms.admission.service.CollegeService;
+import com.spaneos.pms.admission.service.DegreeService;
+import com.spaneos.pms.coursemanagement.domain.Course;
+import com.spaneos.pms.coursemanagement.service.CourseService;
+
+@Service
+public class FacultyNominationServiceImpl implements FacultyNominationService {
+
+	@Autowired
+	private ObjectMapper mapper;
+
+	@Autowired
+	private CollegeExamCoordinatorRepository collegeExamCoordinatorRepository;
+
+	@Autowired
+	private UserAddmissionRepository userAddmissionRepository;
+
+	@Autowired
+	private FacultyNominationRepository facultyNominationRepository;
+
+	@Autowired
+	private DegreeService degreeService;
+
+	@Autowired
+	private CourseService courseService;
+
+	@Autowired
+	private CollegeService collegeService;
+
+	@Autowired
+	private FacultyNominationTemplate facultyNominationtemplate;
+
+	@Autowired
+	private DegreeRepository degreeRepository;
+
+	public static final Logger LOG = LoggerFactory.getLogger(FacultyNominationServiceImpl.class);
+
+	@Value("${api.university.port}")
+	private String UNIVERSITY_SERVER_PORT;
+
+	/**
+	 * <tt>getFacultyByCourseCode</tt> get the faculty List based on Course Code
+	 * 
+	 * @author Tejasvi K
+	 */
+	@Override
+	public List<FacultyDetail> getFacultyByCourseCode(String courseCode) {
+
+		try {
+			List<FacultyDetail> facultyList = new ArrayList<>();
+			Objects.requireNonNull(courseCode, "Course code is required");
+			List<FacultyDto> facultyDtoList = collegeExamCoordinatorRepository.getFacultyBYCourseCode(courseCode);
+
+			College college = collegeService.getCollege();
+
+			if (facultyDtoList != null && !facultyDtoList.isEmpty()) {
+
+				Set<String> idSet = new HashSet<>();
+				facultyDtoList.forEach(facultyDto -> {
+
+					if (!idSet.contains(facultyDto.getFacultyId())) {
+						FacultyDetail faculty = new FacultyDetail();
+						Employee employee = userAddmissionRepository.findById(facultyDto.getFacultyId());
+						if (employee != null) {
+							faculty.setFacultyId(facultyDto.getFacultyId());
+							faculty.setName(facultyDto.getFacultyName());
+							faculty.setDeptId(employee.getDeptId());
+							faculty.setDesignation(employee.getDesignation());
+							LocalDate dateOfJoining = employee.getDateOfJoining();
+							LocalDate currentDate = LocalDate.now();
+							Period period = Period.between(dateOfJoining, currentDate);
+							FacultyExperience experience = new FacultyExperience();
+							experience.setYear(period.getYears());
+							experience.setMonth(period.getMonths());
+							experience.setDay(period.getDays());
+							faculty.setExperience(experience);
+							faculty.setCollegeName(college.getName());
+							faculty.setCollegeShortName(college.getShortName());
+							faculty.setCollegeUri(college.getWebsite());
+
+						}
+						idSet.add(facultyDto.getFacultyId());
+
+						facultyList.add(faculty);
+					}
+
+				});
+			} else {
+				throw new UniversityExaminationException(
+						UniversityExaminationException.NO_FACULTY_FOUND_FOR_GIVEN_COURSE_CODE);
+			}
+			return facultyList;
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+			throw new UniversityExaminationException(e.getMessage());
+		}
+
+	}
+
+	/**
+	 * <tt>saveFacultyNomination</tt> save the faculty nomination list for setting
+	 * question paper
+	 * 
+	 * @author Tejasvi K
+	 */
+	@Override
+	public String saveFacultyNomination(FacultyNominationDto facultyNominationDto) {
+		LOG.error("save faculty nomination service {}", facultyNominationDto);
+		Objects.requireNonNull(facultyNominationDto, "Faculty nomination detail is required");
+		if (facultyNominationDto.getFaculty() != null && !facultyNominationDto.getFaculty().isEmpty()) {
+			FacultyNomination facultyNomination = new FacultyNomination();
+			BeanUtils.copyProperties(facultyNominationDto, facultyNomination);
+			facultyNomination.setCollegeFacultyNominationStatus(FacultyNominationStatus.SAVED);
+			facultyNomination.setUniversityFacultyNominationStatus(FacultyNominationStatus.PENDING);
+			LOG.error("facultyNomination : {}", facultyNomination);
+			facultyNominationRepository.save(facultyNomination);
+			return "Success";
+		} else {
+			throw new UniversityExaminationException(UniversityExaminationException.FACULTY_LIST_EMPTY);
+		}
+	}
+
+	/**
+	 * <tt>getFacultyNominationData</tt> method for get facult Nomination Data Baseb
+	 * on College and TenantId
+	 * 
+	 * @author Tejasvi K
+	 */
+
+	@Override
+	public List<CollegeFacultyNominationDetail> getFacultyNominationData(String collegeName, String tenantId) {
+		List<CollegeFacultyNominationDetail> collegeFacultyNominationDetailList = new ArrayList<>();
+		try {
+			List<Degree> degrees = degreeService.findAll();
+			degrees.forEach(degree -> {
+				Set<SchemeDto> schemeList = degreeService.findSchemeList(degree.getDegreeId());
+				degree.getDepartments()
+						.forEach(dept -> dept.getSemesters().forEach(semester -> schemeList.forEach(scheme -> {
+							CollegeFacultyNominationDetail collegeFacultyNominationDetail = new CollegeFacultyNominationDetail();
+							collegeFacultyNominationDetail.setCollegeName(collegeName);
+							collegeFacultyNominationDetail.setTenantId(tenantId);
+							collegeFacultyNominationDetail.setDegreeId(degree.getDegreeId());
+							collegeFacultyNominationDetail.setDeptId(dept.getDeptId());
+							collegeFacultyNominationDetail.setSemester(semester.getSemId());
+							collegeFacultyNominationDetail.setSyllabusScheme(scheme.getSchemeYear());
+							collegeFacultyNominationDetail.setCourses(setCourseList(degree.getDegreeId(),
+									dept.getDeptId(), semester.getSemId(), scheme.getSchemeYear()));
+
+							collegeFacultyNominationDetailList.add(collegeFacultyNominationDetail);
+						})
+
+				)
+
+				);
+
+			});
+
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+			throw new UniversityExaminationException(e.getMessage());
+		}
+		return collegeFacultyNominationDetailList;
+	}
+
+	/**
+	 * @author Tejasvi K
+	 * @param degreeId
+	 * @param deptId
+	 * @param semId
+	 * @param syllabusScheme
+	 * @return
+	 */
+	private List<CourseList> setCourseList(String degreeId, String deptId, String semId, String syllabusScheme) {
+		List<CourseList> courseList = new ArrayList<>();
+		try {
+			List<Course> courses = courseService.findCoursesForSemesterBasedOnDegreeAndSchemeYear(syllabusScheme, semId,
+					degreeId, deptId);
+			courses.forEach(course -> {
+				CourseList coursedetail = new CourseList();
+				coursedetail.setCourseCode(course.getCourseCode());
+				coursedetail.setCourseName(course.getCourseName());
+				coursedetail.setFaculties(getFacultyByCourseCode(course.getCourseCode()));
+
+				courseList.add(coursedetail);
+			});
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+		}
+		return courseList;
+	}
+
+	@Override
+	public List<FacultyNominationStatusDto> getNominatonStatusByDegreeIdAndScheme(String degreeId, String schemeyear) {
+
+		try {
+			Objects.requireNonNull(degreeId, "degree id is required");
+			Objects.requireNonNull(schemeyear, "scheme year is required");
+
+			LOG.error("getNominatonStatusByDegreeIdAndScheme : degreeId : {}, schemeyear {}", degreeId, schemeyear);
+			List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+			Set<String> semesters = new HashSet<>();
+			List<FacultyNominationStatusDto> listOfFacultyNominationStatus = new ArrayList<>();
+
+			TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+					() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+			termDetails.forEach(term -> {
+				semesters.addAll(
+						term.getAcademicCalendar().stream().filter(cal -> cal.getSchemeYear().equals(schemeyear))
+								.map(AcademicCalendar::getSemId).collect(Collectors.toSet()));
+			});
+			semesters.forEach(semester -> {
+				FacultyNominationStatusDto dto = new FacultyNominationStatusDto();
+				dto.setTermNumber(termDetail.getTermNumber());
+				dto.setAcademicYear(termDetail.getAcademicYear());
+				dto.setSemester(semester);
+				List<FacultyNomination> list = facultyNominationRepository
+						.findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYearAndTermNumber(degreeId, semester,
+								schemeyear, termDetail.getAcademicYear(), termDetail.getTermNumber());
+				LOG.error("faculty nomiantion details : {}", list.size());
+				if (list.isEmpty()) {
+					dto.setNominationStatus(FacultyNominationStatus.PENDING);
+				} else {
+					/*
+					 * list.forEach(template -> { if
+					 * (template.getCollegeFacultyNominationStatus().equals(
+					 * FacultyNominationStatus.SUBMITTED)) { LOG.error("Status submitted");
+					 * dto.setNominationStatus(template. getCollegeFacultyNominationStatus());
+					 * dto.setSubmittedDate(template.getSubmittedDate()); } else {
+					 * LOG.error("Status saved");
+					 * dto.setNominationStatus(FacultyNominationStatus.SAVED); } });
+					 */
+					dto.setNominationStatus(getStatusFacultyNomination(list));
+					/*
+					 * To stop iterating the loop once the submitted date is set. used java 1.5 for each
+					 */
+					for ( FacultyNomination fac : list) {
+						if(fac.getCollegeFacultyNominationStatus().equals(FacultyNominationStatus.SUBMITTED)) {
+							dto.setSubmittedDate(fac.getSubmittedDate());
+							break;
+						}
+					}
+				}
+				listOfFacultyNominationStatus.add(dto);
+			});
+			LOG.error("listOfFacultyNominationStatus {}", listOfFacultyNominationStatus);
+			return listOfFacultyNominationStatus;
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+			return null;
+		}
+	}
+
+	private FacultyNominationStatus getStatusFacultyNomination(List<FacultyNomination> list) {
+		for (FacultyNomination facultyNomination : list) {
+			if (facultyNomination.getCollegeFacultyNominationStatus() == FacultyNominationStatus.PENDING) {
+				return FacultyNominationStatus.PENDING;
+			}
+		}
+		for (FacultyNomination facultyNomination : list) {
+			if (facultyNomination.getCollegeFacultyNominationStatus() == FacultyNominationStatus.SAVED) {
+				return FacultyNominationStatus.SAVED;
+			}
+		}
+
+		for (FacultyNomination facultyNomination : list) {
+			if (facultyNomination.getCollegeFacultyNominationStatus() == FacultyNominationStatus.SUBMITTED) {
+				return FacultyNominationStatus.SUBMITTED;
+			}
+		}
+		return FacultyNominationStatus.PENDING;
+	}
+
+	@Override
+	public FacultyNominationDetailsCourseWiseDto getCourseWiseNominationDetails(String degreeId, String schemeYear,
+			String semester) {
+		Objects.requireNonNull(degreeId, "degree id is required");
+		Objects.requireNonNull(schemeYear, "scheme year is required");
+		Objects.requireNonNull(semester, "Semester id is required");
+
+		LOG.error("getCourseWiseNominationDetails : degreeId : {}, schemeyear {}, {}", degreeId, schemeYear, semester);
+		List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+		LOG.error("termDetails {}", termDetails);
+
+		TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+				() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+		LOG.error("termDetail {}", termDetail);
+
+		FacultyNominationDetailsCourseWiseDto dto = new FacultyNominationDetailsCourseWiseDto();
+		/*
+		 * unallocated faculty set stores all course details allocated faculty set
+		 * stores the data from dhi-faculty-nomination collection
+		 */
+		Set<FacultyNominationDetails> allocatedfacultyDetails = new HashSet<>();
+		Set<FacultyNominationDetails> unallocatedfacultyDetails = new HashSet<>();
+
+		List<FacultyNomination> list = facultyNominationRepository
+				.findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYearAndTermNumber(degreeId, semester,
+						schemeYear, termDetail.getAcademicYear(), termDetail.getTermNumber());
+		LOG.error("FacultyNomination list : {}", list);
+		Set<CourseDetails> courseDetails = facultyNominationtemplate
+				.getCourseListByDegreeIdAndsemesterAndSchemeYear(degreeId, schemeYear, semester);
+		LOG.error("courseDetails : {} ", courseDetails);
+		courseDetails.forEach(course -> {
+			dto.setDegreeId(degreeId);
+			dto.setSyllabusScheme(schemeYear);
+			dto.setSemesterId(semester);
+			dto.setTermNumber(termDetail.getTermNumber());
+			dto.setExaminationMonth(termDetail.getExaminationMonth());
+			dto.setAcademicYear(termDetail.getAcademicYear());
+			if (!list.isEmpty()) {
+				list.forEach(facultyTemplate -> {
+					// BeanUtils.copyProperties(facultyTemplate, dto);
+					FacultyNominationDetails detail = new FacultyNominationDetails();
+
+					if (course.getCourseCode().equals(facultyTemplate.getCourseCode())) {
+						BeanUtils.copyProperties(facultyTemplate, detail);
+						List<FacultyDetail> allocated = new ArrayList<>();
+						allocated.addAll(facultyTemplate.getFaculty().stream()
+								.filter(fac -> fac.getCollegeAllocationStatus()
+										.equals(CollegeFacultyAllocationStatus.ALLOCATED))
+								.collect(Collectors.toList()));
+						if (!allocated.isEmpty()) {
+							detail.setNoOfAllocatedFaculties(allocated.size());
+							detail.setFaculty(allocated);
+							detail.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.ALLOCATED);
+						}
+
+						allocatedfacultyDetails.add(detail);
+					} else {
+						BeanUtils.copyProperties(course, detail);
+						detail.setNoOfAllocatedFaculties(0);
+						detail.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.UNALLOCATED);
+						unallocatedfacultyDetails.add(detail);
+					}
+				});
+				dto.setFacultyNominationStatus(getStatusFacultyNomination(list));
+			} else {
+				dto.setFacultyNominationStatus(FacultyNominationStatus.PENDING);
+				FacultyNominationDetails detail = new FacultyNominationDetails();
+				BeanUtils.copyProperties(course, detail);
+				detail.setNoOfAllocatedFaculties(0);
+				detail.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.UNALLOCATED);
+				unallocatedfacultyDetails.add(detail);
+			}
+		});
+		allocatedfacultyDetails.addAll(unallocatedfacultyDetails);
+		dto.setFacultyDetails(allocatedfacultyDetails);
+		LOG.error("Faculty nomination dto : {}", dto);
+		return dto;
+	}
+
+	@Override
+	public Set<CourseDetailsDto> getCourseList(String degreeId, String schemeYear, String semester) {
+		List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+		LOG.error("termDetails {}", termDetails);
+		/*
+		 * listOfCourses -> final list unallocatedCourses all courses for which
+		 * faculties haven't been allocated.
+		 */
+		Set<CourseDetailsDto> listOfCourses = new HashSet<>();
+		Set<CourseDetailsDto> unallocatedCourses = new HashSet<>();
+
+		TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+				() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+		LOG.error("termDetail {}", termDetail);
+
+		List<FacultyNomination> list = facultyNominationRepository
+				.findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYearAndTermNumber(degreeId, semester,
+						schemeYear, termDetail.getAcademicYear(), termDetail.getTermNumber());
+		Set<CourseDetails> courses = facultyNominationtemplate.getCourseListByDegreeIdAndsemesterAndSchemeYear(degreeId,
+				schemeYear, semester);
+		courses.forEach(course -> {
+			if (list != null && !list.isEmpty()) {
+				list.forEach(facultyTemplate -> {
+					CourseDetailsDto dto = new CourseDetailsDto();
+					if (course.getCourseCode().equals(facultyTemplate.getCourseCode())) {
+						BeanUtils.copyProperties(facultyTemplate, dto);
+						dto.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.ALLOCATED);
+						listOfCourses.add(dto);
+					} else {
+						BeanUtils.copyProperties(course, dto);
+						dto.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.UNALLOCATED);
+						unallocatedCourses.add(dto);
+					}
+
+				});
+			} else {
+				CourseDetailsDto dto = new CourseDetailsDto();
+				BeanUtils.copyProperties(course, dto);
+				dto.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.UNALLOCATED);
+				unallocatedCourses.add(dto);
+			}
+		});
+		listOfCourses.addAll(unallocatedCourses);
+		return listOfCourses;
+	}
+
+	@Override
+	public FacultyNominationDto getFacultyNominationdetails(String degreeId, String schemeYear, String semester,
+			String courseCode, String tenantId) {
+		Objects.requireNonNull(degreeId, "degree id is required");
+		Objects.requireNonNull(schemeYear, "scheme year is required");
+		Objects.requireNonNull(semester, "Semester id is required");
+		Objects.requireNonNull(courseCode, "Course code is required");
+
+		List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+		TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+				() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+		LOG.error("termDetail {}", termDetail);
+
+		FacultyNomination facultyNomination = facultyNominationRepository
+				.findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYearAndTermNumberAndCourseCode(degreeId,
+						semester, schemeYear, termDetail.getAcademicYear(), termDetail.getTermNumber(), courseCode);
+		LOG.error("FacultyNomination list : {}", facultyNomination);
+		FacultyNominationDto dto = new FacultyNominationDto();
+		if (facultyNomination != null) {
+			BeanUtils.copyProperties(facultyNomination, dto);
+		} else {
+			dto.setAcademicYear(termDetail.getAcademicYear());
+			dto.setDegreeId(degreeId);
+			dto.setSemesterId(semester);
+			dto.setCourseCode(courseCode);
+			dto.setTermNumber(termDetail.getTermNumber());
+			dto.setExaminationMonth(termDetail.getExaminationMonth());
+			dto.setSyllabusScheme(schemeYear);
+			List<FacultyDto> facultyDtoList = collegeExamCoordinatorRepository.getFacultyBYCourseCode(courseCode);
+			Set<FacultyDto> uniqueFaculties = new HashSet<>(facultyDtoList);
+			LOG.error("facultyDtoList : {}", uniqueFaculties);
+			College college = collegeService.getCollege();
+			if (uniqueFaculties != null && !uniqueFaculties.isEmpty()) {
+				List<FacultyDetailDto> listOfFaculties = new ArrayList<>();
+				uniqueFaculties.forEach(facultyDto -> {
+					FacultyDetailDto faculty = new FacultyDetailDto();
+					Employee employee = userAddmissionRepository.findById(facultyDto.getFacultyId());
+					if (employee != null) {
+						faculty.setTenantId(tenantId);
+						faculty.setFacultyId(facultyDto.getFacultyId());
+						faculty.setName(facultyDto.getFacultyName());
+						faculty.setDeptId(employee.getDeptId());
+						faculty.setDesignation(employee.getDesignation());
+						LocalDate dateOfJoining = employee.getDateOfJoining();
+						LocalDate currentDate = LocalDate.now();
+						Period period = Period.between(dateOfJoining, currentDate);
+						FacultyExperience experience = new FacultyExperience();
+						experience.setYear(period.getYears());
+						experience.setMonth(period.getMonths());
+						experience.setDay(period.getDays());
+						faculty.setExperience(experience);
+						faculty.setCollegeName(college.getName());
+						faculty.setCollegeShortName(college.getShortName());
+						faculty.setCollegeUri(college.getWebsite());
+						faculty.setCollegeAllocationStatus(CollegeFacultyAllocationStatus.UNALLOCATED);
+						faculty.setUniversityAllocationStatus(UniversityFacultyAllocationStatus.UNALLOCATED);
+						Set<CourseDetails> courseDetails = facultyNominationtemplate
+								.getCourseListByDegreeIdAndsemesterAndSchemeYearAndCourseCode(degreeId, schemeYear,
+										semester, courseCode);
+						courseDetails.forEach(course -> {
+							BeanUtils.copyProperties(course, dto);
+
+						});
+						dto.setCollegeFacultyNominationStatus(FacultyNominationStatus.SAVED);
+						listOfFaculties.add(faculty);
+					}
+				});
+				dto.setFaculty(listOfFaculties);
+			} else {
+				throw new UniversityExaminationException(
+						UniversityExaminationException.NO_FACULTY_FOUND_FOR_GIVEN_COURSE_CODE);
+			}
+		}
+		return dto;
+	}
+
+	@Override
+	public String submitFacultyNomination(FacultyNominationDetailsCourseWiseDto facultyNominationCourseWiseDto) {
+		try {
+			LOG.error("submitFacultyNomination: {}", facultyNominationCourseWiseDto);
+			List<FacultyNomination> collegeFacultyNominations = new ArrayList<>();
+			List<FacultyNomination> universityFacultyNominations = new ArrayList<>();
+			facultyNominationCourseWiseDto.getFacultyDetails().stream()
+					.filter(courseStatus -> Objects.nonNull(courseStatus)
+							&& Objects.nonNull(courseStatus.getCollegeAllocationStatus()) && courseStatus
+									.getCollegeAllocationStatus().equals(CollegeFacultyAllocationStatus.ALLOCATED))
+					.forEach(course -> {
+						FacultyNomination facultyNomination = new FacultyNomination();
+						facultyNomination = facultyNominationRepository
+								.findByDegreeIdAndSemesterIdAndSyllabusSchemeAndAcademicYearAndTermNumberAndCourseCode(
+										facultyNominationCourseWiseDto.getDegreeId(),
+										facultyNominationCourseWiseDto.getSemesterId(),
+										facultyNominationCourseWiseDto.getSyllabusScheme(),
+										facultyNominationCourseWiseDto.getAcademicYear(),
+										facultyNominationCourseWiseDto.getTermNumber(), course.getCourseCode());
+						if (facultyNomination != null) {
+							FacultyNomination collegeFacultyNomination = new FacultyNomination();
+							// BeanUtils.copyProperties(course, collegeFacultyNominations);
+							collegeFacultyNomination.setId(facultyNomination.getId());
+							collegeFacultyNomination.setAcademicYear(facultyNominationCourseWiseDto.getAcademicYear());
+							collegeFacultyNomination.setSemesterId(facultyNominationCourseWiseDto.getSemesterId());
+							collegeFacultyNomination.setDegreeId(facultyNominationCourseWiseDto.getDegreeId());
+							collegeFacultyNomination
+									.setSyllabusScheme(facultyNominationCourseWiseDto.getSyllabusScheme());
+							collegeFacultyNomination.setTermNumber(facultyNominationCourseWiseDto.getTermNumber());
+							collegeFacultyNomination
+									.setExaminationMonth(facultyNominationCourseWiseDto.getExaminationMonth());
+							collegeFacultyNomination.setCourseCode(course.getCourseCode());
+							collegeFacultyNomination.setCourseName(course.getCourseName());
+							collegeFacultyNomination.setCourseShortName(course.getCourseShortName());
+							collegeFacultyNomination.setCourseType(course.getCourseType());
+							collegeFacultyNomination.setDeptId(course.getDeptId());
+
+							List<FacultyDetail> allFacultyList = new ArrayList<>();
+
+							course.getFaculty().forEach(fac -> {
+								allFacultyList.add(fac);
+							});
+							collegeFacultyNomination.setFaculty(allFacultyList);
+							LOG.info("course code for college faculty : {}, no of faculties : {}",
+									facultyNomination.getCourseCode(), facultyNomination.getFaculty().size());
+							collegeFacultyNominations.add(collegeFacultyNomination);
+							List<FacultyDetail> list = new ArrayList<>();
+							course.getFaculty().stream()
+									.filter(facultyDetatil -> Objects.nonNull(facultyDetatil)
+											&& facultyDetatil.getCollegeAllocationStatus()
+													.equals(CollegeFacultyAllocationStatus.ALLOCATED))
+									.forEach(allocatedFaculty -> {
+										list.add(allocatedFaculty);
+									});
+							facultyNomination.setFaculty(list);
+							LOG.info("allocated faculties : {}", list.size());
+
+						} else
+							throw new UniversityExaminationException(
+									UniversityExaminationException.NO_FACULTY_FOUND_FOR_GIVEN_DETAILS);
+						universityFacultyNominations.add(facultyNomination);
+					});
+			ClientConfig config = new ClientConfig();
+			Client client = ClientBuilder.newClient(config);
+			WebTarget target = client.target(UNIVERSITY_SERVER_PORT); // university
+																		// server
+																		// baseUrl
+			Response response = target.path("facultynomination/submitfacultynomination").request()
+					.accept(MediaType.APPLICATION_JSON).post(Entity.json(universityFacultyNominations));
+			if (response.getStatus() == 200) {
+				collegeFacultyNominations.forEach(domain -> {
+					domain.setCollegeFacultyNominationStatus(FacultyNominationStatus.SUBMITTED);
+					domain.setUniversityFacultyNominationStatus(FacultyNominationStatus.PENDING);
+					domain.setSubmittedDate(LocalDate.now());
+					LOG.info("Course code : {}, no of faculties : {}", domain.getCourseCode(),
+							domain.getFaculty().size());
+					LOG.info("submitted to university successfully : {}", response.getStatus());
+				});
+				facultyNominationRepository.save(collegeFacultyNominations);
+				return "Success";
+			} else {
+				throw new UniversityExaminationException(UniversityExaminationException.SUBMIT_TO_UNIVERSITY_FAILED);
+			}
+		} catch (Exception e) {
+			LOG.error(e.getMessage());
+			e.printStackTrace();
+			throw new UniversityExaminationException(e.getMessage());
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 */
+	@Override
+	public List<FacultyNomination> saveUpdatedFacultyNomination(List<FacultyNomination> facultyNominations) {
+		try {
+			List<FacultyNomination> finalFacultyNominations = new ArrayList<>();
+			List<FacultyNomination> facultyNominations2 = facultyNominationRepository.findAll();
+			for (FacultyNomination facultyNomination : facultyNominations) {
+				FacultyNomination nomination = facultyNominations2.parallelStream()
+						.filter(f -> f.getAcademicYear().equals(facultyNomination.getAcademicYear())
+								&& f.getCourseCode().equals(facultyNomination.getCourseCode())
+								&& f.getDegreeId().equals(facultyNomination.getDegreeId())
+								&& f.getTermNumber() == facultyNomination.getTermNumber()
+								&& f.getSyllabusScheme().equals(facultyNomination.getSyllabusScheme())
+								&& f.getSemesterId().equals(facultyNomination.getSemesterId()))
+						.findAny().get();
+				facultyNominations2.removeIf(f -> f.getAcademicYear().equals(facultyNomination.getAcademicYear())
+						&& f.getCourseCode().equals(facultyNomination.getCourseCode())
+						&& f.getDegreeId().equals(facultyNomination.getDegreeId())
+						&& f.getTermNumber() == facultyNomination.getTermNumber()
+						&& f.getSyllabusScheme().equals(facultyNomination.getSyllabusScheme())
+						&& f.getSemesterId().equals(facultyNomination.getSemesterId()));
+				if (nomination != null) {
+					nomination.setFaculty(new ArrayList<>());
+					nomination.setFaculty(facultyNomination.getFaculty());
+					finalFacultyNominations.add(nomination);
+				} else {
+					finalFacultyNominations.add(facultyNomination);
+				}
+			}
+			facultyNominationRepository.save(finalFacultyNominations);
+			return facultyNominations;
+		} catch (Exception e) {
+			throw new UniversityExaminationException(
+					UniversityExaminationException.ERROR_WHILE_UPDATING_FACULTY_NOMINATION);
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 */
+	@Override
+	public List<FacultyAllocationDto> getFacultyAllocation() {
+		List<FacultyAllocationDto> facultyAllocationDtos = new ArrayList<>();
+		try {
+			List<Degree> degrees = degreeRepository.findAll();
+			if (degrees != null && !degrees.isEmpty()) {
+				for (Degree degree : degrees) {
+					if (degree != null) {
+						List<TermDetail> termDetails = degree.getTermDetails();
+						TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny()
+								.orElseThrow(() -> new UniversityExaminationException(
+										UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+
+						List<FacultyNomination> facultyNominations = facultyNominationRepository
+								.findByDegreeIdAndAcademicYearAndTermNumber(degree.getDegreeId(),
+										termDetail.getAcademicYear(), termDetail.getTermNumber());
+						LOG.info("facultyNominations : {}", facultyNominations);
+						facultyAllocationDtos = setFacultyAllocation(facultyAllocationDtos, facultyNominations,
+								degree.getDegreeId());
+					}
+				}
+			} else {
+				throw new DegreeException(DegreeException.DEGREE_NOT_FOUND);
+			}
+		} catch (UniversityExaminationException e) {
+			LOG.error(e.getMessage());
+		}
+		return facultyAllocationDtos;
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param facultyAllocationDtos
+	 * @param facultyNominations
+	 * @param degreeId
+	 */
+	private List<FacultyAllocationDto> setFacultyAllocation(List<FacultyAllocationDto> facultyAllocationDtos,
+			List<FacultyNomination> facultyNominations, String degreeId) {
+		if (facultyNominations != null && !facultyNominations.isEmpty()) {
+			facultyNominations.removeIf(f -> f.getUniversityFacultyNominationStatus().name()
+					.equals(FacultyNominationStatus.SUBMITTED.name())
+					|| f.getCollegeFacultyNominationStatus().name().equals(FacultyNominationStatus.PENDING.name())
+					|| f.getCollegeFacultyNominationStatus().name().equals(FacultyNominationStatus.SAVED.name()));
+			LOG.info("facultyNominations after removing the status  : {}", facultyNominations);
+			getFacultyNominationDetails(facultyNominations);
+			FacultyAllocationDto facultyAllocationDto = new FacultyAllocationDto();
+			facultyAllocationDto.setDegreeId(degreeId);
+			facultyAllocationDto.setStatus(getStatus(facultyNominations));
+			facultyAllocationDtos.add(facultyAllocationDto);
+		}
+		return facultyAllocationDtos;
+
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param facultyNominations
+	 * @return
+	 */
+	private String getStatus(List<FacultyNomination> facultyNominations) {
+		boolean isPending = false;
+		if (facultyNominations != null && !facultyNominations.isEmpty()) {
+			for (FacultyNomination facultyNomination : facultyNominations) {
+				if (facultyNomination != null && (facultyNomination.getCollegeFacultyNominationStatus().name()
+						.equals(FacultyNominationStatus.PENDING.name())
+						|| facultyNomination.getCollegeFacultyNominationStatus().name()
+								.equals(FacultyNominationStatus.SAVED.name()))) {
+					isPending = true;
+					break;
+				}
+			}
+			if (isPending) {
+				return FacultyNominationStatus.PENDING.name();
+			} else {
+				return FacultyNominationStatus.SUBMITTED.name();
+			}
+		} else {
+			return FacultyNominationStatus.SUBMITTED.name();
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param facultyNominations
+	 */
+	private void getFacultyNominationDetails(List<FacultyNomination> facultyNominations) {
+		if (facultyNominations != null && !facultyNominations.isEmpty()) {
+			List<FacultyNominationDto> facultyNominationDtos = new ArrayList<>();
+			BeanUtils.copyProperties(facultyNominations, facultyNominationDtos);
+			LOG.error("source : {}", facultyNominations);
+			LOG.error("dest : {}", facultyNominationDtos);
+			ClientConfig config = new ClientConfig();
+			Client client = ClientBuilder.newClient(config);
+			WebTarget target = client.target(UNIVERSITY_SERVER_PORT);
+			Response response = target.path("facultynomination/getupdateduniversitystatus").request()
+					.accept(MediaType.APPLICATION_JSON).post(Entity.json(facultyNominations));
+			if (response.getStatus() == 200) {
+				FacultyNominationDto[] facultyNominations2 = response.readEntity(FacultyNominationDto[].class);
+				List<FacultyNomination> facultyNominations3 = new ArrayList<>();
+				facultyNominations3 = Arrays
+						.asList(mapper.convertValue((Arrays.asList(facultyNominations2)), FacultyNomination[].class));
+				facultyNominations3.forEach(f -> {
+					if (f.getUniversityFacultyNominationStatus().name()
+							.equals(FacultyNominationStatus.SUBMITTED.name())) {
+						f.setCollegeFacultyNominationStatus(FacultyNominationStatus.PENDING);
+					}
+				});
+				facultyNominationRepository.save(facultyNominations3);
+			}
+		}
+	}
+
+	@Override
+	public List<AllocatedFacultiesDto> getAllAllocatedFaculties(String degreeId,
+			FacultyNominationStatus collegeFacultyNominationStatus) {
+		List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+		TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+				() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+		return facultyNominationtemplate.getAllAllocatedFaculties(degreeId, termDetail.getAcademicYear(),
+				termDetail.getTermNumber(), collegeFacultyNominationStatus);
+	}
+
+	@Override
+	public String submitAllocatedFaculties(String degreeId, FacultyNominationStatus collegeFacultyNominationStatus) {
+		List<TermDetail> termDetails = facultyNominationtemplate.getTermDetailsByDegreeId(degreeId);
+		TermDetail termDetail = termDetails.stream().filter(TermDetail::isCurrent).findAny().orElseThrow(
+				() -> new UniversityExaminationException(UniversityExaminationException.TERM_DETAILS_NOT_FOUND));
+		List<FacultyNomination> facultyNominations = facultyNominationRepository
+				.findByDegreeIdAndAcademicYearAndTermNumberAndCollegeFacultyNominationStatus(degreeId,
+						termDetail.getAcademicYear(), termDetail.getTermNumber(), collegeFacultyNominationStatus);
+		List<FacultyNomination> updatedFacultyNominations = new ArrayList<>();
+		LOG.error("facultyNominations :{}", facultyNominations.size());
+		facultyNominations.forEach(faculty -> {
+			faculty.setCollegeFacultyNominationStatus(FacultyNominationStatus.SUBMITTED);
+			faculty.setSubmittedDate(LocalDate.now());
+			updatedFacultyNominations.add(faculty);
+		});
+		facultyNominationRepository.save(updatedFacultyNominations);
+		return "Success";
+	}
+
+}

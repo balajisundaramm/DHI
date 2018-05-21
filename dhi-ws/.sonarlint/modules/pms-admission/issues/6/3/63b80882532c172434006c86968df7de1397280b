@@ -1,0 +1,112 @@
+
+|squid:UnusedPrivateMethodĞ"@Remove this unused private "getStudentPaidFeeComponents" method.(éåºÂHôURMAJORZ
+CODE_SMELL
+wsquid:UnusedPrivateMethodø";Remove this unused private "getStudentPaidFeeItems" method.(ÛŞÒİHõURMAJORZ
+CODE_SMELL
+ysquid:UnusedPrivateMethod"=Remove this unused private "addFeeToIncomeCategories" method.(â¯ğºHöURMAJORZ
+CODE_SMELL
+‡squid:UnusedPrivateMethod–"FRemove this unused private "getDegreYearWiseFeePaidComponents" method.(ÃõîšÿÿÿÿÿH÷URMAJORZ
+CODE_SMELL
+{squid:UnusedPrivateMethod¿
+":Remove this unused private "deductFeeDetailAmount" method.(ªÓŒ­úÿÿÿÿHøURMAJORZ
+CODE_SMELL
+Wsquid:S2629‹"$Invoke method(s) only conditionally.(‚ˆ¸ÆüÿÿÿÿHùURMAJORZ
+CODE_SMELL
+‘squid:S1192"[Define a constant instead of duplicating this literal "Enrolled with full payment" 7 times.(¬˜ò®ûÿÿÿÿHúURCRITICALZ
+CODE_SMELL
+”squid:S1192"^Define a constant instead of duplicating this literal "Enrolled with partial payment" 7 times.(¬˜ò®ûÿÿÿÿHûURCRITICALZ
+CODE_SMELL
+~squid:S1192š"MDefine a constant instead of duplicating this literal "Full payment" 5 times.(’”ÊHüURCRITICALZ
+CODE_SMELL
+squid:S1192š"PDefine a constant instead of duplicating this literal "Partial payment" 5 times.(’”ÊHıURCRITICALZ
+CODE_SMELL
+}squid:S2159Å
+"VRemove this call to "equals"; comparisons between unrelated types always return false.(Õø´HşURMAJORZBUG
+bsquid:S1066Ñ"/Merge this if statement with the enclosing one.(ıá„ÁûÿÿÿÿHÿURMAJORZ
+CODE_SMELL
+“squid:S4165¨"gRemove this useless assignment; "filterDto" already holds the assigned value along all execution paths.(¨Ë‡‘ıÿÿÿÿH€VRMAJORZBUG
+~squid:CommentedOutCodeLineÓ"<This block of commented-out lines of code should be removed.(ªŒµèÿÿÿÿÿHVRMAJORZ
+CODE_SMELL
+f
+squid:S106™"9Replace this use of System.out or System.err by a logger.(Í½àËH‚VRMAJORZ
+CODE_SMELL
+f
+squid:S106¸"9Replace this use of System.out or System.err by a logger.(ñÑÕHƒVRMAJORZ
+CODE_SMELL
+f
+squid:S106É"9Replace this use of System.out or System.err by a logger.(ÀØ·ôH„VRMAJORZ
+CODE_SMELL
+jsquid:S2589ÿ"7Remove this expression which always evaluates to "true"( Ì€–úÿÿÿÿH…VRMAJORZ
+CODE_SMELL
+]squid:S1905Ê"0Remove this unnecessary cast to "ModeOfPayment".(É…ÁCH†VRMINORZ
+CODE_SMELL
+Zsquid:S1481Ÿ",Remove this unused "student" local variable.(‚Ç¼ÇH‡VRMINORZ
+CODE_SMELL
+ƒsquid:S3776é"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¦ò¸ÏHˆVRCRITICALZ
+CODE_SMELL
+ˆsquid:S3776—"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(º¥é¼ùÿÿÿÿH‰VRCRITICALZ
+CODE_SMELL
+ƒsquid:S3776ó"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(şÓÜÂHŠVRCRITICALZ
+CODE_SMELL
+„squid:S3776×"SRefactor this method to reduce its Cognitive Complexity from 132 to the 15 allowed.(ù‡ŠªH‹VRCRITICALZ
+CODE_SMELL
+„squid:S3776Ô"SRefactor this method to reduce its Cognitive Complexity from 101 to the 15 allowed.(ŒÔƒÑHŒVRCRITICALZ
+CODE_SMELL
+ˆsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 86 to the 15 allowed.(µììÿÿÿÿÿHVRCRITICALZ
+CODE_SMELL
+„squid:S3776Ä"SRefactor this method to reduce its Cognitive Complexity from 101 to the 15 allowed.(ÌËõõHVRCRITICALZ
+CODE_SMELL
+„squid:S3776ı"SRefactor this method to reduce its Cognitive Complexity from 147 to the 15 allowed.(íğ´›HVRCRITICALZ
+CODE_SMELL
+„squid:S3776º	"SRefactor this method to reduce its Cognitive Complexity from 101 to the 15 allowed.(Ïó”»HVRCRITICALZ
+CODE_SMELL
+ˆsquid:S3776Ë
+"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(È†ÂÜşÿÿÿÿH‘VRCRITICALZ
+CODE_SMELL
+ˆsquid:S3776Ş
+"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(×Ï¯ùÿÿÿÿH’VRCRITICALZ
+CODE_SMELL
+ƒsquid:S3776Ä"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¡Ì¿İH“VRCRITICALZ
+CODE_SMELL
+‚squid:S3776Ê"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(‘¯‘UH”VRCRITICALZ
+CODE_SMELL
+csquid:S2209–"5Change this instance-reference to a static reference.(ô»ˆìH•VRMAJORZ
+CODE_SMELL
+asquid:S1172Ì".Remove this unused method parameter "student".(‰ëµÆúÿÿÿÿH–VRMAJORZ
+CODE_SMELL
+Tsquid:S1172Ğ"&Remove these unused method parameters.(éåºÂH—VRMAJORZ
+CODE_SMELL
+jsquid:S1172–"7Remove this unused method parameter "usnOrCandidateId".(ÃõîšÿÿÿÿÿH˜VRMAJORZ
+CODE_SMELL
+Zsquid:S1602",Remove useless curly braces around statement(µ›ˆH™VRMINORZ
+CODE_SMELL
+Zsquid:S1602",Remove useless curly braces around statement(Á—ËƒHšVRMINORZ
+CODE_SMELL
+Zsquid:S1602",Remove useless curly braces around statement(üÿ±éH›VRMINORZ
+CODE_SMELL
+_squid:S1602Ÿ",Remove useless curly braces around statement(€­±¡ıÿÿÿÿHœVRMINORZ
+CODE_SMELL
+_squid:S1602 ",Remove useless curly braces around statement(ä·ÔïüÿÿÿÿHVRMINORZ
+CODE_SMELL
+Zsquid:S1602®",Remove useless curly braces around statement(×„ÓHVRMINORZ
+CODE_SMELL
+_squid:S1602¯",Remove useless curly braces around statement(‹ƒš¹ùÿÿÿÿHŸVRMINORZ
+CODE_SMELL
+Zsquid:S1602¾",Remove useless curly braces around statement(—ÉÖ†H VRMINORZ
+CODE_SMELL
+Zsquid:S1602¿",Remove useless curly braces around statement(·ºüæH¡VRMINORZ
+CODE_SMELL
+Zsquid:S1602Ë",Remove useless curly braces around statement(Üµ‰ØH¢VRMINORZ
+CODE_SMELL
+‚squid:S1854·"ORemove this useless assignment to local variable "firstYearStudeFeeComponents".(¢ûÇ¼ûÿÿÿÿH£VRMAJORZ
+CODE_SMELL
+~squid:S1854¸"PRemove this useless assignment to local variable "secondYearStudeFeeComponents".(Á‚î£H¤VRMAJORZ
+CODE_SMELL
+}squid:S1854¹"ORemove this useless assignment to local variable "thirdYearStudeFeeComponents".(µ¬ ŸH¥VRMAJORZ
+CODE_SMELL
+~squid:S1854º"PRemove this useless assignment to local variable "fourthYearStudeFeeComponents".(à’şH¦VRMAJORZ
+CODE_SMELL
+xsquid:S1854Â
+"JRemove this useless assignment to local variable "groupedTransactionDtos".(×ıÿšH§VRMAJORZ
+CODE_SMELL
+Ysquid:S1148¿"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH¨VRMINORZVULNERABILITY

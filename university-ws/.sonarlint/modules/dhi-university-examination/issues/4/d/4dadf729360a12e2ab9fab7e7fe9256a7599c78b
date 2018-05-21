@@ -1,0 +1,12 @@
+
+wsquid:UselessImportCheck"6Remove this unused import 'org.modelmapper.TypeToken'.(ğ´©Ş8ÎÑ”ì¢,HûRMINORZ
+CODE_SMELL
+squid:UselessImportCheck"GRemove this unused import 'com.spaneos.dhi.examination.dto.FeeItemDto'.(€âÊ”øÿÿÿÿ8ÎÑ”ì¢,HüRMINORZ
+CODE_SMELL
+q
+squid:S106l"9Replace this use of System.out or System.err by a logger.(ñ‡Ø—øÿÿÿÿ8ÃëÁì¢,HıRMAJORZ
+CODE_SMELL
+“squid:UselessImportCheck"MRemove this unused import 'com.spaneos.dhi.examination.dto.UEFeeTemplateDto'.(íİ¬òùÿÿÿÿ8ÎÑ”ì¢,HşRMINORZ
+CODE_SMELL
+’squid:UselessImportCheck"LRemove this unused import 'com.spaneos.dhi.examination.dto.FeeComponentDto'.(©¬†¼ÿÿÿÿÿ8ÎÑ”ì¢,HÿRMINORZ
+CODE_SMELL

@@ -1,0 +1,15 @@
+app:
+  tenants:
+    srinivasgroup_university:
+      dbName: dhi_srinivasgroup_university
+      user: SpanSRI
+      password: NSR$35qwe
+      port: 47118
+      host: 78.46.92.173
+    dhi_local:
+      dbName: srinivas
+      user: null
+      password: null
+      port: 27017
+      host: localhost
+  defaultTenant: dhi_local

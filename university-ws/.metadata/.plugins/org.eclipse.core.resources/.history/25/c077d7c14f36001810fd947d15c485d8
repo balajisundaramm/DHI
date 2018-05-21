@@ -1,0 +1,94 @@
+package com.spaneos.dhi.examination.service;
+
+import java.util.List;
+
+import com.spaneos.dhi.examination.builder.SuccessMessage;
+import com.spaneos.dhi.examination.domain.FacultyNomination;
+import com.spaneos.dhi.examination.dto.CourseDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyDetailDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationDto;
+import com.spaneos.dhi.examination.dto.FacultyNominationReport;
+
+/**
+ * 
+ * @author Biswajit
+ *
+ */
+public interface FacultyNominationService {
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @return
+	 */
+	List<FacultyNominationReport> getFacultyNominationReport(String degreeId, String scheme);
+
+	/**
+	 * 
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semester
+	 * @return
+	 */
+	List<FacultyNominationDto> getFacultyNominationData(String degreeId, String scheme, String semester);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semesterId
+	 * @param courseCode
+	 * @return
+	 */
+	List<CourseDetailDto> getCourseList(String degreeId, String scheme, String semesterId, String courseCode);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semesterId
+	 * @param courseCode
+	 * @return
+	 */
+	List<FacultyDetailDto> getFacultyListByCourse(String degreeId, String scheme, String semesterId, String courseCode);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semesterId
+	 * @param courseCode
+	 * @return
+	 */
+	FacultyNomination saveFacultyListByCourse(String degreeId, String scheme, String semesterId, String courseCode,
+			List<FacultyDetailDto> facultyDetailDtos);
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param scheme
+	 * @param semester
+	 * @param facultyNominationDtos
+	 * @return
+	 */
+	List<FacultyNominationDto> saveFacultyNominationData(String degreeId, String scheme, String semester,
+			List<FacultyNominationDto> facultyNominationDtos);
+
+
+	/**
+	 * @author balaji
+	 * @since 28-Mar-2018
+	 * @param facultyNominationDtos
+	 * @return
+	 */
+	String submitFacultyNomination(List<FacultyNomination> facultyNominations);
+
+}

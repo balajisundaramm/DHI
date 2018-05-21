@@ -1,0 +1,662 @@
+package com.spaneos.dhi.examination.service;
+
+import java.io.InputStream;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+import javax.ws.rs.core.MultivaluedMap;
+
+import org.apache.commons.io.IOUtils;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spaneos.dhi.examination.domain.AnswerScriptStatus;
+import com.spaneos.dhi.examination.domain.Day;
+import com.spaneos.dhi.examination.domain.DigitalEvaluation;
+import com.spaneos.dhi.examination.domain.DigitalEvaluationFacultyNomination;
+import com.spaneos.dhi.examination.domain.EvaluationCourse;
+import com.spaneos.dhi.examination.domain.EvaluationStatus;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.domain.ScriptDetail;
+import com.spaneos.dhi.examination.domain.TabulateScore;
+import com.spaneos.dhi.examination.domain.TabulationStatus;
+import com.spaneos.dhi.examination.domain.UEQuestion;
+import com.spaneos.dhi.examination.domain.UEQuestionPaper;
+import com.spaneos.dhi.examination.domain.UniversityCircular;
+import com.spaneos.dhi.examination.domain.UniversityCourseEnrollment;
+import com.spaneos.dhi.examination.domain.UniversityFacultyAllocationStatus;
+import com.spaneos.dhi.examination.dto.DayWiseScriptEvaluationStatus;
+import com.spaneos.dhi.examination.dto.DaywiseAnswerScriptsDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationConfigurationDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationDto;
+import com.spaneos.dhi.examination.dto.EvaluationCourseDto;
+import com.spaneos.dhi.examination.dto.ScriptDetailDto;
+import com.spaneos.dhi.examination.dto.TabulateScoreDTO;
+import com.spaneos.dhi.examination.dto.UEQuestionAndAnswerScriptDto;
+import com.spaneos.dhi.examination.dto.UEScoreTabulateDTO;
+import com.spaneos.dhi.examination.dto.UniversityCourseEnrollmentDto;
+import com.spaneos.dhi.examination.exception.DigitalEvaluationException;
+import com.spaneos.dhi.examination.repository.DigitalEvaluationRepository;
+import com.spaneos.dhi.examination.repository.UniversityCourseEnrollmentRepository;
+import com.spaneos.dhi.university.domain.TermDetail;
+import com.spaneos.dhi.university.domain.UECategoryType;
+import com.spaneos.dhi.university.service.UniversityDetailService;
+
+import scala.collection.mutable.LinkedHashMap;
+
+@Service
+public class DigitalEvalutionServiceImpl implements DigitalEvalutionService {
+	private static final Logger LOG = LoggerFactory.getLogger(DigitalEvalutionServiceImpl.class);
+
+	private static final String ACADEMIC_YEAR = "academicyear";
+
+	private static final String SEMESTER_ID = "semid";
+
+	private static final String COURSE_CODE = "courseCode";
+
+	private static final String DEGREE_NAME = "degree";
+
+	private static final String USN = "usn";
+
+	private static final String SCRIPT_REF = "script-ref";
+
+	private static final String TERM = "term";
+
+	private static final String SCHEME = "scheme";
+	private static final String EVALUATION_ID = "evaluation-id";
+
+	@Autowired
+	private DigitalEvaluationFacultyNominationService digitalFacultyNominationService;
+
+	@Autowired
+	private UniversityCourseEnrollmentService universityCourseEnrollmentService;
+
+	@Autowired
+	private DigitalEvaluationConfigurationService configurationService;
+
+	@Autowired
+	private DigitalEvaluationRepository digitalEvaluationRepository;
+
+	@Autowired
+	private FacultyNominationService facultyNominationService;
+
+	@Autowired
+	private UniversityCourseEnrollmentRepository universityCourseEnrollmentRepository;
+
+	@Autowired
+	private FileService fileService;
+
+	@Autowired
+	private UniversityDetailService universityDetailsService;
+
+	@Override
+	public UEScoreTabulateDTO getTabulateData(MultivaluedMap<String, String> queryParams) {
+
+		try {
+
+			String scriptRef = queryParams.getFirst(SCRIPT_REF);
+			String courseCode = queryParams.getFirst(COURSE_CODE);
+			String tenantId = queryParams.getFirst("tenant");
+			String evaluatorId = queryParams.getFirst("evaluator");
+			String academicYear = queryParams.getFirst("academicYear");
+			String degreeId = queryParams.getFirst("degreeId");
+			String semester = queryParams.getFirst("semester");
+			String scheme = queryParams.getFirst(SCHEME);
+			Objects.requireNonNull(queryParams.getFirst("termNumber"), "termNumber is required");
+			int termNumber = Integer.parseInt(queryParams.getFirst("termNumber"));
+
+			Objects.requireNonNull(academicYear, "academicYear is required");
+			Objects.requireNonNull(degreeId, "degreeId is required");
+			Objects.requireNonNull(semester, "semester is required");
+			Objects.requireNonNull(scheme, "scheme is required");
+			Objects.requireNonNull(courseCode, "courseCode is required");
+			Objects.requireNonNull(evaluatorId, "Evaluator is required");
+			Objects.requireNonNull(tenantId, "Tenant is required");
+
+			Objects.requireNonNull(scriptRef, "academicYear is required");
+			Objects.requireNonNull(courseCode, "degreeId is required");
+
+			LOG.info("ref no:{},courseCode:{},evaluation Id:{},tent:{}", scriptRef, courseCode, evaluatorId, tenantId);
+			LOG.info("academic Year:{},degreeId:{},sem:{},scheme:{},courseCode:{},termNumber:{}", academicYear,
+					degreeId, semester, scheme, courseCode, termNumber);
+
+			DigitalEvaluation evalution = digitalEvaluationRepository.findEvaluation(academicYear, degreeId, semester,
+					scheme, evaluatorId, tenantId, termNumber);
+
+			Objects.requireNonNull(evalution, "Evaluation is not found");
+			EvaluationCourse evaluationCourse = evalution.getEvaluationCourses().stream()
+					.filter(eval -> eval.getCourseCode().equals(courseCode)).findAny().orElseThrow(
+							() -> new DigitalEvaluationException(DigitalEvaluationException.CONFIGURATION_NOT_FOUND));
+			ScriptDetail scriptDetail = evaluationCourse.getEvaluationScripts().stream()
+					.filter(script -> script.getAnswerScriptNumber().equals(scriptRef)).findAny()
+					.orElseThrow(() -> new DigitalEvaluationException(DigitalEvaluationException.SCRIPT_NOT_FOUND));
+			UEQuestionAndAnswerScriptDto ueQuestionAndAnswerScriptDto;
+			// check if QP is released or handle exception
+			ueQuestionAndAnswerScriptDto 	= facultyNominationService
+						.getReleasedQuestionPaperForTabulation(queryParams);
+			UEQuestionPaper ueQuestionPaper = ueQuestionAndAnswerScriptDto.getQuestionPaperDto();
+			Objects.requireNonNull(ueQuestionPaper, "Question Paper is not released");
+			UEScoreTabulateDTO ueScoreTabulateDTO = new UEScoreTabulateDTO();
+			BeanUtils.copyProperties(evaluationCourse, ueScoreTabulateDTO);
+			BeanUtils.copyProperties(ueQuestionPaper, ueScoreTabulateDTO);
+			List<TabulateScoreDTO> scores = new ArrayList<>();
+
+			Map<Integer, List<UEQuestion>> groupedQuestions = ueQuestionPaper.getUeQuestions().stream()
+					.sorted(Comparator.comparing(UEQuestion::getQuestionNumber))
+					.collect(Collectors.groupingBy(UEQuestion::getQuestionNumber));
+			groupedQuestions.forEach((questionNumber, questions) -> {
+
+				TabulateScoreDTO tabulate = new TabulateScoreDTO();
+				tabulate.setQuestionNumber(questionNumber);
+				tabulate.setMaxMarks(questions.stream().mapToDouble(UEQuestion::getMaxMarks).sum());
+				if (questions.stream().anyMatch(q -> q.getOption() != null)) {
+					tabulate.setIsOption(true);
+					List<UEQuestion> ueSubQuestion = questions.stream()
+							.sorted(Comparator.comparing(UEQuestion::getOption)).collect(Collectors.toList());
+					List<TabulateScoreDTO> optionscores = new ArrayList<>();
+					ueSubQuestion.forEach(subQuest -> {
+						TabulateScoreDTO subTabulate = new TabulateScoreDTO();
+						BeanUtils.copyProperties(subQuest, subTabulate);
+						subTabulate.setOption(subQuest.getOption());
+						optionscores.add(subTabulate);
+					});
+					tabulate.setOptionScores(optionscores);
+
+				} else {
+					BeanUtils.copyProperties(questions.get(0), tabulate);
+
+				}
+				scores.add(tabulate);
+			});
+
+			LOG.info("tabulation status :{} ", scriptDetail.getTabulationStatus());
+
+			if (scriptDetail.getTabulationStatus() == TabulationStatus.TO_DO) {
+				ueScoreTabulateDTO.setScores(scores);
+
+			} else {
+
+				scores.forEach(score -> {
+					if (score.isOption()) {
+						score.getOptionScores()
+								.forEach(option -> option.setObtainedMarks(scriptDetail.getScores().stream()
+										.filter(sc -> sc.getQuestionNumber() == score.getQuestionNumber()
+												&& sc.getOption() == option.getOption())
+										.mapToDouble(TabulateScore::getObtainedMarks).sum()));
+						score.setObtainedMarks(scriptDetail.getScores().stream()
+								.filter(sc -> sc.getQuestionNumber() == score.getQuestionNumber())
+								.mapToDouble(TabulateScore::getObtainedMarks).sum());
+
+					} else {
+						score.setObtainedMarks(scriptDetail.getScores().stream()
+								.filter(sc -> sc.getQuestionNumber() == score.getQuestionNumber())
+								.mapToDouble(TabulateScore::getObtainedMarks).sum());
+					}
+
+				});
+				ueScoreTabulateDTO.setMarksObtained(
+						(int) Math.round(scores.stream().mapToDouble(TabulateScoreDTO::getObtainedMarks).sum()));
+				ueScoreTabulateDTO.setScores(scores);
+
+			}
+
+			return ueScoreTabulateDTO;
+		} catch (DigitalEvaluationException e) {
+			e.printStackTrace();
+			throw new DigitalEvaluationException(e.getMessage());
+		}
+
+	}
+
+	@Override
+	public void createDigitalEvaluationObject(UniversityCircular circular) {
+
+		if (circular.getUeCategoryType() == UECategoryType.ANSWER_SHEET_EVALUATION) {
+
+			List<DigitalEvaluation> digitalEvaluationList = new ArrayList<>();
+
+			circular.getDegreeSemList().forEach(degree -> {
+
+				try {
+					DigitalEvaluationConfigurationDto configurationObj = configurationService
+							.getConfiguration(circular.getAcademicYear(), degree.getDegreeId(), degree.getTermNumber());
+
+					List<DigitalEvaluationFacultyNomination> nominationDetailsList = digitalFacultyNominationService
+							.findFacultyNominationDetailsForDigitalEvaluation(circular.getAcademicYear(),
+									degree.getDegreeId(), degree.getTermNumber(), degree.getSemesters());
+					LOG.info("nominationDetailsList size :{} ", nominationDetailsList.size());
+
+					List<UniversityCourseEnrollment> courseEnrollmentDetails = universityCourseEnrollmentService
+							.findCourseEnrollmentDetails(circular.getAcademicYear(), degree.getDegreeId(),
+									degree.getTermNumber(), degree.getSemesters());
+
+					nominationDetailsList.forEach(nominationDetails -> {
+						List<FacultyDetail> facultyList = nominationDetails.getFaculties().stream()
+								.filter(faculty -> faculty
+										.getUniversityAllocationStatus() == UniversityFacultyAllocationStatus.ALLOCATED)
+								.collect(Collectors.toList());
+
+						List<UniversityCourseEnrollment> courseEnrollmentList = courseEnrollmentDetails.stream()
+								.filter(course -> course.getAnswerScriptPath() != null
+										&& course.getCourseCode().equals(nominationDetails.getCourseCode())
+										&& course.getSchemeYear().equals(nominationDetails.getSchemeYear()))
+								.collect(Collectors.toList());
+						LOG.info("courseenrollmentdetail size :{} ", courseEnrollmentList.size());
+
+						setDigitalEvaluationObj(circular, digitalEvaluationList, nominationDetails, facultyList);
+
+						AtomicInteger noOfScripts = new AtomicInteger(courseEnrollmentList.size());
+						LOG.info("noOfScripts :{} ", noOfScripts.get());
+
+						int noOfFaculties = facultyList.size();
+						LOG.info("noOFaculties :{} ", noOfFaculties);
+						LocalDate date = circular.getSchedule().getStartDate().minusDays(1);
+
+						configurationObj.getEvaluationDay().forEach(day -> {
+							AtomicInteger totalScripts = new AtomicInteger(0);
+
+							for (int i = 0; i < facultyList.size(); i++) {
+								FacultyDetail faculty = facultyList.get(i);
+								DigitalEvaluation evalObject = digitalEvaluationList.stream()
+										.filter(eval -> eval.getEvaluatorId().equals(faculty.getFacultyId())).findAny()
+										.orElse(null);
+								EvaluationCourse evaluationCourse = new EvaluationCourse();
+								evaluationCourse.setCourseCode(nominationDetails.getCourseCode());
+								evaluationCourse.setCourseName(nominationDetails.getCourseName());
+								evaluationCourse.setCourseShortName(nominationDetails.getCourseShortName());
+								evaluationCourse.setDayNumber(day.getDayNumber());
+								evaluationCourse.setDate(date.plusDays(day.getDayNumber()));
+								evaluationCourse.setDay(Day.valueOf(evaluationCourse.getDate().getDayOfWeek().name()));
+								List<ScriptDetail> scriptDetails = new ArrayList<>();
+								if ((noOfScripts.get() / noOfFaculties) < day.getScripts()) {
+									double scriptCount = Math.ceil(noOfScripts.get() / (double) noOfFaculties);
+									setScriptDetails(courseEnrollmentList, scriptDetails, (int) scriptCount);
+									evaluationCourse.setNoOfScriptsAllocated(scriptDetails.size());
+									evalObject.setTotalNumberOfScriptAllocated(
+											evalObject.getTotalNumberOfScriptAllocated()
+													+ evaluationCourse.getNoOfScriptsAllocated());
+									evalObject.setNumberOfDaysForEvalution(evalObject.getEvaluationCourses().size());
+									checkForScripts(evalObject, evaluationCourse, scriptDetails);
+									totalScripts.set(totalScripts.get() + evaluationCourse.getNoOfScriptsAllocated());
+
+								} else {
+									setScriptDetails(courseEnrollmentList, scriptDetails, day.getScripts());
+									evaluationCourse.setNoOfScriptsAllocated(scriptDetails.size());
+									evalObject.setTotalNumberOfScriptAllocated(
+											evalObject.getTotalNumberOfScriptAllocated()
+													+ evaluationCourse.getNoOfScriptsAllocated());
+									evalObject.setNumberOfDaysForEvalution(evalObject.getEvaluationCourses().size());
+									checkForScripts(evalObject, evaluationCourse, scriptDetails);
+									totalScripts.set(totalScripts.get() + evaluationCourse.getNoOfScriptsAllocated());
+								}
+							}
+
+							noOfScripts.set(noOfScripts.get() - totalScripts.get());
+
+						});
+
+					});
+
+					universityCourseEnrollmentService.updateCourseEnrollmentDetails(courseEnrollmentDetails);
+					digitalEvaluationRepository.save(digitalEvaluationList);
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			});
+
+		}
+
+	}
+
+	private void checkForScripts(DigitalEvaluation evalObject, EvaluationCourse evaluationCourse,
+			List<ScriptDetail> scriptDetails) {
+		if (scriptDetails != null && !scriptDetails.isEmpty())
+			evaluationCourse.setEvaluationScripts(scriptDetails);
+
+		if (evaluationCourse.getEvaluationScripts() != null && !evaluationCourse.getEvaluationScripts().isEmpty())
+			evalObject.getEvaluationCourses().add(evaluationCourse);
+	}
+
+	private void setDigitalEvaluationObj(UniversityCircular circular, List<DigitalEvaluation> digitalEvaluationList,
+			DigitalEvaluationFacultyNomination nominationDetails, List<FacultyDetail> facultyList) {
+		facultyList.forEach(faculty -> {
+			DigitalEvaluation digitalEvaluation = new DigitalEvaluation();
+			digitalEvaluation.setDegreeId(nominationDetails.getDegreeId());
+			digitalEvaluation.setAcademicYear(circular.getAcademicYear());
+			digitalEvaluation.setSemId(nominationDetails.getSemesterId());
+			digitalEvaluation.setSchemeYear(nominationDetails.getSchemeYear());
+			digitalEvaluation.setEvaluatorId(faculty.getFacultyId());
+			digitalEvaluation.setTenantId(faculty.getTenantId());
+			digitalEvaluation.setEvaluatorName(faculty.getName());
+			digitalEvaluation.setEvaluationStartDate(circular.getSchedule().getStartDate());
+			digitalEvaluation.setEvaluationEndDate(circular.getSchedule().getDueDate());
+			digitalEvaluation.setTermNumber(nominationDetails.getTermNumber());
+			digitalEvaluation.setEvaluationStatus(EvaluationStatus.DIGITAL_EVALUATION);
+			digitalEvaluation.setEvaluationCourses(new ArrayList<>());
+			digitalEvaluationList.add(digitalEvaluation);
+		});
+	}
+
+	private void setScriptDetails(List<UniversityCourseEnrollment> courseEnrollmentList,
+			List<ScriptDetail> scriptDetails, int scriptCount) {
+		courseEnrollmentList.stream().filter(
+				c -> c.getAnswerScriptStatus() != null && c.getAnswerScriptStatus() == AnswerScriptStatus.NOT_ALLOCATED)
+				.limit(scriptCount).forEach(cc -> {
+					ScriptDetail scriptDetail = new ScriptDetail();
+					scriptDetail.setUsn(cc.getUsn());
+					scriptDetail.setAnswerScriptNumber(cc.getAnswerScriptNumber());
+					scriptDetail.setAnswerScriptPath(cc.getAnswerScriptPath());
+					scriptDetail.setTabulationStatus(TabulationStatus.TO_DO);
+					scriptDetails.add(scriptDetail);
+					cc.setAnswerScriptStatus(AnswerScriptStatus.ALLOCATED);
+				});
+	}
+
+	@Override
+	public DigitalEvaluationDto getDaywiseCourseDetails(String evaluatorId, String tenantId) {
+		LOG.info("evaluatorId:{},tenantId:{}", evaluatorId, tenantId);
+
+		try {
+			if (evaluatorId == null || evaluatorId == "" || tenantId == null || tenantId == "")
+				throw new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_ID_REQUIRED);
+
+			List<DigitalEvaluation> digitalEvaluationList = digitalEvaluationRepository
+					.findByEvaluatorIdAndTenantId(evaluatorId, tenantId);
+
+			if (digitalEvaluationList.isEmpty())
+				throw new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_NOT_FOUND);
+
+			DigitalEvaluationDto digitalEvaluationDto = new DigitalEvaluationDto();
+			LocalDate today = LocalDate.now();
+
+			DigitalEvaluation digitalEvaluationObj = digitalEvaluationList.stream()
+					.filter(digitalEvaluation -> today.compareTo(digitalEvaluation.getEvaluationStartDate()) >= 0
+							&& today.compareTo(digitalEvaluation.getEvaluationEndDate()) <= 0)
+					.findAny()
+					.orElseThrow(() -> new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_NOT_FOUND));
+
+			BeanUtils.copyProperties(digitalEvaluationObj, digitalEvaluationDto);
+
+			List<EvaluationCourseDto> evaluationCourseDtoList = new ArrayList<>();
+			digitalEvaluationObj.getEvaluationCourses().forEach(course -> {
+
+				EvaluationCourseDto evaluationCourseDto = new EvaluationCourseDto();
+				BeanUtils.copyProperties(course, evaluationCourseDto);
+				if (evaluationCourseDto.getDate().equals(LocalDate.now()))
+					evaluationCourseDto.setCurrentDay(true);
+
+				if (course.getEvaluationScripts().stream()
+						.allMatch(script -> script.getTabulationStatus() == TabulationStatus.TO_DO))
+					evaluationCourseDto.setStatus(DayWiseScriptEvaluationStatus.TO_DO);
+				else if (course.getEvaluationScripts().stream()
+						.allMatch(script -> script.getTabulationStatus() == TabulationStatus.SUBMITTED))
+					evaluationCourseDto.setStatus(DayWiseScriptEvaluationStatus.DONE);
+				else
+					evaluationCourseDto.setStatus(DayWiseScriptEvaluationStatus.SAVED);
+				evaluationCourseDtoList.add(evaluationCourseDto);
+
+			});
+
+			digitalEvaluationDto.setEvaluationCourses(evaluationCourseDtoList);
+
+			digitalEvaluationDto
+					.setInstructions(configurationService
+							.getConfiguration(digitalEvaluationDto.getAcademicYear(),
+									digitalEvaluationDto.getDegreeId(), digitalEvaluationDto.getTermNumber())
+							.getInstructions());
+
+			return digitalEvaluationDto;
+		} catch (Exception e) {
+			throw new DigitalEvaluationException(e.getMessage());
+
+		}
+	}
+
+	@Override
+	public DaywiseAnswerScriptsDto getAnswerScriptsBasedOnCourseCode(String evaluatorId, String tenantId,
+			String courseCode, int dayNumber) {
+		LOG.info("evaluatorId:{},tenantId:{},courseCode:{},dayNumber:{}", evaluatorId, tenantId, courseCode, dayNumber);
+
+		DaywiseAnswerScriptsDto daywiseAnswerScriptsDto = new DaywiseAnswerScriptsDto();
+		if (evaluatorId == null || evaluatorId == "" || tenantId == null || tenantId == "")
+			throw new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_ID_REQUIRED);
+
+		List<DigitalEvaluation> digitalEvaluationList = digitalEvaluationRepository
+				.findByEvaluatorIdAndTenantId(evaluatorId, tenantId);
+
+		if (digitalEvaluationList.isEmpty())
+			throw new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_NOT_FOUND);
+
+		LocalDate today = LocalDate.now();
+		LOG.info("Date:{}", today);
+
+		DigitalEvaluation digitalEvaluationObj = digitalEvaluationList.stream()
+				.filter(digitalEvaluation -> today.compareTo(digitalEvaluation.getEvaluationStartDate()) >= 0
+						&& today.compareTo(digitalEvaluation.getEvaluationEndDate()) <= 0)
+				.findAny()
+				.orElseThrow(() -> new DigitalEvaluationException(DigitalEvaluationException.EVALUATOR_NOT_FOUND));
+
+		daywiseAnswerScriptsDto.setAcademicYear(digitalEvaluationObj.getAcademicYear());
+		daywiseAnswerScriptsDto.setDegreeId(digitalEvaluationObj.getDegreeId());
+		daywiseAnswerScriptsDto.setTermNumber(digitalEvaluationObj.getTermNumber());
+		daywiseAnswerScriptsDto.setSemesterId(digitalEvaluationObj.getSemId());
+		daywiseAnswerScriptsDto.setScheme(digitalEvaluationObj.getSchemeYear());
+
+		LOG.info("daywiseAnswerScriptsDto:{}", daywiseAnswerScriptsDto);
+		EvaluationCourse evaluationCourse = digitalEvaluationObj.getEvaluationCourses().stream()
+				.filter(course -> course.getCourseCode().equals(courseCode) && course.getDayNumber() == dayNumber)
+				.findAny().orElse(null);
+
+		if (evaluationCourse == null)
+			throw new DigitalEvaluationException(DigitalEvaluationException.NO_COURSE_FOUND);
+
+		LOG.info("evaluationCourse:{}", evaluationCourse);
+		daywiseAnswerScriptsDto.setTotalNoOfScriptsAllocated(evaluationCourse.getNoOfScriptsAllocated());
+		daywiseAnswerScriptsDto.setTotalEvaluatedScripts(evaluationCourse.getNoOfScriptsEvaluated());
+		daywiseAnswerScriptsDto.setTotalPendingScripts(
+				evaluationCourse.getNoOfScriptsAllocated() - evaluationCourse.getNoOfScriptsEvaluated());
+
+		if (evaluationCourse.getNoOfScriptsAllocated() == evaluationCourse.getNoOfScriptsEvaluated())
+			daywiseAnswerScriptsDto.setStatus(DayWiseScriptEvaluationStatus.DONE);
+		else if (evaluationCourse.getNoOfScriptsEvaluated() == 0)
+			daywiseAnswerScriptsDto.setStatus(DayWiseScriptEvaluationStatus.TO_DO);
+		else if (evaluationCourse.getNoOfScriptsEvaluated() > 0)
+			daywiseAnswerScriptsDto.setStatus(DayWiseScriptEvaluationStatus.SAVED);
+
+		LOG.info("After evaluationCourse:{}", evaluationCourse);
+		List<ScriptDetail> scriptDetails = evaluationCourse.getEvaluationScripts();
+		List<ScriptDetailDto> scriptDetailDtoList = new ArrayList<>();
+
+		LOG.info("scriptDetails:{}", scriptDetails);
+		if (scriptDetails == null || scriptDetails.isEmpty())
+			throw new DigitalEvaluationException(DigitalEvaluationException.NO_SCRIPTS_AVAILABLE);
+		else
+			scriptDetails.forEach(script -> {
+				ScriptDetailDto scriptDetailDto = new ScriptDetailDto();
+				scriptDetailDto.setUsn(script.getUsn());
+				scriptDetailDto.setAnswerScriptNumber(script.getAnswerScriptNumber());
+				scriptDetailDto.setAnswerScriptPath(script.getAnswerScriptPath());
+				scriptDetailDtoList.add(scriptDetailDto);
+			});
+		daywiseAnswerScriptsDto.setAnswerScripts(scriptDetailDtoList);
+		return daywiseAnswerScriptsDto;
+
+	}
+
+	@Override
+	public UEScoreTabulateDTO saveTabulateData(MultivaluedMap<String, String> queryParams,
+			UEScoreTabulateDTO ueTabulate) {
+
+		try {
+			String scriptRef = queryParams.getFirst(SCRIPT_REF);
+			String courseCode = queryParams.getFirst(COURSE_CODE);
+			String tenantId = queryParams.getFirst("tenant");
+			String evaluatorId = queryParams.getFirst("evaluator");
+			String academicYear = queryParams.getFirst("academicYear");
+			String degreeId = queryParams.getFirst("degreeId");
+			String semester = queryParams.getFirst("semester");
+			String scheme = queryParams.getFirst(SCHEME);
+			Objects.requireNonNull(queryParams.getFirst("termNumber"), "termNumber is required");
+			int termNumber = Integer.parseInt(queryParams.getFirst("termNumber"));
+
+			Objects.requireNonNull(academicYear, "academicYear is required");
+			Objects.requireNonNull(degreeId, "degreeId is required");
+			Objects.requireNonNull(semester, "semester is required");
+			Objects.requireNonNull(scheme, "scheme is required");
+			Objects.requireNonNull(courseCode, "courseCode is required");
+			Objects.requireNonNull(evaluatorId, "Evaluator is required");
+			Objects.requireNonNull(tenantId, "Tenant is required");
+
+			Objects.requireNonNull(scriptRef, "academicYear is required");
+			Objects.requireNonNull(courseCode, "degreeId is required");
+
+			LOG.info("ref no:{},courseCode:{},evaluation Id:{},tent:{}", scriptRef, courseCode, evaluatorId, tenantId);
+			LOG.info("academic Year:{},degreeId:{},sem:{},scheme:{},courseCode:{},termNumber:{}", academicYear,
+					degreeId, semester, scheme, courseCode, termNumber);
+
+			DigitalEvaluation evalution = digitalEvaluationRepository.findEvaluation(academicYear, degreeId, semester,
+					scheme, evaluatorId, tenantId, termNumber);
+
+			Objects.requireNonNull(evalution, "Evaluation is not found");
+
+			EvaluationCourse evaluationCourse = evalution.getEvaluationCourses().stream()
+					.filter(eval -> eval.getCourseCode().equals(courseCode)).findAny().orElseThrow(
+							() -> new DigitalEvaluationException(DigitalEvaluationException.CONFIGURATION_NOT_FOUND));
+
+			ScriptDetail scriptDetail = evaluationCourse.getEvaluationScripts().stream()
+					.filter(script -> script.getAnswerScriptNumber().equals(scriptRef)).findAny()
+					.orElseThrow(() -> new DigitalEvaluationException(DigitalEvaluationException.SCRIPT_NOT_FOUND));
+
+			scriptDetail.setMarksObtained(ueTabulate.getMarksObtained());
+			scriptDetail.setMaxMarks(ueTabulate.getMaxMarks());
+			scriptDetail.setNumberOfQuestionsToAttempt(ueTabulate.getNumberOfQuestionsToAttempt());
+			scriptDetail.setTotalNoOfQuestions(ueTabulate.getNumberOfQuestions());
+			scriptDetail.setPartwiseQuestions(ueTabulate.getPartwiseQuestions());
+			scriptDetail.setTabulationStatus(ueTabulate.getTabulationStatus());
+			List<TabulateScore> scoresList = new ArrayList<>();
+			ueTabulate.getScores().forEach(tab -> {
+				TabulateScore newTabScore = new TabulateScore();
+				if (tab.isOption()) {
+					tab.getOptionScores().forEach(sub -> {
+						TabulateScore newsubTabScore = new TabulateScore();
+						BeanUtils.copyProperties(sub, newsubTabScore);
+						scoresList.add(newsubTabScore);
+
+					});
+				} else {
+					BeanUtils.copyProperties(tab, newTabScore);
+					scoresList.add(newTabScore);
+				}
+
+			});
+
+			scriptDetail.setScores(scoresList);
+
+			digitalEvaluationRepository.save(evalution);
+			return ueTabulate;
+		} catch (DigitalEvaluationException e) {
+			e.printStackTrace();
+			throw new DigitalEvaluationException(e.getMessage());
+		}
+
+	}
+
+	/**
+	 * @modifiedBy Biswajit
+	 */
+	@Override
+	public String saveScripts(List<UniversityCourseEnrollmentDto> universityCourseEnrollmentDtos) {
+		try {
+			List<UniversityCourseEnrollment> enrolments = new ArrayList<>();
+			BeanUtils.copyProperties(universityCourseEnrollmentDtos, enrolments);
+			universityCourseEnrollmentRepository.save(enrolments);
+			return "Scripts Saved Successfully";
+		} catch (NumberFormatException e) {
+			throw new DigitalEvaluationException(e.getMessage());
+		}
+	}
+
+	/**
+	 * @modifiedBy Biswajit
+	 */
+	@Override
+	public String uploadAnswerScript(String path, InputStream file, FormDataContentDisposition pdfDetails) {
+		byte[] content;
+		try {
+			// "dhi/examanswerscript" + "/" + courseCode + "_" + usn + "/" + LocalDate.now()
+			// + "/"
+			// + LocalTime.now().getHour() + "-" + LocalTime.now().getMinute() + "-" +
+			// LocalTime.now().getSecond()
+			// + "/" + pdfDetails.getFileName();
+			content = IOUtils.toByteArray(file);
+			if (fileService.store(path, content)) {
+				return "Answer script uploaded successfully";
+			} else {
+				throw new DigitalEvaluationException("File Not Uploaded");
+			}
+		} catch (Exception ex) {
+			LOG.error("Error, {}", ex);
+			throw new DigitalEvaluationException("Error while uploading Answer Scripts, " + ex.getMessage());
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param queryParams
+	 * @return
+	 */
+	@Override
+	public String getAnswerScript(String path) {
+		try {
+			return new String(fileService.fetch(path));
+		} catch (NumberFormatException e) {
+			throw new DigitalEvaluationException(e.getMessage());
+		}
+	}
+
+	/**
+	 * @author Biswajit
+	 * 
+	 * @param degreeId
+	 * @param semesterId
+	 * @param schemeYear
+	 * @param courseCode
+	 * @return
+	 */
+	@Override
+	public List<UniversityCourseEnrollmentDto> getEnrollmentStudents(String degreeId, String semesterId,
+			String schemeYear, String courseCode) {
+		try {
+			TermDetail termDetails = universityDetailsService.getCurrentTermDetail(degreeId);
+			List<UniversityCourseEnrollmentDto> enrolments = universityCourseEnrollmentRepository
+					.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(degreeId,
+							schemeYear, termDetails.getAcademicYear(), termDetails.getTermNumber(), semesterId,
+							courseCode);
+			List<UniversityCourseEnrollmentDto> universityCourseEnrollmentDtos = new ArrayList<>();
+			if (enrolments != null) {
+				BeanUtils.copyProperties(enrolments, universityCourseEnrollmentDtos);
+				return universityCourseEnrollmentDtos;
+			} else {
+				throw new DigitalEvaluationException(DigitalEvaluationException.NO_COURSE_ENROLLEMENT);
+			}
+		} catch (BeansException e) {
+			throw new DigitalEvaluationException(e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+
+squid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(êÈ½ã8êÁ¬ü±,Hõ-RMAJORZ
+CODE_SMELL
+jsquid:S3655à"7Call "Optional#isPresent()" before accessing the value.(˜—ÙÎüÿÿÿÿ8¦•ÅÈ­,Hö-RMAJORZBUG
+squid:S3776¥"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ëÃÌýÿÿÿÿ8““«¹­,H÷-RCRITICALZ
+CODE_SMELL
+ƒsquid:UnusedPrivateMethodÅ"@Remove this unused private "checkUnallocatedOrAllocated" method.(œâ—Ã8¦•ÅÈ­,Hø-RMAJORZ
+CODE_SMELL
+^squid:S3655º"7Call "Optional#isPresent()" before accessing the value.(žÕ¬»Hù-RMAJORZBUG
+squid:S3776ª"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(”§ü¥úÿÿÿÿ8¦•ÅÈ­,Hú-RCRITICALZ
+CODE_SMELL
+ˆsquid:S3776…"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(òÏ‹÷þÿÿÿÿHû-RCRITICALZ
+CODE_SMELL
+jsquid:S3655É"7Call "Optional#isPresent()" before accessing the value.(Í˜¨éÿÿÿÿÿ8¦•ÅÈ­,Hü-RMAJORZBUG
+ƒsquid:S1192¢"KDefine a constant instead of duplicating this literal "termNumber" 4 times.(²‰ü8êÁ¬ü±,Hý-RCRITICALZ
+CODE_SMELL

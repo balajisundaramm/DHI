@@ -1,0 +1,22 @@
+
+jsquid:S1481X"6Remove this unused "facultyNomination" local variable.(Î•ø8¶›Îà¦,H÷RMINORZ
+CODE_SMELL
+usquid:S10683"<Remove this unused "COLLEGE_DETAIL_ROOT_PATH" private field.(´Ö–Âşÿÿÿÿ8÷Ä°ˆ©,HïRMAJORZ
+CODE_SMELL
+¤squid:UselessImportCheck"^Remove this unused import 'com.spaneos.dhi.examination.domain.CollegeFacultyAllocationStatus'.(²¨ÕÈşÿÿÿÿ8ã±æÕ¨,HöRMINORZ
+CODE_SMELL
+qsquid:S2583´"CChange this condition so that it does not always evaluate to "true"(Ì‘³í8ã¸ç×¦,HõRMAJORZBUG
+`squid:S1148ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷Ä°ˆ©,HóRMINORZVULNERABILITY
+jsquid:S3655«"7Call "Optional#isPresent()" before accessing the value.(Í˜¨éÿÿÿÿÿ8ã¸ç×¦,HøRMAJORZBUG
+…squid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(‡‹Ïãüÿÿÿÿ8÷Ä°ˆ©,HñRMAJORZ
+CODE_SMELL
+zsquid:S10753"ARefactor your code to get this URI from a customizable parameter.(´Ö–Âşÿÿÿÿ8éÒŸ´¨,HùRMINORZ
+CODE_SMELL
+squid:S3776Æ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(òÏ‹÷şÿÿÿÿ8¶›Îà¦,HôRCRITICALZ
+CODE_SMELL
+ˆsquid:S3776u"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(´èùk8÷Ä°ˆ©,HòRCRITICALZ
+CODE_SMELL
+jsquid:S3655‰"7Call "Optional#isPresent()" before accessing the value.(Í˜¨éÿÿÿÿÿ8éÒŸ´¨,HóRMAJORZBUG
+ˆsquid:S10685"TRemove this unused "COLLEGE_DETAIL_FOR_UPDATE_FACULTY_OF_COLLEGE_URI" private field.(ÌÄûä8÷Ä°ˆ©,HğRMAJORZ
+CODE_SMELL
+esquid:S3655ı"7Call "Optional#isPresent()" before accessing the value.(Õ¬»8ã¸ç×¦,HúRMAJORZBUG

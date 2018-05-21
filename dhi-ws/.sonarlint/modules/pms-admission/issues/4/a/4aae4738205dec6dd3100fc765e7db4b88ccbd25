@@ -1,0 +1,43 @@
+
+…squid:S1192Û"SUse already-defined constant 'FEETEMPLATEID' instead of duplicating its value here.(÷ç²ƒH‰’RCRITICALZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(ÿÏÿëHŠ’RMAJORZ
+CODE_SMELL
+™squid:S00115ˆ"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¿ð¶èûÿÿÿÿ8±˜ú»°,H‹’RCRITICALZ
+CODE_SMELL
+‘squid:S1192¨"_Use already-defined constant 'FEE_TEMPLATE_FOR_TERM_FEE' instead of duplicating its value here.(‚ªèüHŒ’RCRITICALZ
+CODE_SMELL
+isquid:S1118ä":Add a private constructor to hide the implicit public one.(œóµH’RMAJORZ
+CODE_SMELL
+nsquid:S1118”":Add a private constructor to hide the implicit public one.(¦ŽŒÞøÿÿÿÿHŽ’RMAJORZ
+CODE_SMELL
+Xsquid:S1068"*Remove this unused "ID_NEW" private field.(ŸÓÂH’RMAJORZ
+CODE_SMELL
+nsquid:S1118Ï":Add a private constructor to hide the implicit public one.(ø—ê®ýÿÿÿÿH’RMAJORZ
+CODE_SMELL
+„squid:S1192×"MUse already-defined constant 'COLLEGE' instead of duplicating its value here.(ÏÙéäýÿÿÿÿH‘’RCRITICALZ
+CODE_SMELL
+…squid:S1192‡"LUse already-defined constant 'UPDATE' instead of duplicating its value here.(Ñä©„8¿À´¿¤,H’’RCRITICALZ
+CODE_SMELL
+‡squid:S1192Í"VUse already-defined constant 'SAVE_NEW_STUDENT' instead of duplicating its value here.(Žƒ«ZH“’RCRITICALZ
+CODE_SMELL
+ƒsquid:S1192Œ"LUse already-defined constant 'PARENT' instead of duplicating its value here.(ºÜÀÈüÿÿÿÿH”’RCRITICALZ
+CODE_SMELL
+isquid:S1118»":Add a private constructor to hide the implicit public one.(Óƒ“•H•’RMAJORZ
+CODE_SMELL
+nsquid:S1118«":Add a private constructor to hide the implicit public one.(×àÿÿÿÿÿH–’RMAJORZ
+CODE_SMELL
+…squid:S1192ì"SUse already-defined constant 'SUBCATEGORYID' instead of duplicating its value here.(ÂöÒH—’RCRITICALZ
+CODE_SMELL
+squid:S1192õ"TUse already-defined constant 'SUMMARY_REPORT' instead of duplicating its value here.(÷‡ªô8Åë‡ò¢,H˜’RCRITICALZ
+CODE_SMELL
+‰squid:S1192ñ"XUse already-defined constant 'CREATE_TERM_DETAIL' instead of duplicating its value here.(•ýÊVH™’RCRITICALZ
+CODE_SMELL
+‰squid:S1192Ç"WUse already-defined constant 'DROP_DOWN_DTO_URI' instead of duplicating its value here.(­ºúåHš’RCRITICALZ
+CODE_SMELL
+squid:S1192Ì"VUse already-defined constant 'GET_VENDOR_EXCEL' instead of duplicating its value here.(¼½ÌÂÿÿÿÿÿH›’RCRITICALZ
+CODE_SMELL
+—squid:S1192Ë"`Use already-defined constant 'GET_BUDGET_ALLOCATED_EXCEL' instead of duplicating its value here.(ßòè…ýÿÿÿÿHœ’RCRITICALZ
+CODE_SMELL
+~squid:S1192Š"LUse already-defined constant 'PARENT' instead of duplicating its value here.(èŒóœH’RCRITICALZ
+CODE_SMELL

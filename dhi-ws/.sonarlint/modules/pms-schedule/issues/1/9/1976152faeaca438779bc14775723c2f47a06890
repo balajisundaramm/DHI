@@ -1,0 +1,63 @@
+
+`squid:S2093µ"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHölRCRITICALZ
+CODE_SMELL
+ƒsquid:S3776‹"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(€„×H„mRCRITICALZ
+CODE_SMELL
+Tsquid:S1075£
+"&Remove this hard-coded path-delimiter.(ßîéÃHôlRMINORZ
+CODE_SMELL
+`squid:S2093…	"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿH÷lRCRITICALZ
+CODE_SMELL
+‚squid:S3776º"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ö›îsHƒmRCRITICALZ
+CODE_SMELL
+k
+squid:S106§"9Replace this use of System.out or System.err by a logger.(°«éÿüÿÿÿÿHılRMAJORZ
+CODE_SMELL
+_squid:S1602×",Remove useless curly braces around statement(ÊüÕ¥ÿÿÿÿÿH‡mRMINORZ
+CODE_SMELL
+_squid:S1602",Remove useless curly braces around statement(›­ôëüÿÿÿÿHˆmRMINORZ
+CODE_SMELL
+`squid:S2093Â"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHùlRCRITICALZ
+CODE_SMELL
+e
+squid:S106¡"9Replace this use of System.out or System.err by a logger.(—§ˆXHülRMAJORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineÉ
+"<This block of commented-out lines of code should be removed.(Æ¯ÑÅHûlRMAJORZ
+CODE_SMELL
+ˆsquid:S3776Ü"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(İëäÿüÿÿÿÿH‚mRCRITICALZ
+CODE_SMELL
+ƒsquid:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¨Ü•ŸHmRCRITICALZ
+CODE_SMELL
+psquid:S00107Ü"<Method has 8 parameters, which is greater than 7 authorized.(İëäÿüÿÿÿÿH†mRMAJORZ
+CODE_SMELL
+_squid:S1602Ã",Remove useless curly braces around statement(áíÑıÿÿÿÿÿH‰mRMINORZ
+CODE_SMELL
+dsquid:S1172›"6Remove this unused method parameter "collegeTimeings".(«¥†ßH…mRMAJORZ
+CODE_SMELL
+Tsquid:S1075ˆ	"&Remove this hard-coded path-delimiter.(ßîéÃHólRMINORZ
+CODE_SMELL
+Ysquid:S1148±"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHŒmRMINORZVULNERABILITY
+Ysquid:S1148Ğ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHmRMINORZVULNERABILITY
+ysquid:CommentedOutCodeLine­	"<This block of commented-out lines of code should be removed.(Æ¯ÑÅHúlRMAJORZ
+CODE_SMELL
+¬squid:S1192±"{Define a constant instead of duplicating this literal "timetable upload : degree:{},deptId:{},semId:{},section:{}" 3 times.(²ÆÏHõlRCRITICALZ
+CODE_SMELL
+f
+squid:S106»"9Replace this use of System.out or System.err by a logger.(Ş¢¤ÖHÿlRMAJORZ
+CODE_SMELL
+Xsquid:S00108©")Either remove or fill this block of code.(”ı¾H‹mRMAJORZ
+CODE_SMELL
+`squid:S2093Ÿ
+"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHølRCRITICALZ
+CODE_SMELL
+k
+squid:S106«"9Replace this use of System.out or System.err by a logger.(âÉÀÜüÿÿÿÿHşlRMAJORZ
+CODE_SMELL
+tsquid:UnusedPrivateMethod "3Remove this unused private "setFacultyName" method.(å—¶ÿÿÿÿÿHòlRMAJORZ
+CODE_SMELL
+osquid:S1126Ë"AReplace this if-then-else statement by a single return statement.(§Ó¼‰H€mRMINORZ
+CODE_SMELL
+Ysquid:S1148É"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHmRMINORZVULNERABILITY
+Xsquid:S00108š	")Either remove or fill this block of code.(ï­£ÄHŠmRMAJORZ
+CODE_SMELL

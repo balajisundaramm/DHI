@@ -1,0 +1,14 @@
+
+Ysquid:S1612A",Replace this lambda with a method reference.(Œ”çÁHáRMINORZ
+CODE_SMELL
+vsquid:S1854È"CRemove this useless assignment to local variable "eligibleStudent".(Ñ ƒîşÿÿÿÿHâRMAJORZ
+CODE_SMELL
+vsquid:S1854ÿ"CRemove this useless assignment to local variable "eligibleStudent".(Ñ ƒîşÿÿÿÿHãRMAJORZ
+CODE_SMELL
+psquid:UselessImportCheck"6Remove this unused import 'org.modelmapper.TypeToken'.(ğ´©ŞHäRMINORZ
+CODE_SMELL
+wsquid:UselessImportCheck
+"8Remove this unused import 'org.modelmapper.ModelMapper'.(ó¿ÔúÿÿÿÿHåRMINORZ
+CODE_SMELL
+Ysquid:S1148æ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHæRMINORZVULNERABILITY
+Ysquid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHçRMINORZVULNERABILITY

@@ -1,0 +1,97 @@
+package com.spaneos.dhi.examination.dto;
+
+import java.util.List;
+
+import com.spaneos.dhi.examination.domain.FacultyAllocationStatus;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+
+public class CourseDetailDto {
+	private String courseCode;
+	private String courseName;
+	private FacultyAllocationStatus status;
+	private int noOfFacultiesAllocated;
+	private boolean allocationDone;
+	private List<FacultyDetail> allocatedFaculties;
+
+	// = = = = =
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public FacultyAllocationStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(FacultyAllocationStatus status) {
+		this.status = status;
+	}
+
+	public int getNoOfFacultiesAllocated() {
+		return noOfFacultiesAllocated;
+	}
+
+	public void setNoOfFacultiesAllocated(int noOfFacultiesAllocated) {
+		this.noOfFacultiesAllocated = noOfFacultiesAllocated;
+	}
+
+	public boolean isAllocationDone() {
+		return allocationDone;
+	}
+
+	public void setAllocationDone(boolean allocationDone) {
+		this.allocationDone = allocationDone;
+	}
+
+	public List<FacultyDetail> getAllocatedFaculties() {
+		return allocatedFaculties;
+	}
+
+	public void setAllocatedFaculties(List<FacultyDetail> allocatedFaculties) {
+		this.allocatedFaculties = allocatedFaculties;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((courseCode == null) ? 0 : courseCode.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CourseDetailDto other = (CourseDetailDto) obj;
+		if (courseCode == null) {
+			if (other.courseCode != null)
+				return false;
+		} else if (!courseCode.equals(other.courseCode))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "CollegeCourseDTO [courseCode=" + courseCode + ", courseName=" + courseName + ", status=" + status
+				+ ", noOfFacultiesAllocated=" + noOfFacultiesAllocated + ", allocationDone=" + allocationDone
+				+ ", allocatedFaculties=" + allocatedFaculties + "]";
+	}
+}

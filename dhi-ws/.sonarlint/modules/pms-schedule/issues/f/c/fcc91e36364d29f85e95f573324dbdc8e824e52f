@@ -1,0 +1,14 @@
+
+psquid:S1068?"CRemove this unused "UNABLE_TO_CREATE_CALANDER_EVENT" private field.(œüŠÈHëlRMAJORZ
+CODE_SMELL
+jsquid:S1068A"=Remove this unused "UPDATE_CALENDAR_EXCEPTION" private field.(€µý³HìlRMAJORZ
+CODE_SMELL
+`squid:S2093™"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿHílRCRITICALZ
+CODE_SMELL
+~squid:CommentedOutCodeLineà"<This block of commented-out lines of code should be removed.(»¹êìûÿÿÿÿHîlRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(éØ»ÚûÿÿÿÿHïlRMAJORZ
+CODE_SMELL
+ˆsquid:S3776×"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(„´²êüÿÿÿÿHðlRCRITICALZ
+CODE_SMELL
+Ysquid:S1148¸"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿHñlRMINORZVULNERABILITY

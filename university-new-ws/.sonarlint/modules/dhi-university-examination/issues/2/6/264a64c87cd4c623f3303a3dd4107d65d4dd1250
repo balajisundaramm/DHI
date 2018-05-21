@@ -1,0 +1,20 @@
+
+€squid:CommentedOutCodeLineŽ"<This block of commented-out lines of code should be removed.(Ò‰èÔ8ÊÓ¿‰°,HŒ(RMAJORZ
+CODE_SMELL
+ysquid:S3358Æ"DExtract this nested ternary operation into an independent statement.(Áïå©8ü¾ˆ¯,H(RMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine•"<This block of commented-out lines of code should be removed.(ÑÝÐËþÿÿÿÿ8ÊÓ¿‰°,HŽ(RMAJORZ
+CODE_SMELL
+‰squid:S3776{"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(…¸½Â8™÷³˜®,H(RCRITICALZ
+CODE_SMELL
+€squid:CommentedOutCodeLineÇ"<This block of commented-out lines of code should be removed.(Ò‰èÔ8ÊÓ¿‰°,H(RMAJORZ
+CODE_SMELL
+fsquid:S1602±",Remove useless curly braces around statement(‡ìÒùÿÿÿÿ8öˆ¦¾¯,H‘(RMINORZ
+CODE_SMELL
+…squid:CommentedOutCodeLineŠ"<This block of commented-out lines of code should be removed.(îÑÓÀýÿÿÿÿ8ÊÓ¿‰°,H’(RMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLineÎ"<This block of commented-out lines of code should be removed.(ÑÝÐËþÿÿÿÿ8ÊÓ¿‰°,H“(RMAJORZ
+CODE_SMELL
+’
+squid:S135“"YReduce the total number of break and continue statements in this loop to use at most one.(Ñ¸Æóÿÿÿÿÿ8²ƒŠ¯,H”(RMINORZ
+CODE_SMELL

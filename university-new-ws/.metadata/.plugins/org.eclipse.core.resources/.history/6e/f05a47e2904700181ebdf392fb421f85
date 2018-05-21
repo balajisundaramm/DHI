@@ -1,0 +1,384 @@
+/**
+ * 
+ */
+package com.spaneos.dhi.examination.service;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import javax.ws.rs.core.MultivaluedMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spaneos.dhi.coursemanagement.domain.CourseType;
+import com.spaneos.dhi.examination.domain.CourseDetails;
+import com.spaneos.dhi.examination.domain.DigitalEvaluationConfiguration;
+import com.spaneos.dhi.examination.domain.DigitalEvaluationFacultyNomination;
+import com.spaneos.dhi.examination.domain.FacultyDetail;
+import com.spaneos.dhi.examination.domain.FacultyNominationStatus;
+import com.spaneos.dhi.examination.domain.UniversityCourseEnrollment;
+import com.spaneos.dhi.examination.domain.UniversityFacultyAllocationStatus;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationFacultyDetailDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationFacultyNominationDto;
+import com.spaneos.dhi.examination.dto.DigitalEvaluationSemesterWiseDetailsDto;
+import com.spaneos.dhi.examination.dto.EvaluationCourseDetailDto;
+import com.spaneos.dhi.examination.dto.EvaluationCourseDetailsDto;
+import com.spaneos.dhi.examination.dto.FacultyDetailDto;
+import com.spaneos.dhi.examination.exception.DigitalEvaluationFacultyNominationException;
+import com.spaneos.dhi.examination.mongotemplate.DigitalEvaluationFacultyNominationTemplate;
+import com.spaneos.dhi.examination.repository.DigitalEvaluationConfigurationRepository;
+import com.spaneos.dhi.examination.repository.DigitalEvaluationFacultyNominationRepository;
+import com.spaneos.dhi.examination.repository.UniversityCourseEnrollmentRepository;
+import com.spaneos.dhi.university.service.UniversityDetailService;
+
+/**
+ * @author balaji
+ *
+ */
+@Service
+public class DigitalEvaluationFacultyNominationServiceImpl implements DigitalEvaluationFacultyNominationService {
+
+	public static final Logger LOG = LoggerFactory.getLogger(DigitalEvaluationFacultyNominationServiceImpl.class);
+
+	private static final String SUCCESS = "Success";
+
+	@Autowired
+	private DigitalEvaluationFacultyNominationRepository deFacultyNominationRepository;
+
+	@Autowired
+	private UniversityCourseEnrollmentRepository courseEnrollmentRepository;
+
+	@Autowired
+	private UniversityDetailService universityDetailsService;
+
+	@Autowired
+	private DigitalEvaluationFacultyNominationTemplate template;
+
+	@Autowired
+	private DigitalEvaluationConfigurationRepository configRepository;
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 20-Apr-2018
+	 */
+	@Override
+	public List<DigitalEvaluationSemesterWiseDetailsDto> getAllCourses(String degreeId, String schemeYear,
+			String academicYear, int termNumber) {
+		List<String> semesters = universityDetailsService.getAllSemesters(degreeId, schemeYear);
+		List<DigitalEvaluationSemesterWiseDetailsDto> list = new ArrayList<>();
+		semesters.forEach(semester -> {
+			DigitalEvaluationSemesterWiseDetailsDto dto = new DigitalEvaluationSemesterWiseDetailsDto();
+			dto.setSemesterId(semester);
+
+			dto.setTotalCourses(courseEnrollmentRepository
+					.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseType(degreeId,
+							schemeYear, academicYear, termNumber, semester, CourseType.THEORY)
+					.size());
+			List<DigitalEvaluationFacultyNomination> facultyNominationList = deFacultyNominationRepository
+					.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterId(degreeId, schemeYear,
+							academicYear, termNumber, semester);
+			if (facultyNominationList != null && !facultyNominationList.isEmpty()) {
+				dto.setStatus(getStatusFacultyNomination(facultyNominationList, null));
+				dto.setCoursesAllocated(facultyNominationList.stream()
+						.filter(fac -> fac.getUniversityFacultyNominationStatus().equals(FacultyNominationStatus.SAVED))
+						.collect(Collectors.toList()).size());
+			} else {
+				dto.setStatus(FacultyNominationStatus.TODO);
+				dto.setCoursesAllocated(0);
+			}
+			list.add(dto);
+		});
+		list.removeIf(fac -> fac.getTotalCourses() == 0);
+		return list;
+	}
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 20-Apr-2018
+	 */
+	@Override
+	public EvaluationCourseDetailsDto getEntireCourseList(String degreeId, String schemeYear, String academicYear,
+			int termNumber, String semester) {
+		LOG.error("");
+		Set<CourseDetails> courses = template.getAllCourses(degreeId, schemeYear, academicYear, termNumber, semester);
+		List<DigitalEvaluationFacultyNomination> nominations = deFacultyNominationRepository
+				.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterId(degreeId, schemeYear,
+						academicYear, termNumber, semester);
+		EvaluationCourseDetailsDto courseDto = new EvaluationCourseDetailsDto();
+		Set<EvaluationCourseDetailDto> courseDetails = new HashSet<>();
+		int noOfAllocatedCourses = 0;
+		if (courses != null && !courses.isEmpty()) {
+			for (CourseDetails course : courses) {
+				EvaluationCourseDetailDto dto = new EvaluationCourseDetailDto();
+				dto.setCourseCode(course.getCourseCode());
+				dto.setCourseName(course.getCourseName());
+				if (nominations != null && !nominations.isEmpty()) {
+					for (DigitalEvaluationFacultyNomination nomination : nominations) {
+						if (course.getCourseCode().equals(nomination.getCourseCode())) {
+							List<FacultyDetail> allocatedFaculties = nomination.getFaculties().stream()
+									.filter(fac -> fac.getUniversityAllocationStatus()
+											.equals(UniversityFacultyAllocationStatus.ALLOCATED))
+									.collect(Collectors.toList());
+							if (allocatedFaculties != null && !allocatedFaculties.isEmpty()) {
+								dto.setAllocationStatus(nomination.getUniversityFacultyNominationStatus());
+								noOfAllocatedCourses++;
+								courseDetails.add(dto);
+								break;
+							} else {
+								dto.setAllocationStatus(FacultyNominationStatus.TODO);
+								courseDetails.add(dto);
+								break;
+							}
+						} else {
+							dto.setAllocationStatus(FacultyNominationStatus.TODO);
+							courseDetails.add(dto);
+						}
+					}
+				} else {
+					dto.setAllocationStatus(FacultyNominationStatus.TODO);
+					courseDetails.add(dto);
+				}
+
+			}
+		} else {
+			throw new DigitalEvaluationFacultyNominationException(
+					DigitalEvaluationFacultyNominationException.NO_COURSES_FOUND);
+		}
+		courseDto.setTotalCourses(courseDetails.size());
+		courseDto.setCourseDetails(courseDetails);
+		courseDto.setCoursesAllocated(noOfAllocatedCourses);
+		List<EvaluationCourseDetailDto> courseDetails1 = new ArrayList<>(courseDetails);
+		courseDto.setSemesterWiseStatus(getStatusFacultyNomination(null, courseDetails1));
+		return courseDto;
+	}
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param list
+	 * @param list1
+	 * @return
+	 */
+	private FacultyNominationStatus getStatusFacultyNomination(List<DigitalEvaluationFacultyNomination> list,
+			List<EvaluationCourseDetailDto> list1) {
+
+		return isPresentByStatus(list, list1, FacultyNominationStatus.SAVED) ? FacultyNominationStatus.SAVED
+				: isPresentByStatus(list, list1, FacultyNominationStatus.SUBMITTED) ? FacultyNominationStatus.SUBMITTED
+						: FacultyNominationStatus.TODO;
+	}
+
+	/**
+	 * \
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param list
+	 * @param list1
+	 * @param status
+	 * @return
+	 */
+	private boolean isPresentByStatus(List<DigitalEvaluationFacultyNomination> list,
+			List<EvaluationCourseDetailDto> list1, FacultyNominationStatus status) {
+		if (list != null) {
+			return list.stream().filter(pre -> pre.getUniversityFacultyNominationStatus().equals(status)).findAny()
+					.isPresent();
+		} else {
+			return list1.stream().filter(pre -> pre.getAllocationStatus().equals(status)).findAny().isPresent();
+		}
+	}
+
+	/**
+	 * 
+	 * @author balaji
+	 * @since 23-Apr-2018
+	 * @param faculties
+	 * @return
+	 */
+	private List<FacultyDetailDto> convertFacultyDetailIntoDto(List<FacultyDetail> faculties) {
+		List<FacultyDetailDto> dtos = new ArrayList<>();
+		faculties.forEach(fac -> {
+			FacultyDetailDto dto = new FacultyDetailDto();
+			BeanUtils.copyProperties(fac, dto);
+			dtos.add(dto);
+		});
+		return dtos;
+	}
+
+	@Override
+	public DigitalEvaluationFacultyDetailDto getAllocatedFaculties(MultivaluedMap<String, String> queryParams) {
+		try {
+			String academicYear = queryParams.getFirst("academicYear");
+			String degreeId = queryParams.getFirst("degreeId");
+			String semester = queryParams.getFirst("semester");
+			String schemeYear = queryParams.getFirst("scheme");
+			int termNumber = Integer.parseInt(queryParams.getFirst("termNumber"));
+			String courseCode = queryParams.getFirst("courseCode");
+			Objects.requireNonNull(academicYear, "academic year is required");
+			Objects.requireNonNull(degreeId, "degree id is required");
+			Objects.requireNonNull(semester, "semester is required");
+			Objects.requireNonNull(schemeYear, "seheme is required");
+			Objects.requireNonNull(termNumber, "term number is required");
+			Objects.requireNonNull(courseCode, "course code is is required");
+			DigitalEvaluationFacultyNomination nomination = deFacultyNominationRepository
+					.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(degreeId,
+							schemeYear, academicYear, termNumber, semester, courseCode);
+			DigitalEvaluationFacultyDetailDto dto = new DigitalEvaluationFacultyDetailDto();
+			if (nomination != null && nomination.getFaculties() != null) {
+				dto.setNominatedFaculties(nomination.getFaculties().size());
+				List<FacultyDetail> list = nomination.getFaculties().stream().filter(
+						pre -> pre.getUniversityAllocationStatus().equals(UniversityFacultyAllocationStatus.ALLOCATED))
+						.collect(Collectors.toList());
+				dto.setAllocatedFaculties(list.size());
+				UniversityCourseEnrollment studentDetails = courseEnrollmentRepository
+						.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(degreeId,
+								schemeYear, academicYear, termNumber, semester, courseCode);
+				int totalScripts = 0;
+				if (studentDetails != null) {
+					if (studentDetails.getStudents() != null && !studentDetails.getStudents().isEmpty()) {
+						totalScripts = studentDetails.getStudents().size();
+					}
+				} else {
+					throw new DigitalEvaluationFacultyNominationException(
+							DigitalEvaluationFacultyNominationException.NO_SCRIPTS_FOUND);
+				}
+				DigitalEvaluationConfiguration config = configRepository
+						.findByDegreeIdAndAcademicYearAndTermNumber(degreeId, academicYear, termNumber);
+				int scriptsPerEvaluator = config.getScriptsPerEvaluator();
+				dto.setEvaluatorsNeeded((int) (Math.ceil(totalScripts / (scriptsPerEvaluator * 1.0))));
+				dto.setFaculties(convertFacultyDetailIntoDto(list));
+				return dto;
+			} else {
+				throw new DigitalEvaluationFacultyNominationException("Faculties are not nominated by college");
+			}
+		} catch (Exception ex) {
+			LOG.error("Error, {}", ex);
+			throw new DigitalEvaluationFacultyNominationException(
+					"Error getting Allocated Faculty List, " + ex.getMessage());
+		}
+	}
+
+	@Override
+	public DigitalEvaluationFacultyNominationDto getNominationDetails(MultivaluedMap<String, String> queryParams) {
+		String academicYear = queryParams.getFirst("academicYear");
+		String degreeId = queryParams.getFirst("degreeId");
+		String schemeYear = queryParams.getFirst("scheme");
+		int termNumber = Integer.parseInt(queryParams.getFirst("termNumber"));
+		String courseCode = queryParams.getFirst("courseCode");
+		String semester = queryParams.getFirst("semester");
+		Objects.requireNonNull(academicYear, "academic year is required");
+		Objects.requireNonNull(degreeId, "degree id is required");
+		Objects.requireNonNull(semester, "semester is required");
+		Objects.requireNonNull(schemeYear, "seheme is required");
+		Objects.requireNonNull(termNumber, "term number is required");
+		Objects.requireNonNull(courseCode, "course code is is required");
+		DigitalEvaluationFacultyNomination nomination = deFacultyNominationRepository
+				.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(degreeId, schemeYear,
+						academicYear, termNumber, semester, courseCode);
+		DigitalEvaluationFacultyNominationDto dto = new DigitalEvaluationFacultyNominationDto();
+		BeanUtils.copyProperties(nomination, dto);
+		dto.setNominatedFaculties(nomination.getFaculties().size());
+
+		List<FacultyDetail> list = nomination.getFaculties().stream()
+				.filter(pre -> pre.getUniversityAllocationStatus().equals(UniversityFacultyAllocationStatus.ALLOCATED))
+				.collect(Collectors.toList());
+		if (list != null) {
+			dto.setAllocatedFaculties(list.size());
+		}
+		UniversityCourseEnrollment studentDetails = courseEnrollmentRepository
+				.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(degreeId, schemeYear,
+						academicYear, termNumber, semester, courseCode);
+		int totalScripts = 0;
+		if (studentDetails != null) {
+			if (studentDetails.getStudents() != null && !studentDetails.getStudents().isEmpty()) {
+				totalScripts = studentDetails.getStudents().size();
+			}
+		} else {
+			throw new DigitalEvaluationFacultyNominationException(
+					DigitalEvaluationFacultyNominationException.NO_SCRIPTS_FOUND);
+		}
+		DigitalEvaluationConfiguration config = configRepository.findByDegreeIdAndAcademicYearAndTermNumber(degreeId,
+				academicYear, termNumber);
+		int scriptsPerEvaluator = config.getScriptsPerEvaluator();
+		dto.setEvaluatersNeeded((int) (Math.ceil(totalScripts / (scriptsPerEvaluator * 1.0))));
+		dto.setFaculties(nomination.getFaculties());
+		return dto;
+	}
+
+	@Override
+	public DigitalEvaluationFacultyNominationDto saveFacultyNomination(DigitalEvaluationFacultyNominationDto dto) {
+		Objects.requireNonNull(dto, "Faculty nomination details are required");
+		if (dto.getFaculties() != null && !dto.getFaculties().isEmpty()) {
+			DigitalEvaluationFacultyNomination nomination = deFacultyNominationRepository
+					.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterIdAndCourseCode(
+							dto.getDegreeId(), dto.getSchemeYear(), dto.getAcademicYear(), dto.getTermNumber(),
+							dto.getSemesterId(), dto.getCourseCode());
+			if (nomination != null) {
+				List<FacultyDetail> allocatedFaculties = dto.getFaculties().stream().filter(
+						pre -> pre.getUniversityAllocationStatus().equals(UniversityFacultyAllocationStatus.ALLOCATED))
+						.collect(Collectors.toList());
+
+				nomination.setFaculties(dto.getFaculties());
+				if (allocatedFaculties != null && !allocatedFaculties.isEmpty()) {
+					nomination.setUniversityFacultyNominationStatus(FacultyNominationStatus.SAVED);
+				} else {
+					nomination.setUniversityFacultyNominationStatus(FacultyNominationStatus.PENDING);
+				}
+				deFacultyNominationRepository.save(nomination);
+			} else {
+				throw new DigitalEvaluationFacultyNominationException(
+						DigitalEvaluationFacultyNominationException.NO_COURSES_FOUND);
+			}
+		} else {
+			throw new DigitalEvaluationFacultyNominationException(
+					DigitalEvaluationFacultyNominationException.NO_FACULTIES_FOUND);
+		}
+		return dto;
+	}
+
+	@Override
+	public String submitFacultyNominationDetails(MultivaluedMap<String, String> queryParams,
+			EvaluationCourseDetailsDto dtos) {
+		String academicYear = queryParams.getFirst("academicYear");
+		String degreeId = queryParams.getFirst("degreeId");
+		String schemeYear = queryParams.getFirst("scheme");
+		int termNumber = Integer.parseInt(queryParams.getFirst("termNumber"));
+		String semester = queryParams.getFirst("semester");
+		Objects.requireNonNull(academicYear, "academic year is required");
+		Objects.requireNonNull(degreeId, "degree id is required");
+		Objects.requireNonNull(semester, "semester is required");
+		Objects.requireNonNull(schemeYear, "seheme is required");
+		Objects.requireNonNull(termNumber, "term number is required");
+		List<DigitalEvaluationFacultyNomination> nomination = deFacultyNominationRepository
+				.findByDegreeIdAndSchemeYearAndAcademicYearAndTermNumberAndSemesterId(degreeId, schemeYear,
+						academicYear, termNumber, semester);
+		dtos.getCourseDetails().forEach(course -> {
+			if (!nomination.isEmpty()) {
+				nomination.forEach(nom -> {
+					if (course.getCourseCode().equals(nom.getCourseCode())) {
+						nom.getFaculties().stream().filter(pre -> Objects.nonNull(pre) && pre
+								.getUniversityAllocationStatus().equals(UniversityFacultyAllocationStatus.ALLOCATED)).anyMatch(s -> {
+							nom.setUniversityFacultyNominationStatus(FacultyNominationStatus.SUBMITTED);
+							nom.setSubmittedDate(LocalDate.now());
+						});
+							
+						} else {
+							throw new DigitalEvaluationFacultyNominationException("Faculties are not nominated by college");
+						}
+					});
+				}
+		return SUCCESS;
+	}
+
+}

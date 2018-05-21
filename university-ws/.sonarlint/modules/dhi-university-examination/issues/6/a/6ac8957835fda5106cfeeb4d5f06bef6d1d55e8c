@@ -1,0 +1,18 @@
+
+_squid:S1148P"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Êå¬é¢,Hœ
+RMINORZVULNERABILITY
+squid:S1192b"YDefine a constant instead of duplicating this literal "Fee template id Required" 3 times.( ç8¼İ¿È¢,H
+RCRITICALZ
+CODE_SMELL
+ssquid:UnusedPrivateMethodš"8Remove this unused private "validateFeeTemplate" method.(èòç2H
+RMAJORZ
+CODE_SMELL
+squid:S1192c"VDefine a constant instead of duplicating this literal "Fee template Required" 3 times.(Îó‡Ô8¼İ¿È¢,HŸ
+RCRITICALZ
+CODE_SMELL
+„squid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(å‹’¤ûÿÿÿÿ8Ä’¤ù¡,H 
+RMAJORZ
+CODE_SMELL
+™squid:S1192"]Define a constant instead of duplicating this literal "Fee template status required" 3 times.(÷ĞÎÿÿÿÿÿ8Ã×ûÉ¢,H¡
+RCRITICALZ
+CODE_SMELL

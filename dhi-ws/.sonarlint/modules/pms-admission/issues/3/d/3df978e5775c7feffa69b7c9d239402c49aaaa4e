@@ -1,0 +1,11 @@
+
+gsquid:S1948$"1Make "vissionMissions" transient or serializable.(Šìø¼ÿÿÿÿÿHºÅRCRITICALZ
+CODE_SMELL
+lsquid:S1948""6Make "institutionalDetails" transient or serializable.(˜ŒÀÜøÿÿÿÿH¹ÅRCRITICALZ
+CODE_SMELL
+zsquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(œÅŸ³H·ÅRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(×œ—þÿÿÿÿH¶ÅRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(ÆâÞÛøÿÿÿÿH¸ÅRMAJORZ
+CODE_SMELL

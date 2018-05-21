@@ -1,0 +1,24 @@
+
+Ysquid:S1168L"+Return an empty collection instead of null.(•πÔçHãèRMAJORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLineK"<This block of commented-out lines of code should be removed.(—ı÷HÑèRMAJORZ
+CODE_SMELL
+f
+squid:S106B"9Replace this use of System.out or System.err by a logger.(∑ËØ√HâèRMAJORZ
+CODE_SMELL
+Ysquid:S1148H"#Use a logger to log this exception.(Ä…‘Ö˝ˇˇˇˇHçèRMINORZVULNERABILITY
+f
+squid:S1067"9Replace this use of System.out or System.err by a logger.(ÎÇ˙⁄HÜèRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(û“Ì˙˛ˇˇˇˇHÉèRMAJORZ
+CODE_SMELL
+~squid:CommentedOutCodeLinef"<This block of commented-out lines of code should be removed.(Î“Ê–˝ˇˇˇˇHÖèRMAJORZ
+CODE_SMELL
+f
+squid:S106:"9Replace this use of System.out or System.err by a logger.(òÿˇ¥HàèRMAJORZ
+CODE_SMELL
+k
+squid:S1065"9Replace this use of System.out or System.err by a logger.(∆ÉÏ–¸ˇˇˇˇHáèRMAJORZ
+CODE_SMELL
+Ysquid:S1168F"+Return an empty collection instead of null.(•πÔçHäèRMAJORZ
+CODE_SMELL

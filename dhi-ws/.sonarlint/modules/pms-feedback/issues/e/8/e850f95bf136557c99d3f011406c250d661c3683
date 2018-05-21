@@ -1,0 +1,14 @@
+
+…squid:S3437,"_Make this value-based field transient so it is not included in the serialization of this class.(½»ºĞHùRMINORZBUG
+…squid:S3437-"_Make this value-based field transient so it is not included in the serialization of this class.(º½­‡HúRMINORZBUG
+Šsquid:S3437."_Make this value-based field transient so it is not included in the serialization of this class.(¥¤¾ÁùÿÿÿÿHûRMINORZBUG
+Šsquid:UselessImportCheck"KRemove this unused import 'com.spaneos.pms.feedback.domain.FeedbackDetail'.(öÈñûÿÿÿÿHüRMINORZ
+CODE_SMELL
+isquid:UselessImportCheck"*Remove this unused import 'java.util.Map'.(¼è½ÒşÿÿÿÿHıRMINORZ
+CODE_SMELL
+fsquid:S1948+"1Make "feedbackDetails" transient or serializable.(ŞåìÚøÿÿÿÿHşRCRITICALZ
+CODE_SMELL
+isquid:S19480"4Make "feedbackCategories" transient or serializable.(³¼ øÿÿÿÿHÿRCRITICALZ
+CODE_SMELL
+lsquid:S11617":Add the "@Override" annotation above this method signature(ü¬ö’ùÿÿÿÿH€RMAJORZ
+CODE_SMELL
